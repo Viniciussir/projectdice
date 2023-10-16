@@ -1,1 +1,1 @@
-https://viniciussir.github.io/cinema/
+https://viniciussir.github.io/projectdice/
