@@ -1,5 +1,5 @@
 export enum Operacao {
-    SIGIN = 'sigin',
+    LOGIN = 'login',
     REGISTER = 'register',
     MENU = 'menu',
 }

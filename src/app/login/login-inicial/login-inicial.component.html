@@ -1,18 +1,39 @@
-<div class="container">
+<p-toast (onClose)="limparMensagem()" position="top-center"></p-toast>
 
-    <div class="box">
-        <div class="logo">
-            <h2>Imagem</h2>
-        </div>
+<div class="container" *ngIf="operacao == 'login'">
 
-        <div class="login-form">
+    <div class="box-form">
+      <div class="logo-form">
+        <h2>Logo</h2>
+      </div>
 
+      <div class="login-form">
+
+        <div>
+          <div class="form-group">
             <span class="p-float-label">
-                <input id="float-input" type="text" pInputText> 
-                <label for="float-input">Username</label>
-            </span>   
-              
-        </div>       
+              <input class="width" id="float-input" type="text" [(ngModel)]="loginFiltro.username" pInputText/>
+              <label for="float-input">Usuário</label>
+            </span>
+          </div>
           
-    </div>
+          <div class="form-group">
+            <span class="p-float-label">
+              <p-password class="width" id="float-input" [feedback]="false" [(ngModel)]="loginFiltro.password" [toggleMask]="true"></p-password> 
+              <label for="float-input">Senha</label>
+            </span>
+          </div>
+  
+          <div class="form-group">
+            <button style="width: 100%;" class="p-button-outlined p-button-success" (click)="verificaCamposLogin()" pButton type="button" label="Entrar"></button>
+          </div>
+  
+          <div class="form-group inscreva">
+            <label routerLink="/register">Inscreva-se gratuitamente!</label>
+          </div>
+        </div>
+   
+      </div>
+    
+  </div>
 </div>

@@ -1,0 +1,55 @@
+.box-form {
+  display: flex;
+  width: 50vw;
+  height: 55vh;
+  background: #fff;
+}
+
+.logo-form-img{
+  height: auto;
+  margin:0;  
+  width: 100%;
+}
+
+.logo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 55vh;
+  background-color: #000000;
+  color: white;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  height: 55vh;
+  background-color: #fdfdfd;
+}
+
+.login-form .forms{
+  flex-direction: column;
+  justify-content: right;
+}
+
+.form-group {
+  margin-top: 5vh;
+}
+
+.inscreva{
+ text-align: center;
+}
+
+.inscreva:hover{
+  color: #590a0a;
+  text-decoration: underline;
+}
+
+.col-lg-4 .label Cadastrar {
+  margin-left: 80px;
+}

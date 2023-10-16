@@ -4,10 +4,9 @@ import { LoginInicialComponent } from './login/login-inicial/login-inicial.compo
 
 const routes: Routes = [
  { 
-  path:'',
-  component: LoginInicialComponent,
-  pathMatch: 'full'
-  },
+  path: '', 
+  redirectTo: '/login', 
+  pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -54,6 +54,7 @@ import { MenuModule } from 'primeng/menu';
   imports: [
     CommonModule,
     LoginRoutingModule,
+    FormsModule,
 
     BrowserAnimationsModule,
     AccordionModule,
