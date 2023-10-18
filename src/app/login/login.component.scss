@@ -1,15 +1,28 @@
-.box-form {
+.login-form {
   display: flex;
-  width: 50vw;
-  height: 55vh;
-  background: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35vw;
+  height: 60vh;
+  left: 10vw;
+  background-color: #fdfdfd;
+  margin: 20px;
   border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 1;
+}
+
+.login-form .forms{
+  flex-direction: column;
+  justify-content: right;
 }
 
 .logo-form-img{
   height: auto;
   margin:0;  
-  width: 100%;
+  width: 50%;
 }
 
 .logo-form {
@@ -17,27 +30,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40vw;
-  height: 55vh;
+  width: 50vw;
+  height: 80vh;
+  right: 10vw;
   background-color: #989898;
   color: white;
-  border-radius: 10px 0 0 10px;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60vw;
-  height: 55vh;
-  background-color: #fdfdfd;
-  border-radius: 0 10px 10px 0;
-}
-
-.login-form .forms{
-  flex-direction: column;
-  justify-content: right;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 0;
 }
 
 .form-group {
@@ -46,6 +47,7 @@
 
 .inscreva{
  text-align: center;
+ cursor: pointer;
 }
 
 .inscreva:hover{
@@ -55,4 +57,16 @@
 
 .col-lg-4 .label Cadastrar {
   margin-left: 80px;
+}
+
+.iconRetorno{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.iconRetorno:hover{
+  color: #989898;
+  cursor: pointer;
+  text-decoration: underline;
 }

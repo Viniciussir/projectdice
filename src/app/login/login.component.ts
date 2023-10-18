@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
   usernameInvalidRegister:boolean = false;
   passwordInvalidRegister:boolean = false;
 
+  indCadastroLogin:Boolean = false;
+
   constructor(
     private messageService: MessageService, 
   ) { }
@@ -35,8 +37,6 @@ export class LoginComponent implements OnInit {
   //#region Validar Login
   verificaCamposLogin(){
     this.messageService.clear();
-    this.usernameInvalidLogin = false;
-    this.passwordInvalidLogin = false;
     if(this.loginFiltro.username){
       if(this.loginFiltro.password){
         this.usernameInvalidLogin = false;
@@ -55,10 +55,10 @@ export class LoginComponent implements OnInit {
 
   //#region Cadastro
   exibirDialogInscrevase(){
-    this.exibirDialog = true;
     this.registerFiltro = new RegisterFiltro();
     this.usernameInvalidRegister = false;
     this.passwordInvalidRegister = false;
+    this.indCadastroLogin = true;
   }
 
   verificaCamposCadastro(){
@@ -76,6 +76,10 @@ export class LoginComponent implements OnInit {
       this.usernameInvalidRegister = true;
       this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Usuário invalido.', life: 3000});
     }
+  }
+
+  retornarLogin(){
+    this.indCadastroLogin = false;
   }
   //#endregion
   
