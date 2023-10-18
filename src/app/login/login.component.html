@@ -1,0 +1,65 @@
+<p-toast (onClose)="limparMensagem()" position="top-center"></p-toast>
+
+<div class="container" *ngIf="operacao == 'login'">
+
+    <div class="box-form">
+      <div class="logo-form">
+        <img src="assets/img/logo.png" class="logo-form-img">
+      </div>
+
+      <div class="login-form">
+
+        <div>
+          <div class="form-group">
+            <span class="p-float-label">
+              <input class="width" id="float-input" type="text" [(ngModel)]="loginFiltro.username" pInputText/>
+              <label for="float-input">Usuário</label>
+            </span>
+            <small *ngIf="usernameInvalidLogin && !loginFiltro.username" id="username2-help" class="p-invalid" style="color: red;">Usuário não foi informado.</small>
+          </div>
+          
+          <div class="form-group">
+            <span class="p-float-label">
+              <p-password class="width" id="float-input" [feedback]="false" [(ngModel)]="loginFiltro.password" [toggleMask]="true"></p-password> 
+              <label for="float-input">Senha</label>
+            </span>
+            <small *ngIf="passwordInvalidLogin && !loginFiltro.password" id="username2-help" class="p-invalid" style="color: red;">Senha não foi informada.</small>
+          </div>
+  
+          <div class="form-group">
+            <button style="width: 100%;" class="p-button-outlined p-button-success" (click)="verificaCamposLogin()" pButton type="button" label="Entrar"></button>
+          </div>
+  
+          <div class="form-group inscreva">
+            <label (click)="exibirDialogInscrevase()">Inscreva-se gratuitamente!</label>
+          </div>
+        </div>
+   
+      </div>
+    
+  </div>
+</div>
+
+<p-dialog header="Inscreva-se" [(visible)]="exibirDialog">
+
+  <div class="form-group">
+      <span class="p-float-label">
+        <input class="width" id="float-input" type="text" [(ngModel)]="registerFiltro.username" pInputText/>
+        <label for="float-input">Usuário</label>
+      </span>
+      <small *ngIf="usernameInvalidRegister && !registerFiltro.username" id="username2-help" class="p-invalid" style="color: red;">Usuário não foi informado.</small>
+    </div>
+    
+    <div class="form-group">
+      <span class="p-float-label">
+          <p-password class="width" [(ngModel)]="registerFiltro.password" [toggleMask]="true"></p-password> 
+          <label class="width" for="inputtext">Senha</label>
+        </span>
+        <small *ngIf="passwordInvalidRegister && !registerFiltro.password" id="username2-help" class="p-invalid" style="color: red;">Senha não foi informada.</small>
+    </div>
+
+    <div class="form-group">
+      <button style="width: 100%;" class="p-button-outlined p-button-success" (click)="verificaCamposCadastro()" pButton type="button" label="Cadastrar"></button>
+    </div>
+  
+</p-dialog>

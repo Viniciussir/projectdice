@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
-import { LoginInicialComponent } from './login-inicial/login-inicial.component';
-import { LoginManterComponent } from './login-manter/login-manter.component';
+import { LoginComponent } from './login.component';
 
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,8 +47,7 @@ import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
-    LoginInicialComponent,
-    LoginManterComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,
