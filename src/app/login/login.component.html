@@ -36,6 +36,14 @@
         <h2>Realize seu cadastro</h2>
         <div class="form-group">
           <span class="p-float-label">
+            <input class="width" id="float-input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" [(ngModel)]="registerFiltro.email" pInputText/>
+            <label for="float-input">E-mail</label>
+          </span>
+          <small *ngIf="usernameInvalidRegister && !registerFiltro.username" id="username2-help" class="p-invalid" style="color: red;">Usuário não foi informado.</small>
+        </div>
+
+        <div class="form-group">
+          <span class="p-float-label">
             <input class="width" id="float-input" type="text" [(ngModel)]="registerFiltro.username" pInputText/>
             <label for="float-input">Usuário</label>
           </span>
@@ -57,9 +65,7 @@
   
     </div> <!--End Login Form-->
     <div class="logo-form">
-      <h1>Bem vindo de volta</h1>
-      <h3>Insira dados pessoais em sua conta de usuário</h3>
-      <img src="assets/img/logo.png" class="logo-form-img">
+      <img src="assets/img/logo.jpeg" class="logo-form-img">
     </div>
 
 </div>
