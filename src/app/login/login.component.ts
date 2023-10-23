@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private messageService: MessageService, 
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.operacao = Operacao.LOGIN;
@@ -95,6 +95,8 @@ export class LoginComponent implements OnInit {
   }
 
   retornarLogin(){
+    this.usernameInvalidLogin = false;
+    this.passwordInvalidLogin = false;
     this.indCadastroLogin = false;
   }
   //#endregion
