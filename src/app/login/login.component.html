@@ -39,7 +39,7 @@
             <input class="width" id="float-input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" [(ngModel)]="registerFiltro.email" pInputText/>
             <label for="float-input">E-mail</label>
           </span>
-          <small *ngIf="usernameInvalidRegister && !registerFiltro.username" id="username2-help" class="p-invalid" style="color: red;">Usuário não foi informado.</small>
+          <small *ngIf="usernameInvalidRegister && !registerFiltro.email" id="username2-help" class="p-invalid" style="color: red;">E-mail não foi informado.</small>
         </div>
 
         <div class="form-group">
