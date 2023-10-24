@@ -43,6 +43,7 @@ import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import {PanelModule} from 'primeng/panel';
 import { MenuModule } from 'primeng/menu';
+import { MenuUserModule } from '../menu/menu.module';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { MenuModule } from 'primeng/menu';
     CommonModule,
     LoginRoutingModule,
     FormsModule,
+    MenuUserModule,
 
     BrowserAnimationsModule,
     AccordionModule,

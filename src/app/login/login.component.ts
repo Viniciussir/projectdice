@@ -3,6 +3,7 @@ import { LoginFiltro } from './service/loginfiltro';
 import { MessageService } from 'primeng/api';
 import { Operacao } from 'src/app/shared/operacao';
 import { RegisterFiltro } from './service/registerfiltro';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   indCadastroLogin:Boolean = false;
 
   constructor(
+    private router: Router,
     private messageService: MessageService, 
   ) {}
 
@@ -54,7 +56,12 @@ export class LoginComponent implements OnInit {
       this.usernameInvalidLogin = false;
       this.passwordInvalidLogin = false;
       this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Seu login será realizado em até 24 horas.', life: 3000});
+      this.validarLogin();
     }
+  }
+
+  validarLogin(){
+    this.router.navigate(['/menu',this.loginFiltro.username]);
   }
   //#endregion
 
