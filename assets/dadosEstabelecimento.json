@@ -1,0 +1,40 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Cola na Base",
+			"description": "Product Description",
+			"image": "assets/img/cola-na-base.jpg",
+			"category": "Accessories",
+			"Status": "ATIVO"
+		},
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Porks",
+			"description": "Product Description",
+			"image": "assets/img/porks.jpg",
+			"category": "Accessories",
+			"Status": "ATIVO"
+		},
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Bartu",
+			"description": "Product Description",
+			"image": "assets/img/bartu.jpg",
+			"category": "Accessories",
+			"Status": "ATIVO"
+		},
+		{
+			"id": "1000",
+			"code": "f230fh0g3",
+			"name": "Buddha Spa",
+			"description": "Product Description",
+			"image": "assets/img/buddahspa.jpg",
+			"category": "Accessories",
+			"Status": "ATIVO"
+		}
+	]
+}
