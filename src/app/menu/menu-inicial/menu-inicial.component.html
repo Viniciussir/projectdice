@@ -1,20 +1,33 @@
 <div class="container">
 
-    <p-carousel
+  <p-carousel
     [value]="dadosEstabelecimento"
     [numVisible]="3"
     [numScroll]="3"
     [circular]="false"
-    [responsiveOptions]="responsiveOptions">
+    [responsiveOptions]="responsiveOptions"
+    class="header">
+
+    <ng-template pTemplate="header" >
+      <div class="header-title">
+        <div class="title">
+          <h3 >Lugares cadastrados</h3>
+        </div>
+        <div class="button">
+          <p-button label="Adicionar" icon="pi pi-plus"></p-button>
+        </div>
+      </div>
+    </ng-template>
 
     <ng-template let-dadosEstabelecimento pTemplate="item">
       <div class="dadosEstabelecimento-item">
         <div class="dadosEstabelecimento-item-content">
-          <div class="p-mb-3"></div>
           <div>
-            <h4 class="p-mb-1">{{ dadosEstabelecimento.name }}</h4>
+            <h4 class="p-mb-1 dadosEstabelecimento-name">{{ dadosEstabelecimento.name }}</h4>
             <img class="dadosEstabelecimento-image" [src]="dadosEstabelecimento.image" alt="Minha Imagem" />
-            <h4 class="p-mb-1">{{ dadosEstabelecimento.Status }}</h4>
+            <h4 *ngIf="dadosEstabelecimento.Status == 'ATIVO'" class="p-mb-1 dadosEstabelecimento-status" style="color: green;">{{ dadosEstabelecimento.Status }}</h4>
+            <h4 *ngIf="dadosEstabelecimento.Status == 'INATIVO'" class="p-mb-1 dadosEstabelecimento-status" style="color: gray;">{{ dadosEstabelecimento.Status }}</h4>
+            <h4 *ngIf="dadosEstabelecimento.Status == 'AGUARDANDO ANALISE'" class="p-mb-1 dadosEstabelecimento-status" style="color: rgb(202, 202, 3);">{{ dadosEstabelecimento.Status }}</h4>
             <div class="car-buttons p-mt-5">
               <p-button
                 type="button"
@@ -27,6 +40,7 @@
                 styleClass="p-button-help p-button-rounded"
                 icon="pi pi-cog"
                 class="padding10"
+                [disabled]="dadosEstabelecimento.Status == 'AGUARDANDO ANALISE'"
               ></p-button>
             </div>
           </div>

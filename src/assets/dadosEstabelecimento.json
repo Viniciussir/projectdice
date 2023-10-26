@@ -16,7 +16,7 @@
 			"description": "Product Description",
 			"image": "assets/img/porks.jpg",
 			"category": "Accessories",
-			"Status": "ATIVO"
+			"Status": "AGUARDANDO ANALISE"
 		},
 		{
 			"id": "1000",
@@ -25,7 +25,7 @@
 			"description": "Product Description",
 			"image": "assets/img/bartu.jpg",
 			"category": "Accessories",
-			"Status": "ATIVO"
+			"Status": "INATIVO"
 		},
 		{
 			"id": "1000",
