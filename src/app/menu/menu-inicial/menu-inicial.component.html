@@ -38,7 +38,7 @@
                 styleClass="p-button p-button-rounded p-mr-2"
                 icon="pi pi-info-circle"
                 class="padding10"
-                (onClick)="detalharDados()"
+                (onClick)="detalharDados(dadosEstabelecimento.name)"
               ></p-button>
               <p-button
                 type="button"
@@ -61,6 +61,8 @@
 <app-menu-manter
   *ngIf="acessarDadosTelaManter"
   [realizaInclusao]="realizaInclusao"
+  [username]="username"
+  [nomeEstabelecimento]="nomeEstabelecimento"
   [desabilitarCamposManter]="desabilitarCamposManter"
   [acessarDadosTelaManter]="acessarDadosTelaManter">
 </app-menu-manter>

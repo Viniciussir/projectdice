@@ -2,7 +2,6 @@
 	"data": [
 		{
 			"id": "1000",
-			"code": "f230fh0g3",
 			"name": "Cola na Base",
 			"description": "Este bar é um lugar agradavel",
 			"categories": [
@@ -149,11 +148,19 @@
 						"name": "Fechado"
 					}
 				}
-			]
+			],
+			"logradouro": "Rua teste",
+			"numero": "74",
+			"bairro": "Gonzaga",
+			"cidadeUf": {
+				"code": "Santos - SP", 
+				"name": "Santos - SP"
+			},
+			"cep": "11065-000",
+			"complemento": "Numa esquina"
 		},
 		{
 			"id": "1000",
-			"code": "f230fh0g3",
 			"name": "Porks",
 			"description": "Product Description",
 			"image": [
@@ -280,7 +287,6 @@
 		},
 		{
 			"id": "1000",
-			"code": "f230fh0g3",
 			"name": "Bartu",
 			"description": "Product Description",
 			"image": [
@@ -407,7 +413,6 @@
 		},
 		{
 			"id": "1000",
-			"code": "f230fh0g3",
 			"name": "Buddha Spa",
 			"description": "Product Description",
 			"image": [

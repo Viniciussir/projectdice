@@ -23,7 +23,7 @@
                     <span class="p-float-label">
                         <input 
                             class="width" 
-                            id="float-input"
+                            id="descricaoCamposManter"
                             type="text" 
                             [disabled]="desabilitarCamposManter" 
                             [(ngModel)]="dadosEstabelecimento.description" 
@@ -205,28 +205,59 @@
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter" pInputText> 
+                        <input 
+                            class="width" 
+                            id="logradouroCamposManter" 
+                            type="text" 
+                            [(ngModel)]="dadosEstabelecimento.logradouro" 
+                            [disabled]="desabilitarCamposManter" 
+                            pInputText> 
                         <label class="width" for="float-input">Logradouro</label>
                     </span>
                 </div>
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter"  pInputText> 
+                        <input 
+                            class="width" 
+                            id="numeroCamposManter" 
+                            type="text" 
+                            [(ngModel)]="dadosEstabelecimento.numero" 
+                            [disabled]="desabilitarCamposManter"  
+                            pInputText> 
                         <label class="width" for="float-input">Número</label>
                     </span>
                 </div>  
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter"  pInputText> 
+                        <input 
+                            class="width" 
+                            id="float-input" 
+                            type="text" 
+                            [(ngModel)]="dadosEstabelecimento.bairro" 
+                            [disabled]="desabilitarCamposManter"  
+                            pInputText> 
                         <label class="width" for="float-input">Bairro</label>
                     </span>
                 </div> 
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter"  pInputText> 
+                        <p-dropdown 
+                            class="width" 
+                            [options]="listaCidade" 
+                            [(ngModel)]="selecaoCidadesUF" 
+                            (onChange)="selecionarCidadeUf()"
+                            optionLabel="name" 
+                            [showClear]="true" 
+                            [filter]="true"
+                            filterBy="name"
+                            filterPlaceholder="Pesquisar..."
+                            emptyFilterMessage="Nenhum registro encontrado"
+                            [autoDisplayFirst]="false"
+                            [disabled]="desabilitarCamposManter" >
+                        </p-dropdown>
                         <label class="width" for="float-input">Cidade/UF</label>
                     </span>
                 </div> 
@@ -237,14 +268,26 @@
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter" pInputText> 
+                        <input 
+                            class="width" 
+                            id="float-input" 
+                            type="text" 
+                            [disabled]="desabilitarCamposManter" 
+                            [(ngModel)]="dadosEstabelecimento.cep" 
+                            pInputText> 
                         <label class="width" for="float-input">CEP</label>
                     </span>
                 </div> 
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter" pInputText> 
+                        <input 
+                            class="width" 
+                            id="float-input" 
+                            type="text" 
+                            [disabled]="desabilitarCamposManter"
+                            [(ngModel)]="dadosEstabelecimento.complemento"
+                            pInputText> 
                         <label class="width" for="float-input">Complemento</label>
                     </span>
                 </div> 
@@ -258,14 +301,13 @@
                 <p-button
                   type="button"
                   styleClass="p-button p-button-rounded p-mr-2"
-                  icon="pi pi-info-circle"
                   class="padding10"
                   label="Salvar"
+                  (onClick)="adicionarNovosDados()"
                 ></p-button>
                 <p-button
                   type="button"
                   styleClass="p-button-help p-button-rounded"
-                  icon="pi pi-cog"
                   class="padding10"
                   label="Voltar"
                   (onClick)="voltar()"

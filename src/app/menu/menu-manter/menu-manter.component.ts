@@ -13,6 +13,8 @@ export class MenuManterComponent implements OnInit {
   @Input() desabilitarCamposManter:any;
   @Input() acessarDadosTelaManter:any;
   @Input() realizaInclusao:any;
+  @Input() username:any;
+  @Input() nomeEstabelecimento:any;
 
   dadosEstabelecimento:DadosEstabelecimento = new DadosEstabelecimento();
 
@@ -93,20 +95,17 @@ export class MenuManterComponent implements OnInit {
     {name: 'Fechado', code: 'Fechado'},
   ]
 
-  selectedCities:any ='';
-
-  nome:any = ''
+  listaCidade:any [] = [];
+  selecaoCidadesUF:any = '';
 
   constructor(
     private messageService: MessageService,
     private menuAcessoService : MenuAcessoService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    await this.obterCidades();
     if(!this.realizaInclusao){
-      this.menuAcessoService.getDadosEstabelecimento().then(dados => {
-        this.dadosEstabelecimento = dados[0];
-        this.preencherValoresHorarioFuncionamento(dados[0]);
-      });
+      this.detalharDados();
     } else {
       this.horarioFuncionamento = [
         {
@@ -162,6 +161,41 @@ export class MenuManterComponent implements OnInit {
     }
   }
 
+  async detalharDados(){
+    try{
+      let data = await this.menuAcessoService.detalharDados(this.nomeEstabelecimento).toPromise();
+      if (data) {  
+        this.dadosEstabelecimento = data;
+      } else {
+        console.error('A chamada à API retornou um valor indefinido.');
+      }
+    }
+    catch(error){}
+  } 
+
+  async obterCidades() {
+    try {
+      const cidades = await this.menuAcessoService.getCidades('SP').toPromise();
+      if (cidades) {
+        const lista: any[] = [];
+  
+        for (let i = 0; i < cidades.length; i++) {
+          lista.push({
+            'code': cidades[i].nome + " - " + cidades[0].microrregiao.mesorregiao.UF.sigla,
+            'name': cidades[i].nome + " - " + cidades[0].microrregiao.mesorregiao.UF.sigla,
+          });
+        }
+  
+        this.listaCidade = lista;
+      } else {
+        console.error('A chamada à API retornou um valor indefinido.');
+      }
+    } catch (error) {
+      console.error('Erro na chamada da API:', error);
+      throw error;
+    }
+  }
+
   preencherValoresHorarioFuncionamento(dados:any){
     this.horarioFuncionamento = dados.horarioFuncionamento;
   }
@@ -185,6 +219,23 @@ export class MenuManterComponent implements OnInit {
 
   voltar(){
     this.acessarDadosTelaManter = false;
+  }
+
+  selecionarCidadeUf(){
+    if(this.selecaoCidadesUF){
+      this.dadosEstabelecimento.cidadeUf = this.selecaoCidadesUF.name;
+    } else {
+      this.dadosEstabelecimento.cidadeUf = '';
+    } 
+  }
+
+  adicionarNovosDados() {
+    this.menuAcessoService.adicionarDados(this.dadosEstabelecimento).subscribe(response => {
+        console.log('Dados adicionados com sucesso:', response);
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      });
   }
 
 }

@@ -7,4 +7,10 @@ export class DadosEstabelecimento {
     infoBasicas:any [] = [];
     image:any [] = [];
     horarioFuncionamento:any [] = [];
+    logradouro:any = '';
+    numero:any = '';
+    bairro:any = '';
+    cidadeUf:any = '';
+    cep:any = '';
+    complemento:any = '';
 }

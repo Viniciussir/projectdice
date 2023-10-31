@@ -37,6 +37,8 @@ export class MenuInicialComponent implements OnInit {
   desabilitarCamposManter:boolean = false;
   realizaInclusao:boolean = false;
 
+  nomeEstabelecimento:any = '';
+
   constructor(
     private route: ActivatedRoute,
     private menuAcessoService : MenuAcessoService,
@@ -57,8 +59,9 @@ export class MenuInicialComponent implements OnInit {
     this.acessarDadosTelaManter = true;
   }
 
-  detalharDados(){
+  detalharDados(event:any){
     this.realizaInclusao = false;
+    this.nomeEstabelecimento = event;
     this.desabilitarCamposManter = true;
     this.acessarDadosTelaManter = true;
   }
