@@ -1,0 +1,31 @@
+.header{
+    background: white;
+    width: 80vw !important; 
+    height: 80vh !important; 
+    border-radius: 10px;
+}
+
+.box-comp {
+    float: left;
+    position: relative;
+}
+
+.col-lg-4{
+    width: 25% !important; 
+    padding: 1rem;
+}
+
+.range{
+    display: flex;
+    flex-direction: row;
+    .width-range{
+        width: 50% !important; 
+    }
+}
+
+.tableedit{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+  

@@ -7,6 +7,6 @@ export interface dadosEstabelecimento {
     quantity?:number;
     inventoryStatus?:string;
     category?:string;
-    image?:string;
+    horarioFuncionamento?:string;
     rating?:number;
 }

@@ -1,12 +1,10 @@
-export interface DadosEstabelecimento {
-    id?:string;
-    code?:string;
-    name?:string;
-    description?:string;
-    price?:number;
-    quantity?:number;
-    inventoryStatus?:string;
-    category?:string;
-    image?:string;
-    rating?:number;
+export class DadosEstabelecimento {
+    id:any = '';
+    code:any = '';
+    name:any = '';
+    description:any = '';
+    categories:any [] = [];
+    infoBasicas:any [] = [];
+    image:any [] = [];
+    horarioFuncionamento:any [] = [];
 }

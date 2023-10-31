@@ -1,1 +1,285 @@
-<p>menu-manter works!</p>
+<div class="container" *ngIf="acessarDadosTelaManter">
+
+    <div class="header">
+
+        <p-panel header="Dados Gerais" [toggleable]="false">
+
+            <div class="flex">
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            id="nomeCamposManter" 
+                            type="text" 
+                            [disabled]="desabilitarCamposManter" 
+                            [(ngModel)]="dadosEstabelecimento.name" 
+                            pInputText> 
+                        <label class="width" for="float-input">Nome</label>
+                    </span>
+                </div>
+    
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            id="float-input"
+                            type="text" 
+                            [disabled]="desabilitarCamposManter" 
+                            [(ngModel)]="dadosEstabelecimento.description" 
+                            pInputText> 
+                        <label class="width" for="float-input">Descrição</label>
+                    </span>
+                </div>  
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <p-multiSelect 
+                            class="width" 
+                            [options]="listaCategorias" 
+                            optionLabel="name"
+                            [maxSelectedLabels]="1" 
+                            [selectedItemsLabel]="'{1} Opções Selecionadas'"
+                            [(ngModel)]="dadosEstabelecimento.categories" 
+                            [filter]="true"
+                            [disabled]="desabilitarCamposManter">
+                        </p-multiSelect>
+                        <label class="width" for="multiselect">Categorias</label>
+                    </span>
+                </div> 
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <p-multiSelect 
+                            class="width" 
+                            [options]="listaInformacoesBasicas" 
+                            optionLabel="name"
+                            [maxSelectedLabels]="1" 
+                            [selectedItemsLabel]="'{1} Opções Selecionadas'"
+                            [(ngModel)]="dadosEstabelecimento.infoBasicas" 
+                            [filter]="true"
+                            [disabled]="desabilitarCamposManter">
+                        </p-multiSelect>
+                        <label class="width" for="float-input">Informações basicas</label>
+                    </span>
+                </div>
+                
+            </div>
+
+            <div class="tableedit">
+                <h5>Adicione suas imagens</h5>
+             
+                <p-fileUpload 
+                    name="image" 
+                    [customUpload]="true"
+                    (uploadHandler)="onUpload($event)" 
+                    accept="image/*" 
+                    [files]="uploadedFiles"
+                    [multiple]="true"
+                    [maxFileSize]="1000000"
+                    [disabled]="desabilitarCamposManter">
+                </p-fileUpload>
+
+                <ng-template pTemplate="content">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                </ng-template>
+
+                
+            </div>
+
+            <div class="tableedit">
+                <h5>Horario de Funcionamento</h5>
+                <p-table [value]="horarioFuncionamento" dataKey="id" >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Dia da Semana</th>
+                            <th>Horario de abertura</th>
+                            <th>Horario de fechamento</th>
+                            <th>Situação</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-horarioFuncionamento>
+                        <tr>
+                            <td>
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input">
+                                        <input 
+                                            type="text"  
+                                            [(ngModel)]="horarioFuncionamento.dia"
+                                            [disabled]="true"
+                                            pInputText>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.dia}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td *ngIf="!desabilitarCamposManter" pEditableColumn>
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input">
+                                        <p-dropdown 
+                                            [options]="listaHorarios"
+                                            [(ngModel)]="horarioFuncionamento.horaInicial" 
+                                            optionLabel="name"
+                                            placeholder="Selecione o Horario de abertura"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.horaInicial.name}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td *ngIf="!desabilitarCamposManter" pEditableColumn>
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input">
+                                        <p-dropdown 
+                                            [options]="listaHorarios"
+                                            [(ngModel)]="horarioFuncionamento.horaFinal" 
+                                            optionLabel="name"
+                                            placeholder="Selecione o Horario de fechamento"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.horaFinal.name}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td *ngIf="!desabilitarCamposManter" pEditableColumn>
+                                <p-cellEditor>
+                                    <ng-template pTemplate="input">
+                                        <p-dropdown 
+                                            [options]="listaSituacao"
+                                            [(ngModel)]="horarioFuncionamento.Situacao" 
+                                            optionLabel="name"
+                                            placeholder="Selecione se estara aberto ou não no dia"
+                                            [showClear]="true">
+                                        </p-dropdown>
+                                    </ng-template>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.Situacao.name}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td *ngIf="desabilitarCamposManter">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.horaInicial.name}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td *ngIf="desabilitarCamposManter">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.horaFinal.name}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                            <td *ngIf="desabilitarCamposManter">
+                                <p-cellEditor>
+                                    <ng-template pTemplate="output">
+                                        {{horarioFuncionamento.Situacao.name}}
+                                    </ng-template>
+                                </p-cellEditor>
+                            </td>
+
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+
+        </p-panel>
+
+        <p-panel header="Endereço" [toggleable]="false">
+
+            <div class="flex">
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter" pInputText> 
+                        <label class="width" for="float-input">Logradouro</label>
+                    </span>
+                </div>
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter"  pInputText> 
+                        <label class="width" for="float-input">Número</label>
+                    </span>
+                </div>  
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter"  pInputText> 
+                        <label class="width" for="float-input">Bairro</label>
+                    </span>
+                </div> 
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter"  pInputText> 
+                        <label class="width" for="float-input">Cidade/UF</label>
+                    </span>
+                </div> 
+               
+            </div>
+
+            <div class="flex">
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter" pInputText> 
+                        <label class="width" for="float-input">CEP</label>
+                    </span>
+                </div> 
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input class="width" id="float-input" type="text" [disabled]="desabilitarCamposManter" pInputText> 
+                        <label class="width" for="float-input">Complemento</label>
+                    </span>
+                </div> 
+
+            </div>
+
+        </p-panel>
+
+        <p-panel>
+            <div class="car-buttons p-mt-5">
+                <p-button
+                  type="button"
+                  styleClass="p-button p-button-rounded p-mr-2"
+                  icon="pi pi-info-circle"
+                  class="padding10"
+                  label="Salvar"
+                ></p-button>
+                <p-button
+                  type="button"
+                  styleClass="p-button-help p-button-rounded"
+                  icon="pi pi-cog"
+                  class="padding10"
+                  label="Voltar"
+                  (onClick)="voltar()"
+                ></p-button>
+              </div>
+        </p-panel>
+        
+
+    </div>
+
+</div>
+
+<app-menu-inicial
+  *ngIf="!acessarDadosTelaManter">
+</app-menu-inicial>
+
+<p-toast></p-toast>

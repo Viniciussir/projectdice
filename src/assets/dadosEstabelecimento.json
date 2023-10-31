@@ -4,37 +4,533 @@
 			"id": "1000",
 			"code": "f230fh0g3",
 			"name": "Cola na Base",
-			"description": "Product Description",
-			"image": "assets/img/cola-na-base.jpg",
-			"category": "Accessories",
-			"Status": "ATIVO"
+			"description": "Este bar é um lugar agradavel",
+			"categories": [
+				{
+					"code": "Restaurante", 
+					"name": "Restaurante"
+				},
+				{
+					"code": "Baladas", 
+					"name": "Baladas"
+				},
+				{
+					"code": "Cafeterias", 
+					"name": "Cafeterias"
+				}
+			],	
+			"infoBasicas": [
+				{
+					"code": "Ambiente para Fumantes", 
+					"name": "Ambiente para Fumantes"
+				},
+				{
+					"code": "Estacionamento", 
+					"name": "Estacionamento"
+				}
+			],	
+			"image": [
+				{
+					"id":"1",
+					"img":"assets/img/cola-na-base.jpg"
+				}
+			],
+			"Status": "ATIVO",
+			"horarioFuncionamento": [
+				{
+					"id": "1",
+					"dia": "Segunda-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "2",
+					"dia": "Terça-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "3",
+					"dia": "Quarta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "4",
+					"dia": "Quinta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "5",
+					"dia": "Sexta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "6",
+					"dia": "Sabado",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "7",
+					"dia": "Domingo",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Fechado", 
+						"name": "Fechado"
+					}
+				}
+			]
 		},
 		{
 			"id": "1000",
 			"code": "f230fh0g3",
 			"name": "Porks",
 			"description": "Product Description",
-			"image": "assets/img/porks.jpg",
-			"category": "Accessories",
-			"Status": "AGUARDANDO ANALISE"
+			"image": [
+				{
+					"id":"1",
+					"img":"assets/img/porks.jpg"
+				}
+			],
+			"Status": "AGUARDANDO ANALISE",
+			"horarioFuncionamento": [
+				{
+					"id": "1",
+					"dia": "Segunda-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "2",
+					"dia": "Terça-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "3",
+					"dia": "Quarta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "4",
+					"dia": "Quinta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "5",
+					"dia": "Sexta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "6",
+					"dia": "Sabado",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "7",
+					"dia": "Domingo",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Fechado", 
+						"name": "Fechado"
+					}
+				}
+			]
 		},
 		{
 			"id": "1000",
 			"code": "f230fh0g3",
 			"name": "Bartu",
 			"description": "Product Description",
-			"image": "assets/img/bartu.jpg",
-			"category": "Accessories",
-			"Status": "INATIVO"
+			"image": [
+				{
+					"id":"1",
+					"img":"assets/img/bartu.jpg"
+				}
+			],
+			"Status": "INATIVO",
+			"horarioFuncionamento": [
+				{
+					"id": "1",
+					"dia": "Segunda-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "2",
+					"dia": "Terça-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "3",
+					"dia": "Quarta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "4",
+					"dia": "Quinta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "5",
+					"dia": "Sexta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "6",
+					"dia": "Sabado",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "7",
+					"dia": "Domingo",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				}
+			]
 		},
 		{
 			"id": "1000",
 			"code": "f230fh0g3",
 			"name": "Buddha Spa",
 			"description": "Product Description",
-			"image": "assets/img/buddahspa.jpg",
-			"category": "Accessories",
-			"Status": "ATIVO"
+			"image": [
+				{
+					"id":"1",
+					"img":"assets/img/buddahspa.jpg"
+				}
+			],
+			"Status": "ATIVO",
+			"horarioFuncionamento": [
+				{
+					"id": "1",
+					"dia": "Segunda-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "2",
+					"dia": "Terça-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "3",
+					"dia": "Quarta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "4",
+					"dia": "Quinta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "5",
+					"dia": "Sexta-Feira",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "6",
+					"dia": "Sabado",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				},
+				{
+					"id": "7",
+					"dia": "Domingo",
+					"horaInicial": {
+						"code": "08:00", 
+						"name": "08:00"
+					},
+					"horaFinal": {
+						"code": "18:00", 
+						"name": "18:00"
+					},
+					"Situacao": {
+						"code": "Aberto", 
+						"name": "Aberto"
+					}
+				}
+			]
 		}
 	]
 }

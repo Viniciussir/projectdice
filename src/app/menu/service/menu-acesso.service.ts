@@ -8,8 +8,10 @@ export class MenuAcessoService {
     constructor(private http: HttpClient) { }
 
     getDadosEstabelecimento() {
-        return this.http.get<any>('assets/dadosEstabelecimento.json').toPromise()
+        return this.http.get<any>('../../../assets/dadosEstabelecimento.json').toPromise()
         .then(res => <DadosEstabelecimento[]>res.data)
-        .then(data => { return data; });
+        .then(data => { 
+            return data; 
+        });
     }
 }

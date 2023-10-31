@@ -33,6 +33,10 @@ export class MenuInicialComponent implements OnInit {
     }
   ];
 
+  acessarDadosTelaManter:boolean = false;
+  desabilitarCamposManter:boolean = false;
+  realizaInclusao:boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private menuAcessoService : MenuAcessoService,
@@ -45,6 +49,24 @@ export class MenuInicialComponent implements OnInit {
     this.menuAcessoService.getDadosEstabelecimento().then(dados => {
 			this.dadosEstabelecimento = dados;
 		});
+  }
+
+  adicionarDados(){
+    this.realizaInclusao = true;
+    this.desabilitarCamposManter = false;
+    this.acessarDadosTelaManter = true;
+  }
+
+  detalharDados(){
+    this.realizaInclusao = false;
+    this.desabilitarCamposManter = true;
+    this.acessarDadosTelaManter = true;
+  }
+
+  alterarDados(){
+    this.realizaInclusao = false;
+    this.desabilitarCamposManter = false;
+    this.acessarDadosTelaManter = true;
   }
 
 }
