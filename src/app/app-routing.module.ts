@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LoginComponent 
   },
   { 
-    path: 'menu/:username', 
+    path: 'menu/:userId', 
     component: MenuInicialComponent
   },
 ];

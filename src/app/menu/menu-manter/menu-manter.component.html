@@ -56,7 +56,7 @@
                             optionLabel="name"
                             [maxSelectedLabels]="1" 
                             [selectedItemsLabel]="'{1} Opções Selecionadas'"
-                            [(ngModel)]="dadosEstabelecimento.infoBasicas" 
+                            [(ngModel)]="dadosEstabelecimento.basicInformation" 
                             [filter]="true"
                             [disabled]="desabilitarCamposManter">
                         </p-multiSelect>
@@ -209,7 +209,7 @@
                             class="width" 
                             id="logradouroCamposManter" 
                             type="text" 
-                            [(ngModel)]="dadosEstabelecimento.logradouro" 
+                            [(ngModel)]="dadosEstabelecimento.street" 
                             [disabled]="desabilitarCamposManter" 
                             pInputText> 
                         <label class="width" for="float-input">Logradouro</label>
@@ -222,7 +222,7 @@
                             class="width" 
                             id="numeroCamposManter" 
                             type="text" 
-                            [(ngModel)]="dadosEstabelecimento.numero" 
+                            [(ngModel)]="dadosEstabelecimento.number" 
                             [disabled]="desabilitarCamposManter"  
                             pInputText> 
                         <label class="width" for="float-input">Número</label>
@@ -235,7 +235,7 @@
                             class="width" 
                             id="float-input" 
                             type="text" 
-                            [(ngModel)]="dadosEstabelecimento.bairro" 
+                            [(ngModel)]="dadosEstabelecimento.district" 
                             [disabled]="desabilitarCamposManter"  
                             pInputText> 
                         <label class="width" for="float-input">Bairro</label>
@@ -273,7 +273,7 @@
                             id="float-input" 
                             type="text" 
                             [disabled]="desabilitarCamposManter" 
-                            [(ngModel)]="dadosEstabelecimento.cep" 
+                            [(ngModel)]="dadosEstabelecimento.zipCode" 
                             pInputText> 
                         <label class="width" for="float-input">CEP</label>
                     </span>
@@ -286,7 +286,7 @@
                             id="float-input" 
                             type="text" 
                             [disabled]="desabilitarCamposManter"
-                            [(ngModel)]="dadosEstabelecimento.complemento"
+                            [(ngModel)]="dadosEstabelecimento.complement"
                             pInputText> 
                         <label class="width" for="float-input">Complemento</label>
                     </span>

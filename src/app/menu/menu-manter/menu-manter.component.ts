@@ -13,12 +13,12 @@ export class MenuManterComponent implements OnInit {
   @Input() desabilitarCamposManter:any;
   @Input() acessarDadosTelaManter:any;
   @Input() realizaInclusao:any;
-  @Input() username:any;
-  @Input() nomeEstabelecimento:any;
+  @Input() userId:any;
+  @Input() id:any;
 
   dadosEstabelecimento:DadosEstabelecimento = new DadosEstabelecimento();
 
-  horarioFuncionamento:any = '';
+  horarioFuncionamento:any[] = [];
 
   uploadedFiles: any[] = [];
   
@@ -105,7 +105,7 @@ export class MenuManterComponent implements OnInit {
   async ngOnInit() {
     await this.obterCidades();
     if(!this.realizaInclusao){
-      this.detalharDados(this.nomeEstabelecimento);
+      this.detalharDados(this.userId);
     } else {
       this.horarioFuncionamento = [
         {
@@ -161,18 +161,7 @@ export class MenuManterComponent implements OnInit {
     }
   }
 
-  async detalharDados(id:any){
-    try{
-      let data = await this.menuAcessoService.detalharDados(id).toPromise();
-      if (data) {  
-        this.dadosEstabelecimento = data;
-      } else {
-        console.error('A chamada à API retornou um valor indefinido.');
-      }
-    }
-    catch(error){}
-  } 
-
+  //#region Combo cidade
   async obterCidades() {
     try {
       const cidades = await this.menuAcessoService.getCidades('SP').toPromise();
@@ -195,6 +184,36 @@ export class MenuManterComponent implements OnInit {
       throw error;
     }
   }
+  //#endregion
+
+  //#region Obter Dados Alteração/Detalhamento
+  async detalharDados(id:any){
+    try{
+      let data = await this.menuAcessoService.getDados(id).toPromise();
+      if (data) {  
+        for (let i = 0; i < data.length; i++) {
+          if(data[i].id == this.id){
+            this.dadosEstabelecimento = data[i];
+          }          
+        }
+        this.ajustarObjetosDropdown(data);
+      } else {
+        console.error('A chamada à API retornou um valor indefinido.');
+      }
+    }
+    catch(error:any){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+    }
+  } 
+
+  ajustarObjetosDropdown(dados:any){
+    for (let i = 0; i < dados.length; i++) {
+      
+    }
+  }
+  //#endregion
+
+
 
   preencherValoresHorarioFuncionamento(dados:any){
     this.horarioFuncionamento = dados.horarioFuncionamento;
@@ -223,14 +242,39 @@ export class MenuManterComponent implements OnInit {
 
   selecionarCidadeUf(){
     if(this.selecaoCidadesUF){
-      this.dadosEstabelecimento.cidadeUf = this.selecaoCidadesUF.name;
+      this.dadosEstabelecimento.city = this.selecaoCidadesUF.name;
     } else {
-      this.dadosEstabelecimento.cidadeUf = '';
+      this.dadosEstabelecimento.city = '';
     } 
   }
 
   adicionarNovosDados() {
-    this.menuAcessoService.adicionarDados(this.dadosEstabelecimento).subscribe(response => {
+    let horario:any [] = [];
+    for (let i = 0; i < this.horarioFuncionamento.length; i++) {
+      horario.push({
+        "id": this.horarioFuncionamento[i].id,
+        "dia": this.horarioFuncionamento[i].dia,
+        "horaInicial": this.horarioFuncionamento[i].horaInicial.code,
+        "horaFinal": this.horarioFuncionamento[i].horaFinal.code,
+        "Situacao": this.horarioFuncionamento[i].Situacao.code,
+      })
+    }
+    let dados = {
+      "userId" : this.userId,
+      "name": this.dadosEstabelecimento.name,
+      "description": this.dadosEstabelecimento.description,
+      "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
+      "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
+      "image" : "",
+      "openingHours": horario,
+      "street": this.dadosEstabelecimento.street,
+      "number" : this.dadosEstabelecimento.number,
+      "district" : this.dadosEstabelecimento.district,
+      "city" : this.selecaoCidadesUF.code,
+      "zipCode" : this.dadosEstabelecimento.zipCode,
+      "complement" : this.dadosEstabelecimento.complement,
+    }
+    this.menuAcessoService.adicionarDados(dados).subscribe(response => {
         console.log('Dados adicionados com sucesso:', response);
       },
       error => {

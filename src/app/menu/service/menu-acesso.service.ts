@@ -8,12 +8,9 @@ export class MenuAcessoService {
 
     constructor(private http: HttpClient) { }
 
-    getDadosEstabelecimento() {
-        return this.http.get<any>('../../../assets/dadosEstabelecimento.json').toPromise()
-        .then(res => <DadosEstabelecimento[]>res.data)
-        .then(data => { 
-            return data; 
-        });
+    getDados(dados: any): 
+        Observable<any> {
+        return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados?userId=" + dados);
     }
 
     getCidades(estado: string): Observable<any[]> {
