@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import {RouterModule} from '@angular/router';
 import { MenuAcessoService } from './menu/service/menu-acesso.service';
+import { LoginService } from './login/service/login.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { MenuAcessoService } from './menu/service/menu-acesso.service';
     RouterModule,
     MenuAcessoModule,
   ],
-  providers: [MenuAcessoService], 
+  providers: [
+    MenuAcessoService,
+    LoginService
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

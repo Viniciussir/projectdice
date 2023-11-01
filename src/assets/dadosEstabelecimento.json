@@ -1,5 +1,4 @@
-{
-	"data": [
+[
 		{
 			"id": "1000",
 			"name": "Cola na Base",
@@ -380,10 +379,7 @@
 				{
 					"id": "6",
 					"dia": "Sabado",
-					"horaInicial": {
-						"code": "08:00", 
-						"name": "08:00"
-					},
+					"horaInicial": "08:00",
 					"horaFinal": {
 						"code": "18:00", 
 						"name": "18:00"
@@ -538,4 +534,3 @@
 			]
 		}
 	]
-}

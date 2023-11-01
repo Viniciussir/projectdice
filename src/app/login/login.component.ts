@@ -4,6 +4,7 @@ import { MessageService } from 'primeng/api';
 import { Operacao } from 'src/app/shared/operacao';
 import { RegisterFiltro } from './service/registerfiltro';
 import { Router } from '@angular/router';
+import { LoginService } from './service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private messageService: MessageService, 
+    private loginService: LoginService, 
   ) {}
 
   ngOnInit(): void {
@@ -55,13 +57,29 @@ export class LoginComponent implements OnInit {
     } else {
       this.usernameInvalidLogin = false;
       this.passwordInvalidLogin = false;
-      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Seu login será realizado em até 24 horas.', life: 3000});
       this.validarLogin();
     }
   }
 
   validarLogin(){
-    this.router.navigate(['/menu',this.loginFiltro.username]);
+    this.loginService.verificarUsername().subscribe(data => {
+      let usuarioEncontrado:boolean = false
+      for (let i = 0; i < data.length; i++) {
+        if(this.loginFiltro.username == data[i].username && this.loginFiltro.password == data[i].password){
+          usuarioEncontrado = true; 
+          break;
+        }
+      }
+      if(usuarioEncontrado){
+        this.router.navigate(['/menu',this.loginFiltro.username]);
+      } else {
+        this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Usuário e Senha não encontrados.', life: 3000});
+      }
+    },
+      error => {
+        this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+      }
+    );
   }
   //#endregion
 
@@ -97,8 +115,18 @@ export class LoginComponent implements OnInit {
       this.emailInvalidRegister = false;
       this.usernameInvalidRegister = false;
       this.passwordInvalidRegister = false;
-      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Seu cadastro será realizado em até 24 horas.', life: 3000});
+      this.realizarCadastroUsername();
     }
+  }
+
+  realizarCadastroUsername(){
+    this.loginService.adicionarUsername(this.registerFiltro).subscribe(response => {
+      this.router.navigate(['/menu',this.registerFiltro.username]);
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
   }
 
   retornarLogin(){

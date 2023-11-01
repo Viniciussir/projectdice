@@ -23,12 +23,12 @@ export class MenuAcessoService {
 
     adicionarDados(dados: any): 
         Observable<any> {
-        return this.http.post("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dadosEstabelecimentos",dados);
+        return this.http.post("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados",dados);
     }
 
     detalharDados(dados: any): 
-    Observable<any> {
-    return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dadosEstabelecimentos",dados);
-}
+        Observable<any> {
+        return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados?userId=" + dados);
+    }
 
 }

@@ -105,7 +105,7 @@ export class MenuManterComponent implements OnInit {
   async ngOnInit() {
     await this.obterCidades();
     if(!this.realizaInclusao){
-      this.detalharDados();
+      this.detalharDados(this.nomeEstabelecimento);
     } else {
       this.horarioFuncionamento = [
         {
@@ -161,9 +161,9 @@ export class MenuManterComponent implements OnInit {
     }
   }
 
-  async detalharDados(){
+  async detalharDados(id:any){
     try{
-      let data = await this.menuAcessoService.detalharDados(this.nomeEstabelecimento).toPromise();
+      let data = await this.menuAcessoService.detalharDados(id).toPromise();
       if (data) {  
         this.dadosEstabelecimento = data;
       } else {
