@@ -193,10 +193,9 @@ export class MenuManterComponent implements OnInit {
       if (data) {  
         for (let i = 0; i < data.length; i++) {
           if(data[i].id == this.id){
-            this.dadosEstabelecimento = data[i];
+            this.ajustarObjetosDropdown(data[i]);
           }          
-        }
-        this.ajustarObjetosDropdown(data);
+        }  
       } else {
         console.error('A chamada à API retornou um valor indefinido.');
       }
@@ -210,6 +209,7 @@ export class MenuManterComponent implements OnInit {
     for (let i = 0; i < dados.length; i++) {
       
     }
+    this.dadosEstabelecimento = dados;
   }
   //#endregion
 

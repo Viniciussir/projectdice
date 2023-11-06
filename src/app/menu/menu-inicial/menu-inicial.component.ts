@@ -1,6 +1,6 @@
 import { DadosEstabelecimento } from './../service/menu-acesso-filtro';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { MessageService } from 'primeng/api';
 
@@ -15,6 +15,7 @@ export class MenuInicialComponent implements OnInit {
 
   id:any = '';
   userId:any = '';
+  username:any = '';
 
   responsiveOptions = [
     {
@@ -42,11 +43,13 @@ export class MenuInicialComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private messageService: MessageService,
     private menuAcessoService : MenuAcessoService,
   ) {
     this.route.params.subscribe(params => {
     this.userId = params['userId'];
+    this.username = params['username'];
   });}
 
   ngOnInit() {
@@ -73,6 +76,10 @@ export class MenuInicialComponent implements OnInit {
     this.id = event;
     this.desabilitarCamposManter = false;
     this.acessarDadosTelaManter = true;
+  }
+
+  voltar(){
+    this.router.navigate(['/login']);
   }
 
 }

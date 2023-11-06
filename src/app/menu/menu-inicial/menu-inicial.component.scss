@@ -16,7 +16,6 @@
     }
 
     .dadosEstabelecimento-name{
-        font-family: "Times New Roman", Times, serif;
         font-size:20px
     }
 
@@ -25,10 +24,6 @@
         width: 15vw;
         height: 20vh;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
-    }
-
-    .dadosEstabelecimento-status {
-        font-family: "Times New Roman", Times, serif;
     }
 }
 
@@ -44,11 +39,17 @@
 
 .title{
     margin-left: 1vw;
-    font-family: "Times New Roman", Times, serif;
 }
 
-.button{
+.button-add{
     display: flex;
     align-items: center;
     margin-right: 1vw;
 }
+
+.button-return{
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+}
+  

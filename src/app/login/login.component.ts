@@ -65,15 +65,17 @@ export class LoginComponent implements OnInit {
     this.loginService.verificarUsername().subscribe(data => {
       let usuarioEncontrado:boolean = false
       let userId:any = '';
+      let username:any = '';
       for (let i = 0; i < data.length; i++) {
         if(this.loginFiltro.username == data[i].username && this.loginFiltro.password == data[i].password){
           usuarioEncontrado = true; 
           userId = data[i].id
+          username = data[i].username
           break;
         }
       }
       if(usuarioEncontrado){
-        this.router.navigate(['/menu',userId]);
+        this.router.navigate(['/menu',userId, username]);
       } else {
         this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Usuário e Senha não encontrados.', life: 3000});
       }
