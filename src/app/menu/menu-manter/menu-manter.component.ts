@@ -100,7 +100,7 @@ export class MenuManterComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private menuAcessoService : MenuAcessoService) { }
+    private menuAcessoService : MenuAcessoService,) { }
 
   async ngOnInit() {
     await this.obterCidades();
@@ -184,6 +184,14 @@ export class MenuManterComponent implements OnInit {
       throw error;
     }
   }
+
+  selecionarCidadeUf(){
+    if(this.selecaoCidadesUF){
+      this.dadosEstabelecimento.city = this.selecaoCidadesUF.name;
+    } else {
+      this.dadosEstabelecimento.city = '';
+    } 
+  }
   //#endregion
 
   //#region Obter Dados Alteração/Detalhamento
@@ -213,14 +221,9 @@ export class MenuManterComponent implements OnInit {
   }
   //#endregion
 
-
-
-  preencherValoresHorarioFuncionamento(dados:any){
-    this.horarioFuncionamento = dados.horarioFuncionamento;
-  }
-
+  //#region upload Imagem
   onUpload(event:any) {
-    const files = event.target.files;
+    const files = event.files;
     if (files) {
       for (const file of files) {
         const reader = new FileReader();
@@ -235,20 +238,44 @@ export class MenuManterComponent implements OnInit {
       }
     }
   }
+  //#endregion
 
+  //#region Voltar
   voltar(){
     this.acessarDadosTelaManter = false;
   }
+  //#endregion
 
-  selecionarCidadeUf(){
-    if(this.selecaoCidadesUF){
-      this.dadosEstabelecimento.city = this.selecaoCidadesUF.name;
+  //#region Salvar 
+  salvar(){
+    if(!this.validarCampos()){
     } else {
-      this.dadosEstabelecimento.city = '';
-    } 
+      this.gravar();
+    }
   }
 
-  adicionarNovosDados() {
+  validarCampos(){
+    if(!this.dadosEstabelecimento.name || !this.dadosEstabelecimento.description || this.dadosEstabelecimento.categories.length == 0){
+      this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Dados Gerais.', life: 3000});
+      return false;
+    } else if(this.uploadedFiles.length == 0){
+      this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
+      return false;
+    } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.number || !this.dadosEstabelecimento.district 
+      || !this.dadosEstabelecimento.city || !this.dadosEstabelecimento.zipCode || !this.dadosEstabelecimento.complement){
+        this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Endereço.', life: 3000});
+      return false;
+    }
+    for (let i = 0; i < this.horarioFuncionamento.length; i++) {
+      if(!this.horarioFuncionamento[i].horaInicial || !this.horarioFuncionamento[i].horaFinal || !this.horarioFuncionamento[i].Situacao){
+        this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de horario de funcionamento.', life: 3000});
+        return false;
+      }
+    }
+    return true;
+  }
+
+  gravar() {
     let horario:any [] = [];
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
       horario.push({
@@ -281,5 +308,12 @@ export class MenuManterComponent implements OnInit {
         console.error('Erro ao adicionar dados:', error);
       });
   }
+  //#endregion
+
+  //#region Limpar Mensagem
+  limparMensagem(){
+    this.messageService.clear();
+  }
+  //#endregion
 
 }

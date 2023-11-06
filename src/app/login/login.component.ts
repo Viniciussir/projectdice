@@ -125,7 +125,7 @@ export class LoginComponent implements OnInit {
 
   realizarCadastroUsername(){
     this.loginService.adicionarUsername(this.registerFiltro).subscribe(response => {
-      this.router.navigate(['/menu',this.registerFiltro.username]);
+      this.router.navigate(['/menu',response.id, response.username]);
       },
       error => {
         console.error('Erro ao adicionar dados:', error);

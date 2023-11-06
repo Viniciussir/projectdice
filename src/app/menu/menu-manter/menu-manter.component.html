@@ -1,34 +1,38 @@
+<p-toast (onClose)="limparMensagem()" position="top-center"></p-toast>
+
 <div class="container" *ngIf="acessarDadosTelaManter">
 
     <div class="header">
 
-        <p-panel header="Dados Gerais" [toggleable]="true">
+        <p-panel header="Dados Gerais" [toggleable]="false">
 
             <div class="flex">
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
                         <input 
-                            class="width" 
+                            pInputText
+                            class="width"
+                            [ngStyle]="{'border': dadosEstabelecimento.name ? '' : '1px solid red'}"
                             id="nomeCamposManter" 
                             type="text" 
-                            [disabled]="desabilitarCamposManter" 
                             [(ngModel)]="dadosEstabelecimento.name" 
-                            pInputText> 
-                        <label class="width" for="float-input">Nome</label>
+                            [disabled]="desabilitarCamposManter" > 
+                            <label [ngStyle]="{'color': dadosEstabelecimento.name ? '' : 'red'}" class="width" for="float-input-invalid">Nome</label>
                     </span>
                 </div>
     
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
                         <input 
+                            pInputText
                             class="width" 
+                            [ngStyle]="{'border': dadosEstabelecimento.description ? '' : '1px solid red'}"
                             id="descricaoCamposManter"
                             type="text" 
-                            [disabled]="desabilitarCamposManter" 
-                            [(ngModel)]="dadosEstabelecimento.description" 
-                            pInputText> 
-                        <label class="width" for="float-input">Descrição</label>
+                            [(ngModel)]="dadosEstabelecimento.description"
+                            [disabled]="desabilitarCamposManter"> 
+                        <label [ngStyle]="{'color': dadosEstabelecimento.description ? '' : 'red'}" class="width" for="float-input">Descrição</label>
                     </span>
                 </div>  
 
@@ -36,15 +40,17 @@
                     <span class="p-float-label">
                         <p-multiSelect 
                             class="width" 
-                            [options]="listaCategorias" 
+                            [ngStyle]="{'border': dadosEstabelecimento.categories.length > 0 ? '' : '1px solid red', 
+                            'border-radius': dadosEstabelecimento.categories.length > 0? '' : '6px'}"
                             optionLabel="name"
                             [maxSelectedLabels]="1" 
                             [selectedItemsLabel]="'{1} Opções Selecionadas'"
                             [(ngModel)]="dadosEstabelecimento.categories" 
+                            [options]="listaCategorias" 
                             [filter]="true"
                             [disabled]="desabilitarCamposManter">
                         </p-multiSelect>
-                        <label class="width" for="multiselect">Categorias</label>
+                        <label [ngStyle]="{'color': dadosEstabelecimento.categories.length > 0 ? '' : 'red'}" class="width" for="multiselect">Categorias</label>
                     </span>
                 </div> 
 
@@ -60,7 +66,7 @@
                             [filter]="true"
                             [disabled]="desabilitarCamposManter">
                         </p-multiSelect>
-                        <label class="width" for="float-input">Informações basicas</label>
+                        <label class="width" for="float-input">Informações opcionais</label>
                     </span>
                 </div>
                 
@@ -68,7 +74,7 @@
 
         </p-panel>
 
-        <p-panel header="Imagens" [toggleable]="true">
+        <p-panel header="Imagens" [toggleable]="false">
 
             <div class="tableedit">
                 <h5>Adicione suas imagens</h5>
@@ -94,7 +100,110 @@
 
         </p-panel>
 
-        <p-panel header="Horario de Funcionamento" [toggleable]="true">
+        <p-panel header="Endereço" [toggleable]="false">
+
+            <div class="flex">
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            [ngStyle]="{'border': dadosEstabelecimento.street ? '' : '1px solid red'}"
+                            id="logradouroCamposManter" 
+                            type="text" 
+                            [(ngModel)]="dadosEstabelecimento.street" 
+                            [disabled]="desabilitarCamposManter" 
+                            pInputText> 
+                        <label [ngStyle]="{'color': dadosEstabelecimento.street ? '' : 'red'}" class="width" for="float-input">Logradouro</label>
+                    </span>
+                </div>
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            [ngStyle]="{'border': dadosEstabelecimento.number ? '' : '1px solid red'}"
+                            id="numeroCamposManter" 
+                            type="text" 
+                            [(ngModel)]="dadosEstabelecimento.number" 
+                            [disabled]="desabilitarCamposManter"  
+                            pInputText> 
+                        <label [ngStyle]="{'color': dadosEstabelecimento.number ? '' : 'red'}" class="width" for="float-input">Número</label>
+                    </span>
+                </div>  
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            [ngStyle]="{'border': dadosEstabelecimento.district ? '' : '1px solid red'}"
+                            id="float-input" 
+                            type="text" 
+                            [(ngModel)]="dadosEstabelecimento.district" 
+                            [disabled]="desabilitarCamposManter"  
+                            pInputText> 
+                        <label [ngStyle]="{'color': dadosEstabelecimento.district ? '' : 'red'}" class="width" for="float-input">Bairro</label>
+                    </span>
+                </div> 
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <p-dropdown 
+                            class="width" 
+                            [ngStyle]="{'border': selecaoCidadesUF ? '' : '1px solid red', 
+                            'border-radius': selecaoCidadesUF ? '' : '6px'}"
+                            [options]="listaCidade" 
+                            [(ngModel)]="selecaoCidadesUF" 
+                            (onChange)="selecionarCidadeUf()"
+                            optionLabel="name" 
+                            [showClear]="true" 
+                            [filter]="true"
+                            filterBy="name"
+                            filterPlaceholder="Pesquisar..."
+                            emptyFilterMessage="Nenhum registro encontrado"
+                            [autoDisplayFirst]="false"
+                            [disabled]="desabilitarCamposManter" >
+                        </p-dropdown>
+                        <label [ngStyle]="{'color': selecaoCidadesUF ? '' : 'red'}" class="width" for="float-input">Cidade/UF</label>
+                    </span>
+                </div> 
+               
+            </div>
+
+            <div class="flex">
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            [ngStyle]="{'border': dadosEstabelecimento.zipCode ? '' : '1px solid red'}"
+                            id="float-input" 
+                            type="text" 
+                            [disabled]="desabilitarCamposManter" 
+                            [(ngModel)]="dadosEstabelecimento.zipCode" 
+                            pInputText> 
+                        <label [ngStyle]="{'color': dadosEstabelecimento.zipCode ? '' : 'red'}" class="width" for="float-input">CEP</label>
+                    </span>
+                </div> 
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <input 
+                            class="width" 
+                            id="float-input" 
+                            type="text" 
+                            [disabled]="desabilitarCamposManter"
+                            [(ngModel)]="dadosEstabelecimento.complement"
+                            pInputText> 
+                        <label class="width" for="float-input">Complemento</label>
+                    </span>
+                </div> 
+
+            </div>
+
+        </p-panel>
+
+        <p-panel header="Horario de Funcionamento" [toggleable]="false">
 
             <div class="tableedit">
                 <p-table [value]="horarioFuncionamento" dataKey="id" >
@@ -205,103 +314,6 @@
 
         </p-panel>
 
-        <p-panel header="Endereço" [toggleable]="true">
-
-            <div class="flex">
-
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <input 
-                            class="width" 
-                            id="logradouroCamposManter" 
-                            type="text" 
-                            [(ngModel)]="dadosEstabelecimento.street" 
-                            [disabled]="desabilitarCamposManter" 
-                            pInputText> 
-                        <label class="width" for="float-input">Logradouro</label>
-                    </span>
-                </div>
-
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <input 
-                            class="width" 
-                            id="numeroCamposManter" 
-                            type="text" 
-                            [(ngModel)]="dadosEstabelecimento.number" 
-                            [disabled]="desabilitarCamposManter"  
-                            pInputText> 
-                        <label class="width" for="float-input">Número</label>
-                    </span>
-                </div>  
-
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <input 
-                            class="width" 
-                            id="float-input" 
-                            type="text" 
-                            [(ngModel)]="dadosEstabelecimento.district" 
-                            [disabled]="desabilitarCamposManter"  
-                            pInputText> 
-                        <label class="width" for="float-input">Bairro</label>
-                    </span>
-                </div> 
-
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <p-dropdown 
-                            class="width" 
-                            [options]="listaCidade" 
-                            [(ngModel)]="selecaoCidadesUF" 
-                            (onChange)="selecionarCidadeUf()"
-                            optionLabel="name" 
-                            [showClear]="true" 
-                            [filter]="true"
-                            filterBy="name"
-                            filterPlaceholder="Pesquisar..."
-                            emptyFilterMessage="Nenhum registro encontrado"
-                            [autoDisplayFirst]="false"
-                            [disabled]="desabilitarCamposManter" >
-                        </p-dropdown>
-                        <label class="width" for="float-input">Cidade/UF</label>
-                    </span>
-                </div> 
-               
-            </div>
-
-            <div class="flex">
-
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <input 
-                            class="width" 
-                            id="float-input" 
-                            type="text" 
-                            [disabled]="desabilitarCamposManter" 
-                            [(ngModel)]="dadosEstabelecimento.zipCode" 
-                            pInputText> 
-                        <label class="width" for="float-input">CEP</label>
-                    </span>
-                </div> 
-
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <input 
-                            class="width" 
-                            id="float-input" 
-                            type="text" 
-                            [disabled]="desabilitarCamposManter"
-                            [(ngModel)]="dadosEstabelecimento.complement"
-                            pInputText> 
-                        <label class="width" for="float-input">Complemento</label>
-                    </span>
-                </div> 
-
-            </div>
-
-        </p-panel>
-
         <p-panel>
             <div class="car-buttons p-mt-5" style="display: flex;justify-content: space-between;">
                 <button 
@@ -315,8 +327,9 @@
                 </button>
 
                 <button 
+                    [disabled]=""
                     class="p-button-outlined p-button-success"
-                    (click)="adicionarNovosDados()" 
+                    (click)="salvar()" 
                     pButton 
                     type="button" 
                     icon="pi pi-check"
@@ -333,5 +346,3 @@
 <app-menu-inicial
   *ngIf="!acessarDadosTelaManter">
 </app-menu-inicial>
-
-<p-toast></p-toast>
