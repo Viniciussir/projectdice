@@ -8,7 +8,7 @@ export class MenuAcessoService {
 
     constructor(private http: HttpClient) { }
 
-    getDados(dados: any): 
+    buscarDados(dados: any): 
         Observable<any> {
         return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados?userId=" + dados);
     }

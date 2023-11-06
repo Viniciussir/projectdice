@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { MessageService } from 'primeng/api';
+import { Operacao } from 'src/app/shared/operacao';
 
 @Component({
   selector: 'app-menu-inicial',
@@ -37,7 +38,7 @@ export class MenuInicialComponent implements OnInit {
 
   acessarDadosTelaManter:boolean = false;
   desabilitarCamposManter:boolean = false;
-  realizaInclusao:boolean = false;
+  operacao:any = '';
 
   nomeEstabelecimento:any = '';
 
@@ -53,28 +54,50 @@ export class MenuInicialComponent implements OnInit {
   });}
 
   ngOnInit() {
-    this.menuAcessoService.getDados(this.userId).subscribe(dados => {
-			this.dadosEstabelecimento = dados;
+    this.menuAcessoService.buscarDados(this.userId).subscribe(dados => {
+      if(dados.length > 0){
+        this.dadosEstabelecimento = dados;
+      } else {
+        this.dadosEstabelecimento = [
+          {
+            id: "Exemplo",
+            userId: "Exemplo",
+            "name": "Exemplo",
+            "description": "Exemplo",
+            "categories": [],
+            "basicInformation": [],
+            "image": ["assets/img/logo.jpeg"],
+            "openingHours": [],
+            "street": "Exemplo",
+            "number": "Exemplo",
+            "district": "Exemplo",
+            "city": "Exemplo",
+            "zipCode": "Exemplo",
+            "complement": "Exemplo",
+            "status": "EXEMPLO"
+          }
+        ]
+      }
 		});
   }
 
   adicionarDados(){
-    this.realizaInclusao = true;
+    this.operacao = Operacao.INCLUIR;
+    this.desabilitarCamposManter = false;
+    this.acessarDadosTelaManter = true;
+  }
+
+  alterarDados(event:any){
+    this.operacao = Operacao.ALTERAR;
+    this.id = event;
     this.desabilitarCamposManter = false;
     this.acessarDadosTelaManter = true;
   }
 
   detalharDados(event:any){
-    this.realizaInclusao = false;
+    this.operacao = Operacao.DETALHAR;
     this.id = event;
     this.desabilitarCamposManter = true;
-    this.acessarDadosTelaManter = true;
-  }
-
-  alterarDados(event:any){
-    this.realizaInclusao = false;
-    this.id = event;
-    this.desabilitarCamposManter = false;
     this.acessarDadosTelaManter = true;
   }
 

@@ -2,6 +2,7 @@ import { MessageService } from 'primeng/api';
 import { DadosEstabelecimento } from '../service/menu-acesso-filtro';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Operacao } from 'src/app/shared/operacao';
 
 @Component({
   selector: 'app-menu-manter',
@@ -12,13 +13,63 @@ export class MenuManterComponent implements OnInit {
 
   @Input() desabilitarCamposManter:any;
   @Input() acessarDadosTelaManter:any;
-  @Input() realizaInclusao:any;
+  @Input() operacao:any;
   @Input() userId:any;
   @Input() id:any;
 
   dadosEstabelecimento:DadosEstabelecimento = new DadosEstabelecimento();
 
-  horarioFuncionamento:any[] = [];
+  horarioFuncionamento:any[] = [
+    {
+      "id": "1",
+      "dia": "Segunda-Feira",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    },
+    {
+      "id": "2",
+      "dia": "Terça-Feira",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    },
+    {
+      "id": "3",
+      "dia": "Quarta-Feira",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    },
+    {
+      "id": "4",
+      "dia": "Quinta-Feira",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    },
+    {
+      "id": "5",
+      "dia": "Sexta-Feira",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    },
+    {
+      "id": "6",
+      "dia": "Sabado",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    },
+    {
+      "id": "7",
+      "dia": "Domingo",
+      "horaInicial": "",
+      "horaFinal": "",
+      "Situacao": ""
+    }
+  ];
 
   uploadedFiles: any[] = [];
   
@@ -104,60 +155,8 @@ export class MenuManterComponent implements OnInit {
 
   async ngOnInit() {
     await this.obterCidades();
-    if(!this.realizaInclusao){
-      this.detalharDados(this.userId);
-    } else {
-      this.horarioFuncionamento = [
-        {
-					"id": "1",
-					"dia": "Segunda-Feira",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				},
-				{
-					"id": "2",
-					"dia": "Terça-Feira",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				},
-				{
-					"id": "3",
-					"dia": "Quarta-Feira",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				},
-				{
-					"id": "4",
-					"dia": "Quinta-Feira",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				},
-				{
-					"id": "5",
-					"dia": "Sexta-Feira",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				},
-				{
-					"id": "6",
-					"dia": "Sabado",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				},
-				{
-					"id": "7",
-					"dia": "Domingo",
-					"horaInicial": "",
-					"horaFinal": "",
-					"Situacao": ""
-				}
-      ]
+    if(this.operacao == Operacao.ALTERAR || this.operacao == Operacao.DETALHAR){
+      this.buscarDados(this.userId);
     }
   }
 
@@ -195,9 +194,9 @@ export class MenuManterComponent implements OnInit {
   //#endregion
 
   //#region Obter Dados Alteração/Detalhamento
-  async detalharDados(id:any){
+  async buscarDados(id:any){
     try{
-      let data = await this.menuAcessoService.getDados(id).toPromise();
+      let data = await this.menuAcessoService.buscarDados(id).toPromise();
       if (data) {  
         for (let i = 0; i < data.length; i++) {
           if(data[i].id == this.id){
@@ -214,10 +213,54 @@ export class MenuManterComponent implements OnInit {
   } 
 
   ajustarObjetosDropdown(dados:any){
-    for (let i = 0; i < dados.length; i++) {
-      
-    }
     this.dadosEstabelecimento = dados;
+    if(dados.categories){
+      let categories:any [] = [];
+      for (let i = 0; i < dados.categories.length; i++) {
+        categories.push({
+          code: dados.categories[i],
+          name: dados.categories[i]
+        })        
+      }
+      this.dadosEstabelecimento.categories = categories;
+    }
+    if(dados.basicInformation){
+      let basicInformation:any [] = [];
+      for (let i = 0; i < dados.basicInformation.length; i++) {
+        basicInformation.push({
+          code: dados.basicInformation[i],
+          name: dados.basicInformation[i]
+        })        
+      }
+      this.dadosEstabelecimento.basicInformation = basicInformation;
+    }
+    if(dados.city){
+      this.selecaoCidadesUF = {
+        code: dados.city,
+        name: dados.city
+      }      
+    }
+    if(dados.openingHours){
+      this.horarioFuncionamento = [];
+      for (let i = 0; i < dados.openingHours.length; i++) {
+        this.horarioFuncionamento.push({
+          id: dados.openingHours[i].id,
+          dia: dados.openingHours[i].dia,
+          horaInicial: {
+            code: dados.openingHours[i].horaInicial,
+            name:dados.openingHours[i].horaInicial
+          },
+          horaFinal: {
+            code: dados.openingHours[i].horaFinal,
+            name:dados.openingHours[i].horaFinal
+          },
+          Situacao: {
+            code: dados.openingHours[i].Situacao,
+            name:dados.openingHours[i].Situacao
+          }
+        })        
+      }
+    }
   }
   //#endregion
 
@@ -302,7 +345,7 @@ export class MenuManterComponent implements OnInit {
       "complement" : this.dadosEstabelecimento.complement,
     }
     this.menuAcessoService.adicionarDados(dados).subscribe(response => {
-        console.log('Dados adicionados com sucesso:', response);
+        this.voltar();
       },
       error => {
         console.error('Erro ao adicionar dados:', error);

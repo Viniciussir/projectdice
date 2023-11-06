@@ -316,16 +316,7 @@
 
         <p-panel>
             <div class="car-buttons p-mt-5" style="display: flex;justify-content: space-between;">
-                <button 
-                    class="p-button-outlined p-button-danger"
-                    (click)="voltar()" 
-                    pButton 
-                    type="button" 
-                    icon="pi pi-check"
-                    iconPos="left" 
-                    label="Voltar">
-                </button>
-
+                
                 <button 
                     [disabled]=""
                     class="p-button-outlined p-button-success"
@@ -336,6 +327,17 @@
                     iconPos="left" 
                     label="Salvar">
                 </button>
+
+                <button 
+                    class="p-button-outlined p-button-danger"
+                    (click)="voltar()" 
+                    pButton 
+                    type="button" 
+                    icon="pi pi-check"
+                    iconPos="left" 
+                    label="Voltar">
+                </button>
+
             </div>
         </p-panel>
         
