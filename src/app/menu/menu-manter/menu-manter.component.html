@@ -2,7 +2,7 @@
 
     <div class="header">
 
-        <p-panel header="Dados Gerais" [toggleable]="false">
+        <p-panel header="Dados Gerais" [toggleable]="true">
 
             <div class="flex">
 
@@ -66,6 +66,10 @@
                 
             </div>
 
+        </p-panel>
+
+        <p-panel header="Imagens" [toggleable]="true">
+
             <div class="tableedit">
                 <h5>Adicione suas imagens</h5>
              
@@ -86,11 +90,13 @@
                     </ul>
                 </ng-template>
 
-                
             </div>
 
+        </p-panel>
+
+        <p-panel header="Horario de Funcionamento" [toggleable]="true">
+
             <div class="tableedit">
-                <h5>Horario de Funcionamento</h5>
                 <p-table [value]="horarioFuncionamento" dataKey="id" >
                     <ng-template pTemplate="header">
                         <tr>
@@ -199,7 +205,7 @@
 
         </p-panel>
 
-        <p-panel header="Endereço" [toggleable]="false">
+        <p-panel header="Endereço" [toggleable]="true">
 
             <div class="flex">
 
@@ -297,25 +303,29 @@
         </p-panel>
 
         <p-panel>
-            <div class="car-buttons p-mt-5">
-                <p-button
-                  type="button"
-                  styleClass="p-button p-button-rounded p-mr-2"
-                  class="padding10"
-                  label="Salvar"
-                  (onClick)="adicionarNovosDados()"
-                ></p-button>
-                <p-button
-                  type="button"
-                  styleClass="p-button-help p-button-rounded"
-                  class="padding10"
-                  label="Voltar"
-                  (onClick)="voltar()"
-                ></p-button>
-              </div>
+            <div class="car-buttons p-mt-5" style="display: flex;justify-content: space-between;">
+                <button 
+                    class="p-button-outlined p-button-danger"
+                    (click)="voltar()" 
+                    pButton 
+                    type="button" 
+                    icon="pi pi-check"
+                    iconPos="left" 
+                    label="Voltar">
+                </button>
+
+                <button 
+                    class="p-button-outlined p-button-success"
+                    (click)="adicionarNovosDados()" 
+                    pButton 
+                    type="button" 
+                    icon="pi pi-check"
+                    iconPos="left" 
+                    label="Salvar">
+                </button>
+            </div>
         </p-panel>
         
-
     </div>
 
 </div>
