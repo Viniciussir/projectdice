@@ -316,8 +316,36 @@
 
         <p-panel>
             <div class="car-buttons p-mt-5" style="display: flex;justify-content: space-between;">
-                
+
+                <div>
+                    <button 
+                        *ngIf="operacao == 'admin'"
+                        [disabled]=""
+                        class="p-button-outlined p-button-success"
+                        (click)="aprovar()" 
+                        pButton 
+                        type="button" 
+                        icon="pi pi-check"
+                        iconPos="left" 
+                        style="margin-right: 1vw;"
+                        label="Aprovar">
+                    </button>
+
+                    <button 
+                        *ngIf="operacao == 'admin'"
+                        [disabled]=""
+                        class="p-button-outlined p-button-danger"
+                        (click)="reprovar()" 
+                        pButton 
+                        type="button" 
+                        icon="pi pi-check"
+                        iconPos="left" 
+                        label="Reprovar">
+                    </button>
+                </div>
+
                 <button 
+                    *ngIf="operacao != 'admin'"
                     [disabled]=""
                     class="p-button-outlined p-button-success"
                     (click)="salvar()" 

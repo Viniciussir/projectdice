@@ -1,4 +1,8 @@
-<div class="container" *ngIf="!acessarDadosTelaManter">
+<div class="progressBar" *ngIf="carregando">
+  <p-progressBar [value]="value"></p-progressBar>
+</div>
+
+<div class="container" *ngIf="!acessarDadosTelaManter && !acessarDadosTelaAdmin && !carregando">
 
   <p-carousel
     [value]="dadosEstabelecimento"
@@ -49,6 +53,7 @@
             <h4 *ngIf="dadosEstabelecimento.status == 'ATIVO'" class="p-mb-1" style="color: green;">{{ dadosEstabelecimento.status }}</h4>
             <h4 *ngIf="dadosEstabelecimento.status == 'INATIVO'" class="p-mb-1" style="color: gray;">{{ dadosEstabelecimento.status }}</h4>
             <h4 *ngIf="dadosEstabelecimento.status == 'AGUARDANDO ANALISE'" class="p-mb-1" style="color: rgb(202, 202, 3);">{{ dadosEstabelecimento.status }}</h4>
+            <h4 *ngIf="dadosEstabelecimento.status == 'REJEITADO'" class="p-mb-1" style="color:red;">{{ dadosEstabelecimento.status }}</h4>
             <h4 *ngIf="dadosEstabelecimento.status == 'EXEMPLO'" class="p-mb-1" style="color:black;">{{ dadosEstabelecimento.status }}</h4>
             <div class="car-buttons p-mt-5">
               <button
@@ -80,6 +85,12 @@
 
 </div>
 
+<div class="container" *ngIf="!acessarDadosTelaManter && acessarDadosTelaAdmin && !carregando">
+
+  <app-menu-admin></app-menu-admin>
+  
+</div>
+
 <app-menu-manter
   *ngIf="acessarDadosTelaManter"
   [operacao]="operacao"
@@ -89,4 +100,4 @@
   [acessarDadosTelaManter]="acessarDadosTelaManter">
 </app-menu-manter>
 
-
+<p-toast position="top-center"></p-toast>

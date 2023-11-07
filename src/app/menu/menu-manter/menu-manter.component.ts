@@ -155,7 +155,7 @@ export class MenuManterComponent implements OnInit {
 
   async ngOnInit() {
     await this.obterCidades();
-    if(this.operacao == Operacao.ALTERAR || this.operacao == Operacao.DETALHAR){
+    if(this.operacao == Operacao.ALTERAR || this.operacao == Operacao.DETALHAR || this.operacao == Operacao.ADMIN){
       this.buscarDados(this.userId);
     }
   }
@@ -193,7 +193,7 @@ export class MenuManterComponent implements OnInit {
   }
   //#endregion
 
-  //#region Obter Dados Alteração/Detalhamento
+  //#region Obter Dados alterar, detalhar e admin
   async buscarDados(id:any){
     try{
       let data = await this.menuAcessoService.buscarDados(id).toPromise();
@@ -343,6 +343,7 @@ export class MenuManterComponent implements OnInit {
       "city" : this.selecaoCidadesUF.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
+      "status" : "AGUARDANDO ANALISE"
     }
     this.menuAcessoService.adicionarDados(dados).subscribe(response => {
         this.voltar();
@@ -356,6 +357,88 @@ export class MenuManterComponent implements OnInit {
   //#region Limpar Mensagem
   limparMensagem(){
     this.messageService.clear();
+  }
+  //#endregion
+
+  //#region Admin
+  aprovar(){
+    let horario:any [] = [];
+    for (let i = 0; i < this.horarioFuncionamento.length; i++) {
+      horario.push({
+        "id": this.horarioFuncionamento[i].id,
+        "dia": this.horarioFuncionamento[i].dia,
+        "horaInicial": this.horarioFuncionamento[i].horaInicial.code,
+        "horaFinal": this.horarioFuncionamento[i].horaFinal.code,
+        "Situacao": this.horarioFuncionamento[i].Situacao.code,
+      })
+    }
+    let dados = {
+      "id" : this.id,
+      "userId" : this.userId,
+      "name": this.dadosEstabelecimento.name,
+      "description": this.dadosEstabelecimento.description,
+      "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
+      "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
+      "image" : "",
+      "openingHours": horario,
+      "street": this.dadosEstabelecimento.street,
+      "number" : this.dadosEstabelecimento.number,
+      "district" : this.dadosEstabelecimento.district,
+      "city" : this.selecaoCidadesUF.code,
+      "zipCode" : this.dadosEstabelecimento.zipCode,
+      "complement" : this.dadosEstabelecimento.complement,
+      "status" : "ATIVO"
+    }
+    this.menuAcessoService.alterarDados(dados).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Aprovado.', life: 3000});
+        setTimeout(() => {
+          this.voltar();
+        }, 1000);
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  reprovar(){
+    let horario:any [] = [];
+    for (let i = 0; i < this.horarioFuncionamento.length; i++) {
+      horario.push({
+        "id": this.horarioFuncionamento[i].id,
+        "dia": this.horarioFuncionamento[i].dia,
+        "horaInicial": this.horarioFuncionamento[i].horaInicial.code,
+        "horaFinal": this.horarioFuncionamento[i].horaFinal.code,
+        "Situacao": this.horarioFuncionamento[i].Situacao.code,
+      })
+    }
+    let dados = {
+      "id" : this.id,
+      "userId" : this.userId,
+      "name": this.dadosEstabelecimento.name,
+      "description": this.dadosEstabelecimento.description,
+      "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
+      "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
+      "image" : "",
+      "openingHours": horario,
+      "street": this.dadosEstabelecimento.street,
+      "number" : this.dadosEstabelecimento.number,
+      "district" : this.dadosEstabelecimento.district,
+      "city" : this.selecaoCidadesUF.code,
+      "zipCode" : this.dadosEstabelecimento.zipCode,
+      "complement" : this.dadosEstabelecimento.complement,
+      "status" : "REJEITADO"
+    }
+    this.menuAcessoService.alterarDados(dados).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Reprovado.', life: 3000});
+      setTimeout(() => {
+        this.voltar();
+      }, 1000);
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
   }
   //#endregion
 

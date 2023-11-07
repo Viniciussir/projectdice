@@ -14,4 +14,5 @@ export class DadosEstabelecimento {
     zipCode:any = '';
     complement:any = '';
     status:any = '';
+    username:any = '';
 }

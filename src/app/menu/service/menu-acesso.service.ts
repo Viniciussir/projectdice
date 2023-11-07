@@ -8,9 +8,12 @@ export class MenuAcessoService {
 
     constructor(private http: HttpClient) { }
 
-    buscarDados(dados: any): 
-        Observable<any> {
+    buscarDados(dados: any): Observable<any> {
         return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados?userId=" + dados);
+    }
+
+    buscarTodosDados(): Observable<any> {
+        return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados");
     }
 
     getCidades(estado: string): Observable<any[]> {
@@ -18,14 +21,24 @@ export class MenuAcessoService {
         return this.http.get<any[]>(url);
     }
 
-    adicionarDados(dados: any): 
-        Observable<any> {
+    adicionarDados(dados: any): Observable<any> {
         return this.http.post("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados",dados);
     }
 
-    detalharDados(dados: any): 
-        Observable<any> {
+    alterarDados(dados: any): Observable<any> {
+        return this.http.put("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados/" + dados.id, dados);
+    }
+
+    detalharDados(dados: any): Observable<any> {
         return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados?userId=" + dados);
+    }
+
+    deletarDados(id: any): Observable<any> {
+        return this.http.delete("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados/" + id);
+    }
+
+    verificarUsername(): Observable<any> {
+        return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/user");
     }
 
 }

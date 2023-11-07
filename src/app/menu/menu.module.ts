@@ -45,12 +45,14 @@ import { MessageService } from 'primeng/api';
 import {PanelModule} from 'primeng/panel';
 import { MenuModule } from 'primeng/menu';
 import {ImageModule} from 'primeng/image';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 
 
 @NgModule({
   declarations: [
     MenuInicialComponent,
-    MenuManterComponent
+    MenuManterComponent,
+    MenuAdminComponent,
   ],
   imports: [
     CommonModule,

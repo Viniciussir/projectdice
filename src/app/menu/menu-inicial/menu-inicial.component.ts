@@ -42,6 +42,12 @@ export class MenuInicialComponent implements OnInit {
 
   nomeEstabelecimento:any = '';
 
+  acessarDadosTelaAdmin:boolean = false;
+
+  value: number = 0;
+
+  carregando:boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -54,6 +60,41 @@ export class MenuInicialComponent implements OnInit {
   });}
 
   ngOnInit() {
+    let interval = setInterval(() => {
+      this.value = this.value + Math.floor(Math.random() * 40) + 1;
+      if (this.value >= 100) {
+          this.value = 100;
+          clearInterval(interval);
+          this.carregando = false;
+      }
+  }, 1000);
+    this.verificarTipoUsuario();
+  }
+
+  verificarTipoUsuario(){
+    this.menuAcessoService.verificarUsername().subscribe(data => {
+      let adminUser:boolean = false
+      for (let i = 0; i < data.length; i++) {
+        if(this.username == data[i].username){
+          if(data[i].adminUser == true){
+            adminUser = true;
+          }
+        }
+      }
+      if(adminUser){
+        this.acessarDadosTelaAdmin = true;
+      } else {
+        this.acessarDadosTelaAdmin = false;
+        this.buscarDados();
+      }
+    },
+      error => {
+        this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+      }
+    );
+  }
+
+  buscarDados(){
     this.menuAcessoService.buscarDados(this.userId).subscribe(dados => {
       if(dados.length > 0){
         this.dadosEstabelecimento = dados;
@@ -74,7 +115,8 @@ export class MenuInicialComponent implements OnInit {
             "city": "Exemplo",
             "zipCode": "Exemplo",
             "complement": "Exemplo",
-            "status": "EXEMPLO"
+            "status": "EXEMPLO",
+            "username":"Exemplo"
           }
         ]
       }
