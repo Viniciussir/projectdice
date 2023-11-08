@@ -99,7 +99,7 @@
                 <p-fileUpload 
                     name="image" 
                     [customUpload]="true"
-                    (uploadHandler)="onUpload($event)" 
+                    (uploadHandler)="uploadImage($event)" 
                     accept="image/*" 
                     [files]="uploadedFiles"
                     [multiple]="true"

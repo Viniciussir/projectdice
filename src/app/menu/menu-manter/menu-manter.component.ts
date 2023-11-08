@@ -3,6 +3,12 @@ import { DadosEstabelecimento } from '../service/menu-acesso-filtro';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Operacao } from 'src/app/shared/operacao';
+import { HttpClient } from '@angular/common/http';
+import { initializeApp } from "firebase/app";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import 'firebase/compat/storage';
 
 @Component({
   selector: 'app-menu-manter',
@@ -159,7 +165,22 @@ export class MenuManterComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private menuAcessoService : MenuAcessoService,) { }
+    private menuAcessoService : MenuAcessoService,
+    private http: HttpClient,
+  ) {
+    const firebaseConfig = {
+      apiKey: "AIzaSyA09PislmzgpeWIf1VpR-iTro0rhz5DuCU",
+      authDomain: "dice-99070.firebaseapp.com",
+      databaseURL: "https://dice-99070-default-rtdb.firebaseio.com",
+      projectId: "dice-99070",
+      storageBucket: "dice-99070.appspot.com",
+      messagingSenderId: "151222719461",
+      appId: "1:151222719461:web:170fc9f1db98ba9b7a550c"
+    };
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  }
 
   async ngOnInit() {
     await this.obterCidades();
@@ -273,20 +294,25 @@ export class MenuManterComponent implements OnInit {
   //#endregion
 
   //#region upload Imagem
-  onUpload(event:any) {
-    const files = event.files;
-    if (files) {
-      for (const file of files) {
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-          if (e.target) {
-            this.uploadedFiles.push({ url: e.target.result });
-          }
-        };
-
-        reader.readAsDataURL(file);
-      }
+  uploadImage(event:any) {
+    for (let i = 0; i < event.files.length; i++) {
+      const file = event.files[i];
+      const storage = firebase.storage();
+      const storageRef = storage.ref();
+      const uploadTask = storageRef.child('imagem/' + file.name).put(file);
+  
+      uploadTask.on('state_changed', snapshot => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      }, error => {
+        console.error('Erro ao fazer o upload da imagem: ', error);
+      }, () => {
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Upload concluído", life: 3000});
+        uploadTask.snapshot.ref.getDownloadURL().then(url => {
+          this.uploadedFiles.push({
+            url
+          })
+        });
+      });
     }
   }
   //#endregion
@@ -312,9 +338,9 @@ export class MenuManterComponent implements OnInit {
     if(!this.dadosEstabelecimento.name || !this.dadosEstabelecimento.description || this.dadosEstabelecimento.categories.length == 0){
       this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Dados Gerais.', life: 3000});
       return false;
-    } else if(this.uploadedFiles.length == 0){
-      this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
-      return false;
+    // } else if(this.uploadedFiles.length == 0){
+    //   this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
+    //   return false;
     } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.number || !this.dadosEstabelecimento.district 
       || !this.dadosEstabelecimento.city || !this.dadosEstabelecimento.zipCode){
         this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Endereço.', life: 3000});
@@ -347,7 +373,7 @@ export class MenuManterComponent implements OnInit {
       "description": this.dadosEstabelecimento.description,
       "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
       "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
-      "image" : [],
+      "image" :  this.uploadedFiles.map(item => item.url),
       "openingHours": horario,
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
