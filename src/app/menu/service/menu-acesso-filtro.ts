@@ -15,4 +15,5 @@ export class DadosEstabelecimento {
     complement:any = '';
     status:any = '';
     username:any = '';
+    motive:any = '';
 }

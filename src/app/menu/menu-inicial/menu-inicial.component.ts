@@ -116,7 +116,8 @@ export class MenuInicialComponent implements OnInit {
             "zipCode": "Exemplo",
             "complement": "Exemplo",
             "status": "EXEMPLO",
-            "username":"Exemplo"
+            "username":"Exemplo",
+            "motive":"Exemplo"
           }
         ]
       }
@@ -145,6 +146,17 @@ export class MenuInicialComponent implements OnInit {
 
   voltar(){
     this.router.navigate(['/login']);
+  }
+
+  deletarDados(dados:any){
+    this.menuAcessoService.deletarDados(dados.id).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Excluido.', life: 3000});
+      this.buscarDados();
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
   }
 
 }

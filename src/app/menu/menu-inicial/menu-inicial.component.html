@@ -75,6 +75,14 @@
                 (click)="alterarDados(dadosEstabelecimento.id)"
                 [disabled]="dadosEstabelecimento.Status == 'AGUARDANDO ANALISE' || dadosEstabelecimento.status == 'EXEMPLO'"
               ></button>
+
+              <button 
+                style="margin-left:1vw;" 
+                pButton pRipple 
+                icon="pi pi-trash" 
+                class="p-button-rounded p-button-warning" 
+                (click)="deletarDados(dadosEstabelecimento)">
+              </button>    
             </div>
           </div>
         </div>
@@ -96,6 +104,7 @@
   [operacao]="operacao"
   [id]="id"
   [userId]="userId"
+  [username]="username"
   [desabilitarCamposManter]="desabilitarCamposManter"
   [acessarDadosTelaManter]="acessarDadosTelaManter">
 </app-menu-manter>

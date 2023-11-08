@@ -72,6 +72,23 @@
                 
             </div>
 
+            <div class="flex" *ngIf="dadosEstabelecimento.motive.length > 0">
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <textarea
+                            [rows]="5" 
+                            [cols]="30" 
+                            [(ngModel)]="dadosEstabelecimento.motive"
+                            pInputTextarea 
+                            [autoResize]="false"
+                            [disabled]="true">
+                        </textarea>
+                        <label class="width" for="float-input">Motivo da Rejeição</label>
+                    </span>
+                </div>
+            
+            </div>
+
         </p-panel>
 
         <p-panel header="Imagens" [toggleable]="false">
@@ -317,9 +334,8 @@
         <p-panel>
             <div class="car-buttons p-mt-5" style="display: flex;justify-content: space-between;">
 
-                <div>
+                <div *ngIf="operacao == 'admin'">
                     <button 
-                        *ngIf="operacao == 'admin'"
                         [disabled]=""
                         class="p-button-outlined p-button-success"
                         (click)="aprovar()" 
@@ -332,10 +348,9 @@
                     </button>
 
                     <button 
-                        *ngIf="operacao == 'admin'"
                         [disabled]=""
                         class="p-button-outlined p-button-danger"
-                        (click)="reprovar()" 
+                        (click)="exibirMotivoReprova(true)" 
                         pButton 
                         type="button" 
                         icon="pi pi-check"
@@ -358,7 +373,7 @@
 
                 <button 
                     class="p-button-outlined p-button-danger"
-                    (click)="voltar()" 
+                    (click)="voltar()"  
                     pButton 
                     type="button" 
                     icon="pi pi-check"
@@ -376,3 +391,40 @@
 <app-menu-inicial
   *ngIf="!acessarDadosTelaManter">
 </app-menu-inicial>
+
+<p-dialog header="Motivo de Reprovação" [(visible)]="exibirDialogMotivo">
+
+    <textarea
+        [rows]="5" 
+        [cols]="30" 
+        [(ngModel)]="dadosEstabelecimento.motive"
+        pInputTextarea 
+        [autoResize]="false">
+    </textarea>
+
+    <div class="button-dialog">
+
+        <button 
+            [disabled]="dadosEstabelecimento.motive.length == 0"
+            class="p-button-outlined p-button-success"
+            (click)="reprovar()" 
+            pButton 
+            type="button" 
+            icon="pi pi-check"
+            iconPos="left" 
+            label="Salvar">
+        </button>
+
+        <button 
+            class="p-button-outlined p-button-danger"
+            (click)="exibirMotivoReprova(false)" 
+            pButton 
+            type="button" 
+            icon="pi pi-check"
+            iconPos="left" 
+            label="Voltar">
+        </button>
+
+    </div>
+
+</p-dialog>

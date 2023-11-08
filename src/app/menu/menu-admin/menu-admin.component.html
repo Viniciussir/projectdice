@@ -6,14 +6,6 @@
 
         <ng-template pTemplate="right">
             <button 
-                style="margin-right: 1vw;"
-                pButton pRipple 
-                label="Listar Usuarios" 
-                icon="pi pi-arrow-left" 
-                class="p-button-danger p-mr-2" 
-                (click)="voltar()">
-            </button>
-            <button 
                 pButton pRipple 
                 label="Voltar" 
                 icon="pi pi-arrow-left" 
@@ -57,6 +49,7 @@
                 <th pSortableColumn="categories">Categorias<p-sortIcon field="categories"></p-sortIcon></th>
                 <th pSortableColumn="city">Cidade/UF<p-sortIcon field="city"></p-sortIcon></th>
                 <th pSortableColumn="status">status<p-sortIcon field="status"></p-sortIcon></th>
+                <th pSortableColumn="motive">Motivo Rejeição<p-sortIcon field="motive"></p-sortIcon></th>
                 <th></th>
             </tr>
         </ng-template>
@@ -71,6 +64,7 @@
                 <td>{{dados.categories}}</td>
                 <td>{{dados.city}}</td>
                 <td>{{dados.status}}</td>
+                <td>{{dados.motive}}</td>
                 <td>
                     <div class="flex">
                         <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(dados)"></button>

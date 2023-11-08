@@ -14,6 +14,7 @@ export class MenuManterComponent implements OnInit {
   @Input() desabilitarCamposManter:any;
   @Input() acessarDadosTelaManter:any;
   @Input() operacao:any;
+  @Input() username:any;
   @Input() userId:any;
   @Input() id:any;
 
@@ -74,7 +75,9 @@ export class MenuManterComponent implements OnInit {
   uploadedFiles: any[] = [];
   
   listaCategorias:any [] = [
+    {name: 'Bares', code: 'Bares'},
     {name: 'Restaurante', code: 'Restaurante'},
+    {name: 'Pub', code: 'Pub'},
     {name: 'Parques', code: 'Parques'},
     {name: 'Baladas', code: 'Baladas'},
     {name: 'Cinemas', code: 'Cinemas'},
@@ -86,8 +89,11 @@ export class MenuManterComponent implements OnInit {
   ];
 
   listaInformacoesBasicas:any [] = [
+    {name: 'Musica ao vivo', code: 'Musica ao vivo'},
     {name: 'Estacionamento', code: 'Estacionamento'},
     {name: 'Ambiente para Fumantes', code: 'Ambiente para Fumantes'},
+    {name: 'Refeição no Local', code: 'Refeição no Local'},
+    {name: 'Para viagem', code: 'Para viagem'},
   ];
 
   listaHorarios:any [] = [
@@ -148,6 +154,8 @@ export class MenuManterComponent implements OnInit {
 
   listaCidade:any [] = [];
   selecaoCidadesUF:any = '';
+
+  exibirDialogMotivo:boolean = false;
 
   constructor(
     private messageService: MessageService,
@@ -293,7 +301,10 @@ export class MenuManterComponent implements OnInit {
   salvar(){
     if(!this.validarCampos()){
     } else {
-      this.gravar();
+      if(this.operacao == Operacao.INCLUIR){
+        this.gravar(Operacao.INCLUIR);
+      } else if (this.operacao == Operacao.ALTERAR)
+      this.gravar(Operacao.ALTERAR);
     }
   }
 
@@ -305,7 +316,7 @@ export class MenuManterComponent implements OnInit {
       this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
       return false;
     } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.number || !this.dadosEstabelecimento.district 
-      || !this.dadosEstabelecimento.city || !this.dadosEstabelecimento.zipCode || !this.dadosEstabelecimento.complement){
+      || !this.dadosEstabelecimento.city || !this.dadosEstabelecimento.zipCode){
         this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Endereço.', life: 3000});
       return false;
     }
@@ -318,7 +329,7 @@ export class MenuManterComponent implements OnInit {
     return true;
   }
 
-  gravar() {
+  gravar(tipoOperacao:any) {
     let horario:any [] = [];
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
       horario.push({
@@ -330,12 +341,13 @@ export class MenuManterComponent implements OnInit {
       })
     }
     let dados = {
+      "id" : this.id,
       "userId" : this.userId,
       "name": this.dadosEstabelecimento.name,
       "description": this.dadosEstabelecimento.description,
       "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
       "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
-      "image" : "",
+      "image" : [],
       "openingHours": horario,
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
@@ -343,14 +355,33 @@ export class MenuManterComponent implements OnInit {
       "city" : this.selecaoCidadesUF.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
-      "status" : "AGUARDANDO ANALISE"
+      "status" : "AGUARDANDO ANALISE",
+      "username" : this.username,
+      "motive" : "",
     }
-    this.menuAcessoService.adicionarDados(dados).subscribe(response => {
-        this.voltar();
+    if(tipoOperacao == Operacao.INCLUIR){
+      this.menuAcessoService.adicionarDados(dados).subscribe(response => {
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Salvo com sucesso.', life: 3000});
+        setTimeout(() => {
+          this.voltar();
+        }, 1000);
+        },
+        error => {
+          console.error('Erro ao adicionar dados:', error);
+        }
+      );
+    } else if (tipoOperacao == Operacao.ALTERAR){
+      this.menuAcessoService.alterarDados(dados).subscribe(response => {
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Salvo com sucesso.', life: 3000});
+        setTimeout(() => {
+          this.voltar();
+        }, 1000);
       },
-      error => {
-        console.error('Erro ao adicionar dados:', error);
-      });
+        error => {
+          console.error('Erro ao adicionar dados:', error);
+        }
+      );
+    }
   }
   //#endregion
 
@@ -360,7 +391,7 @@ export class MenuManterComponent implements OnInit {
   }
   //#endregion
 
-  //#region Admin
+  //#region Manutenção Admin
   aprovar(){
     let horario:any [] = [];
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
@@ -401,7 +432,12 @@ export class MenuManterComponent implements OnInit {
     );
   }
 
+  exibirMotivoReprova(event:any){
+    this.exibirDialogMotivo = event;
+  }
+
   reprovar(){
+    this.exibirDialogMotivo = false;
     let horario:any [] = [];
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
       horario.push({
@@ -427,7 +463,8 @@ export class MenuManterComponent implements OnInit {
       "city" : this.selecaoCidadesUF.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
-      "status" : "REJEITADO"
+      "status" : "REJEITADO",
+      "motive" : this.dadosEstabelecimento.motive
     }
     this.menuAcessoService.alterarDados(dados).subscribe(response => {
       this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Reprovado.', life: 3000});
