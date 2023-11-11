@@ -187,6 +187,8 @@ export class MenuManterComponent implements OnInit {
     await this.obterCidades();
     if(this.operacao == Operacao.ALTERAR || this.operacao == Operacao.DETALHAR || this.operacao == Operacao.ADMIN){
       this.buscarDados(this.userId);
+    } else {
+      this.dadosEstabelecimento.number = null;
     }
   }
 

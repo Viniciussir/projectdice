@@ -142,15 +142,17 @@
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input 
+                        <p-inputNumber 
+                            inputId="inputnumber"
                             class="width" 
-                            [ngStyle]="{'border': dadosEstabelecimento.number ? '' : '1px solid red'}"
+                            [ngStyle]="{'border': dadosEstabelecimento.number ? '' : '1px solid red', 
+                            'border-radius': dadosEstabelecimento.number ? '' : '6px'}"
                             id="numeroCamposManter" 
                             type="text" 
                             [(ngModel)]="dadosEstabelecimento.number" 
-                            [disabled]="desabilitarCamposManter"  
-                            pInputText> 
-                        <label [ngStyle]="{'color': dadosEstabelecimento.number ? '' : 'red'}" class="width" for="float-input">Número</label>
+                            [disabled]="desabilitarCamposManter"  >
+                        </p-inputNumber>
+                        <label [ngStyle]="{'color': dadosEstabelecimento.number ? '' : 'red'}" class="width" for="inputnumber">Número</label>
                     </span>
                 </div>  
 
@@ -196,14 +198,17 @@
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">
-                        <input 
+                        <p-inputMask 
+                            inputId="inputmask" 
+                            mask="99-999999" 
                             class="width" 
-                            [ngStyle]="{'border': dadosEstabelecimento.zipCode ? '' : '1px solid red'}"
+                            [ngStyle]="{'border': dadosEstabelecimento.zipCode ? '' : '1px solid red', 
+                            'border-radius': dadosEstabelecimento.zipCode ? '' : '6px'}"
                             id="float-input" 
                             type="text" 
                             [disabled]="desabilitarCamposManter" 
-                            [(ngModel)]="dadosEstabelecimento.zipCode" 
-                            pInputText> 
+                            [(ngModel)]="dadosEstabelecimento.zipCode">
+                        </p-inputMask>
                         <label [ngStyle]="{'color': dadosEstabelecimento.zipCode ? '' : 'red'}" class="width" for="float-input">CEP</label>
                     </span>
                 </div> 
