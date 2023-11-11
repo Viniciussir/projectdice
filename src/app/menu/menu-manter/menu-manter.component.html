@@ -113,7 +113,7 @@
                         <div class="upload-image">
                             <img class="imagens" *ngIf="file.url" [src]="file.url"alt="Imagem">
                             <span *ngIf="!file.url">{{file.name}}</span>
-                            <button pButton icon="pi pi-trash" (click)="removeImage(file)" class="p-button-danger" *ngIf="file.url"></button>
+                            <button pButton icon="pi pi-trash" [disabled]="desabilitarCamposManter" (click)="removeImage(file)" class="p-button-danger" *ngIf="file.url"></button>
                         </div>
                     </div>
                 </div>
@@ -230,15 +230,15 @@
 
         </p-panel>
 
-        <p-panel header="Horario de Funcionamento" [toggleable]="false">
+        <p-panel header="Horário de Funcionamento" [toggleable]="false">
 
             <div class="tableedit">
                 <p-table [value]="horarioFuncionamento" dataKey="id" >
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Dia da Semana</th>
-                            <th>Horario de abertura</th>
-                            <th>Horario de fechamento</th>
+                            <th>Horário de abertura</th>
+                            <th>Horário de fechamento</th>
                             <th>Situação</th>
                         </tr>
                     </ng-template>
@@ -246,66 +246,53 @@
                         <tr>
                             <td>
                                 <p-cellEditor>
-                                    <ng-template pTemplate="input">
-                                        <input 
-                                            type="text"  
-                                            [(ngModel)]="horarioFuncionamento.dia"
-                                            [disabled]="true"
-                                            pInputText>
-                                    </ng-template>
                                     <ng-template pTemplate="output">
                                         {{horarioFuncionamento.dia}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>
 
-                            <td *ngIf="!desabilitarCamposManter" pEditableColumn>
+                            <td pEditableColumn *ngIf="!desabilitarCamposManter">
                                 <p-cellEditor>
                                     <ng-template pTemplate="input">
-                                        <p-dropdown 
-                                            [options]="listaHorarios"
-                                            [(ngModel)]="horarioFuncionamento.horaInicial" 
-                                            optionLabel="name"
-                                            placeholder="Selecione o Horario de abertura"
-                                            [showClear]="true">
-                                        </p-dropdown>
+                                        <input 
+                                        type="text"  
+                                        [(ngModel)]="horarioFuncionamento.horaInicial"
+                                        pInputText
+                                        placeholder="00:00">
                                     </ng-template>
                                     <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaInicial.name}}
+                                        {{horarioFuncionamento.horaInicial}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>
 
-                            <td *ngIf="!desabilitarCamposManter" pEditableColumn>
+                            <td pEditableColumn *ngIf="!desabilitarCamposManter">
                                 <p-cellEditor>
                                     <ng-template pTemplate="input">
-                                        <p-dropdown 
-                                            [options]="listaHorarios"
-                                            [(ngModel)]="horarioFuncionamento.horaFinal" 
-                                            optionLabel="name"
-                                            placeholder="Selecione o Horario de fechamento"
-                                            [showClear]="true">
-                                        </p-dropdown>
+                                        <input 
+                                        type="text"  
+                                        [(ngModel)]="horarioFuncionamento.horaFinal"
+                                        pInputText
+                                        placeholder="00:00">
                                     </ng-template>
                                     <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaFinal.name}}
+                                        {{horarioFuncionamento.horaFinal}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>
 
-                            <td *ngIf="!desabilitarCamposManter" pEditableColumn>
+                            <td pEditableColumn *ngIf="!desabilitarCamposManter">
                                 <p-cellEditor>
                                     <ng-template pTemplate="input">
-                                        <p-dropdown 
-                                            [options]="listaSituacao"
-                                            [(ngModel)]="horarioFuncionamento.Situacao" 
-                                            optionLabel="name"
-                                            placeholder="Selecione se estara aberto ou não no dia"
-                                            [showClear]="true">
-                                        </p-dropdown>
+                                        <input 
+                                        type="text"  
+                                        [(ngModel)]="horarioFuncionamento.Situacao"
+                                        pInputText
+                                        placeholder="Aberto ou Fechado?">
                                     </ng-template>
                                     <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.Situacao.name}}
+                                        {{horarioFuncionamento.Situacao}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>
@@ -313,7 +300,7 @@
                             <td *ngIf="desabilitarCamposManter">
                                 <p-cellEditor>
                                     <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaInicial.name}}
+                                        {{horarioFuncionamento.horaInicial}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>
@@ -321,7 +308,7 @@
                             <td *ngIf="desabilitarCamposManter">
                                 <p-cellEditor>
                                     <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaFinal.name}}
+                                        {{horarioFuncionamento.horaFinal}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>
@@ -329,7 +316,7 @@
                             <td *ngIf="desabilitarCamposManter">
                                 <p-cellEditor>
                                     <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.Situacao.name}}
+                                        {{horarioFuncionamento.Situacao}}
                                     </ng-template>
                                 </p-cellEditor>
                             </td>

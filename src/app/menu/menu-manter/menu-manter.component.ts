@@ -103,62 +103,6 @@ export class MenuManterComponent implements OnInit {
     {name: 'Para viagem', code: 'Para viagem'},
   ];
 
-  listaHorarios:any [] = [
-    { "code": "01:00", "name": "01:00" },
-    { "code": "01:30", "name": "01:30" },
-    { "code": "02:00", "name": "02:00" },
-    { "code": "02:30", "name": "02:30" },
-    { "code": "03:00", "name": "03:00" },
-    { "code": "03:30", "name": "03:30" },
-    { "code": "04:00", "name": "04:00" },
-    { "code": "04:30", "name": "04:30" },
-    { "code": "05:00", "name": "05:00" },
-    { "code": "05:30", "name": "05:30" },
-    { "code": "06:00", "name": "06:00" },
-    { "code": "06:30", "name": "06:30" },
-    { "code": "07:00", "name": "07:00" },
-    { "code": "07:30", "name": "07:30" },
-    { "code": "08:00", "name": "08:00" },
-    { "code": "08:30", "name": "08:30" },
-    { "code": "09:00", "name": "09:00" },
-    { "code": "09:30", "name": "09:30" },
-    { "code": "10:00", "name": "10:00" },
-    { "code": "10:30", "name": "10:30" },
-    { "code": "11:00", "name": "11:00" },
-    { "code": "11:30", "name": "11:30" },
-    { "code": "12:00", "name": "12:00" },
-    { "code": "12:30", "name": "12:30" },
-    { "code": "13:00", "name": "13:00" },
-    { "code": "13:30", "name": "13:30" },
-    { "code": "14:00", "name": "14:00" },
-    { "code": "14:30", "name": "14:30" },
-    { "code": "15:00", "name": "15:00" },
-    { "code": "15:30", "name": "15:30" },
-    { "code": "16:00", "name": "16:00" },
-    { "code": "16:30", "name": "16:30" },
-    { "code": "17:00", "name": "17:00" },
-    { "code": "17:30", "name": "17:30" },
-    { "code": "18:00", "name": "18:00" },
-    { "code": "18:30", "name": "18:30" },
-    { "code": "19:00", "name": "19:00" },
-    { "code": "19:30", "name": "19:30" },
-    { "code": "20:00", "name": "20:00" },
-    { "code": "20:30", "name": "20:30" },
-    { "code": "21:00", "name": "21:00" },
-    { "code": "21:30", "name": "21:30" },
-    { "code": "22:00", "name": "22:00" },
-    { "code": "22:30", "name": "22:30" },
-    { "code": "23:00", "name": "23:00" },
-    { "code": "23:30", "name": "23:30" },
-    { "code": "00:00", "name": "00:00" },
-    { "code": "00:30", "name": "00:30" }
-  ];
-
-  listaSituacao:any [] = [
-    {name: 'Aberto', code: 'Aberto'},
-    {name: 'Fechado', code: 'Fechado'},
-  ]
-
   listaCidade:any [] = [];
   selecaoCidadesUF:any = '';
 
@@ -246,6 +190,7 @@ export class MenuManterComponent implements OnInit {
 
   ajustarObjetosDropdown(dados:any){
     this.dadosEstabelecimento = dados;
+    this.horarioFuncionamento = dados.openingHours
     for (let i = 0; i < dados.image.length; i++) {
       const url = dados.image[i];
       const regex = /\/imagem%2F(.*?)\?alt=/;
@@ -280,27 +225,6 @@ export class MenuManterComponent implements OnInit {
         code: dados.city,
         name: dados.city
       }      
-    }
-    if(dados.openingHours){
-      this.horarioFuncionamento = [];
-      for (let i = 0; i < dados.openingHours.length; i++) {
-        this.horarioFuncionamento.push({
-          id: dados.openingHours[i].id,
-          dia: dados.openingHours[i].dia,
-          horaInicial: {
-            code: dados.openingHours[i].horaInicial,
-            name:dados.openingHours[i].horaInicial
-          },
-          horaFinal: {
-            code: dados.openingHours[i].horaFinal,
-            name:dados.openingHours[i].horaFinal
-          },
-          Situacao: {
-            code: dados.openingHours[i].Situacao,
-            name:dados.openingHours[i].Situacao
-          }
-        })        
-      }
     }
   }
   //#endregion
@@ -401,12 +325,47 @@ export class MenuManterComponent implements OnInit {
       return false;
     }
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
-      if(!this.horarioFuncionamento[i].horaInicial || !this.horarioFuncionamento[i].horaFinal || !this.horarioFuncionamento[i].Situacao){
-        this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de horario de funcionamento.', life: 3000});
+      if(this.horarioFuncionamento[i].Situacao){
+        if(this.horarioFuncionamento[i].Situacao == "Aberto"){
+          const padraoHora = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+          if (!padraoHora.test(this.horarioFuncionamento[i].horaInicial) || !padraoHora.test(this.horarioFuncionamento[i].horaFinal)) {
+            this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o campo Horário informado no accordion de Horário de Funcionamento.', life: 3000});
+            return false;
+          }
+        } else if (this.horarioFuncionamento[i].Situacao == "Fechado"){
+          this.horarioFuncionamento[i].horaInicial = '';
+          this.horarioFuncionamento[i].horaFinal = '';
+        } else {
+          this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o campo Situação no accordion de Horário de Funcionamento.', life: 3000});
+          return false;
+        }
+      } else {
+        this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Horário de Funcionamento.', life: 3000});
         return false;
       }
     }
     return true;
+  }
+
+  validarCamposHora(situacao: string, horarioInicial: string, horarioFinal: string): string | null {
+    // Verifica se a situação é "aberta"
+    if (situacao.toLowerCase() === 'aberta') {
+      // Verifica os campos de horário se não estão vazios
+      if (horarioInicial.trim() === '' || horarioFinal.trim() === '') {
+        return 'Erro: Os campos de horário não podem estar vazios.';
+      }
+  
+      // Expressão regular para o formato "00:00"
+      const padraoHora = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+  
+      // Verifica se os horários estão no formato correto
+      if (!padraoHora.test(horarioInicial) || !padraoHora.test(horarioFinal)) {
+        return 'Erro: Os campos de horário devem estar no formato "00:00".';
+      }
+    }
+  
+    // Nenhum erro encontrado, retorna null
+    return null;
   }
 
   gravar(tipoOperacao:any) {
@@ -415,9 +374,9 @@ export class MenuManterComponent implements OnInit {
       horario.push({
         "id": this.horarioFuncionamento[i].id,
         "dia": this.horarioFuncionamento[i].dia,
-        "horaInicial": this.horarioFuncionamento[i].horaInicial.code,
-        "horaFinal": this.horarioFuncionamento[i].horaFinal.code,
-        "Situacao": this.horarioFuncionamento[i].Situacao.code,
+        "horaInicial": this.horarioFuncionamento[i].horaInicial,
+        "horaFinal": this.horarioFuncionamento[i].horaFinal,
+        "Situacao": this.horarioFuncionamento[i].Situacao,
       })
     }
     let dados = {
