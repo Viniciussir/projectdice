@@ -9,6 +9,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-menu-manter',
@@ -225,7 +226,7 @@ export class MenuManterComponent implements OnInit {
   //#region Obter Dados alterar, detalhar e admin
   async buscarDados(id:any){
     try{
-      let data = await this.menuAcessoService.buscarDados(id).toPromise();
+      let data = await firstValueFrom(this.menuAcessoService.buscarDados(id));
       if (data) {  
         for (let i = 0; i < data.length; i++) {
           if(data[i].id == this.id){
@@ -243,6 +244,15 @@ export class MenuManterComponent implements OnInit {
 
   ajustarObjetosDropdown(dados:any){
     this.dadosEstabelecimento = dados;
+    for (let i = 0; i < dados.image.length; i++) {
+      const url = dados.image[i];
+      const regex = /\/imagem%2F(.*?)\?alt=/;
+      const match = url.match(regex);
+      this.uploadedFiles.push({
+        "name":match[1],
+        "url":dados.image[i]
+      })        
+    }
     if(dados.categories){
       let categories:any [] = [];
       for (let i = 0; i < dados.categories.length; i++) {
@@ -296,24 +306,66 @@ export class MenuManterComponent implements OnInit {
   //#region upload Imagem
   uploadImage(event:any) {
     for (let i = 0; i < event.files.length; i++) {
+      let name = event.files[i].name
       const file = event.files[i];
       const storage = firebase.storage();
       const storageRef = storage.ref();
-      const uploadTask = storageRef.child('imagem/' + file.name).put(file);
-  
+      const uploadTask = storageRef.child('imagem/' + file.name).put(file);  
       uploadTask.on('state_changed', snapshot => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       }, error => {
         console.error('Erro ao fazer o upload da imagem: ', error);
       }, () => {
-        this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Upload concluído", life: 3000});
         uploadTask.snapshot.ref.getDownloadURL().then(url => {
-          this.uploadedFiles.push({
-            url
-          })
+          const existe = this.uploadedFiles.some(item => item.name === name);
+          if (!existe) {
+            this.uploadedFiles.push({
+              "url": url,
+              "name": name,
+            });
+          }
         });
       });
     }
+    this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Upload concluído", life: 3000});
+  }
+
+  removeImage(event:any){
+    const file = event;
+    const storage = firebase.storage();
+    const storageRef = storage.ref();
+    const fileRef = storageRef.child('imagem/' + file.name);
+    fileRef.delete().then(() => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Imagem removida", life: 3000});
+      const index = this.uploadedFiles.findIndex(item => item.name === event.name);
+      if (index !== -1) {
+        this.uploadedFiles.splice(index, 1);
+      }
+    }).catch(() => {
+      const index = this.uploadedFiles.findIndex(item => item.name === event.name);
+      if (index !== -1) {
+        this.uploadedFiles.splice(index, 1);
+      }
+    });
+  }
+
+  removefile(event:any){
+    const file = event.file;
+    const storage = firebase.storage();
+    const storageRef = storage.ref();
+    const fileRef = storageRef.child('imagem/' + file.name);
+    fileRef.delete().then(() => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Imagem removida", life: 3000});
+      const index = this.uploadedFiles.findIndex(item => item.name === event.file.name);
+      if (index !== -1) {
+        this.uploadedFiles.splice(index, 1);
+      }
+    }).catch((error) => {
+      const index = this.uploadedFiles.findIndex(item => item.name === event.file.name);
+      if (index !== -1) {
+        this.uploadedFiles.splice(index, 1);
+      }
+    });
   }
   //#endregion
 
@@ -338,9 +390,9 @@ export class MenuManterComponent implements OnInit {
     if(!this.dadosEstabelecimento.name || !this.dadosEstabelecimento.description || this.dadosEstabelecimento.categories.length == 0){
       this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Dados Gerais.', life: 3000});
       return false;
-    // } else if(this.uploadedFiles.length == 0){
-    //   this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
-    //   return false;
+    } else if(this.uploadedFiles.length == 0){
+      this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
+      return false;
     } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.number || !this.dadosEstabelecimento.district 
       || !this.dadosEstabelecimento.city || !this.dadosEstabelecimento.zipCode){
         this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Endereço.', life: 3000});

@@ -94,24 +94,29 @@
         <p-panel header="Imagens" [toggleable]="false">
 
             <div class="tableedit">
-                <h5>Adicione suas imagens</h5>
              
                 <p-fileUpload 
                     name="image" 
                     [customUpload]="true"
                     (uploadHandler)="uploadImage($event)" 
+                    (onRemove)="removefile($event)"
                     accept="image/*" 
-                    [files]="uploadedFiles"
                     [multiple]="true"
                     [maxFileSize]="1000000"
-                    [disabled]="desabilitarCamposManter">
-                </p-fileUpload>
+                    [auto]="true"
+                    [disabled]="desabilitarCamposManter"
+                    chooseLabel="Adicionar imagens">                
+                </p-fileUpload>  
 
-                <ng-template pTemplate="content">
-                    <ul *ngIf="uploadedFiles.length">
-                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                    </ul>
-                </ng-template>
+                <div class="image-content">
+                    <div *ngFor="let file of uploadedFiles">
+                        <div class="upload-image">
+                            <img class="imagens" *ngIf="file.url" [src]="file.url"alt="Imagem">
+                            <span *ngIf="!file.url">{{file.name}}</span>
+                            <button pButton icon="pi pi-trash" (click)="removeImage(file)" class="p-button-danger" *ngIf="file.url"></button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 

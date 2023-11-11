@@ -46,6 +46,7 @@ import {PanelModule} from 'primeng/panel';
 import { MenuModule } from 'primeng/menu';
 import {ImageModule} from 'primeng/image';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import {GalleriaModule} from 'primeng/galleria';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { MenuAdminComponent } from './menu-admin/menu-admin.component';
     RouterModule,
     PanelModule,
     MenuModule,
-    ImageModule
+    ImageModule,
+    GalleriaModule
   ],
   exports: [
     MenuInicialComponent
