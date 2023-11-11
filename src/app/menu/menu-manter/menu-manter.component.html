@@ -72,23 +72,6 @@
                 
             </div>
 
-            <div class="flex" *ngIf="dadosEstabelecimento.motive.length > 0">
-                <div class="col-lg-4 box-comp">
-                    <span class="p-float-label">
-                        <textarea
-                            [rows]="5" 
-                            [cols]="30" 
-                            [(ngModel)]="dadosEstabelecimento.motive"
-                            pInputTextarea 
-                            [autoResize]="false"
-                            [disabled]="true">
-                        </textarea>
-                        <label class="width" for="float-input">Motivo da Rejeição</label>
-                    </span>
-                </div>
-            
-            </div>
-
         </p-panel>
 
         <p-panel header="Imagens" [toggleable]="false">

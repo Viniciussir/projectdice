@@ -50,7 +50,7 @@ export class MenuAdminComponent implements OnInit {
     this.id = dados.id
     this.userId = dados.userId
     this.operacao = Operacao.ADMIN;
-    this.desabilitarCamposManter = true;
+    this.desabilitarCamposManter = false;
     this.acessarDadosTelaManter = true;
   }
 

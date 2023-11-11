@@ -177,6 +177,7 @@ export class MenuManterComponent implements OnInit {
         for (let i = 0; i < data.length; i++) {
           if(data[i].id == this.id){
             this.ajustarObjetosDropdown(data[i]);
+            this.verificaMotivoRejeicao(data[i]);
           }          
         }  
       } else {
@@ -225,6 +226,12 @@ export class MenuManterComponent implements OnInit {
         code: dados.city,
         name: dados.city
       }      
+    }
+  }
+
+  verificaMotivoRejeicao(dados:any){
+    if(dados.motive){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: dados.motive, life: 3000});
     }
   }
   //#endregion
@@ -347,27 +354,6 @@ export class MenuManterComponent implements OnInit {
     return true;
   }
 
-  validarCamposHora(situacao: string, horarioInicial: string, horarioFinal: string): string | null {
-    // Verifica se a situação é "aberta"
-    if (situacao.toLowerCase() === 'aberta') {
-      // Verifica os campos de horário se não estão vazios
-      if (horarioInicial.trim() === '' || horarioFinal.trim() === '') {
-        return 'Erro: Os campos de horário não podem estar vazios.';
-      }
-  
-      // Expressão regular para o formato "00:00"
-      const padraoHora = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
-  
-      // Verifica se os horários estão no formato correto
-      if (!padraoHora.test(horarioInicial) || !padraoHora.test(horarioFinal)) {
-        return 'Erro: Os campos de horário devem estar no formato "00:00".';
-      }
-    }
-  
-    // Nenhum erro encontrado, retorna null
-    return null;
-  }
-
   gravar(tipoOperacao:any) {
     let horario:any [] = [];
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
@@ -437,9 +423,9 @@ export class MenuManterComponent implements OnInit {
       horario.push({
         "id": this.horarioFuncionamento[i].id,
         "dia": this.horarioFuncionamento[i].dia,
-        "horaInicial": this.horarioFuncionamento[i].horaInicial.code,
-        "horaFinal": this.horarioFuncionamento[i].horaFinal.code,
-        "Situacao": this.horarioFuncionamento[i].Situacao.code,
+        "horaInicial": this.horarioFuncionamento[i].horaInicial,
+        "horaFinal": this.horarioFuncionamento[i].horaFinal,
+        "Situacao": this.horarioFuncionamento[i].Situacao,
       })
     }
     let dados = {
@@ -449,7 +435,7 @@ export class MenuManterComponent implements OnInit {
       "description": this.dadosEstabelecimento.description,
       "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
       "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
-      "image" : "",
+      "image" :  this.uploadedFiles.map(item => item.url),
       "openingHours": horario,
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
@@ -457,7 +443,9 @@ export class MenuManterComponent implements OnInit {
       "city" : this.selecaoCidadesUF.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
-      "status" : "ATIVO"
+      "status" : "ATIVO",
+      "username" : this.username,
+      "motive" : "",
     }
     this.menuAcessoService.alterarDados(dados).subscribe(response => {
       this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Aprovado.', life: 3000});
@@ -482,9 +470,9 @@ export class MenuManterComponent implements OnInit {
       horario.push({
         "id": this.horarioFuncionamento[i].id,
         "dia": this.horarioFuncionamento[i].dia,
-        "horaInicial": this.horarioFuncionamento[i].horaInicial.code,
-        "horaFinal": this.horarioFuncionamento[i].horaFinal.code,
-        "Situacao": this.horarioFuncionamento[i].Situacao.code,
+        "horaInicial": this.horarioFuncionamento[i].horaInicial,
+        "horaFinal": this.horarioFuncionamento[i].horaFinal,
+        "Situacao": this.horarioFuncionamento[i].Situacao,
       })
     }
     let dados = {
@@ -494,7 +482,7 @@ export class MenuManterComponent implements OnInit {
       "description": this.dadosEstabelecimento.description,
       "categories" : this.dadosEstabelecimento.categories.map(item => item.name),
       "basicInformation" : this.dadosEstabelecimento.basicInformation.map(item => item.name),
-      "image" : "",
+      "image" :  this.uploadedFiles.map(item => item.url),
       "openingHours": horario,
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
@@ -503,7 +491,8 @@ export class MenuManterComponent implements OnInit {
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
       "status" : "REJEITADO",
-      "motive" : this.dadosEstabelecimento.motive
+      "username" : this.username,
+      "motive" : this.dadosEstabelecimento.motive,
     }
     this.menuAcessoService.alterarDados(dados).subscribe(response => {
       this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Reprovado.', life: 3000});
