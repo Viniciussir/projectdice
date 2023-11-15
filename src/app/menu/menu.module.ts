@@ -48,6 +48,7 @@ import {ImageModule} from 'primeng/image';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import {GalleriaModule} from 'primeng/galleria';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 
 @NgModule({
@@ -101,7 +102,8 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
     MenuModule,
     ImageModule,
     GalleriaModule,
-    ToggleButtonModule
+    ToggleButtonModule,
+    SelectButtonModule
   ],
   exports: [
     MenuInicialComponent

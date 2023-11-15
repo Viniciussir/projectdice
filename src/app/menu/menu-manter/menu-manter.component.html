@@ -227,97 +227,29 @@
                             <th>Horário de abertura</th>
                             <th>Horário de fechamento</th>
                             <th>Situação</th>
+                            <th></th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-horarioFuncionamento>
                         <tr>
+                            <td>{{horarioFuncionamento.dia}}</td>
+
+                            <td>{{horarioFuncionamento.horaInicial}}</td>
+
+                            <td>{{horarioFuncionamento.horaFinal}}</td>
+
+                            <td>{{horarioFuncionamento.Situacao}}</td>
+
                             <td>
-                                <p-cellEditor>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.dia}}
-                                    </ng-template>
-                                </p-cellEditor>
+                                <button 
+                                    pButton 
+                                    pRipple 
+                                    icon="pi pi-pencil" 
+                                    class="p-button-rounded p-button-success p-mr-2" 
+                                    (click)="editarHorario(horarioFuncionamento)"
+                                    [disabled]="desabilitarCamposManter">
+                                </button>
                             </td>
-
-                            <td pEditableColumn *ngIf="!desabilitarCamposManter">
-                                <p-cellEditor>
-                                    <ng-template pTemplate="input">
-                                        <p-inputMask 
-                                            inputId="inputmask" 
-                                            mask="99:99" 
-                                            [maxlength]="5"
-                                            placeholder="00:00"
-                                            class="width" 
-                                            id="float-input" 
-                                            type="text" 
-                                            [(ngModel)]="horarioFuncionamento.horaInicial">
-                                        </p-inputMask>
-                                    </ng-template>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaInicial}}
-                                    </ng-template>
-                                </p-cellEditor>
-                            </td>
-
-                            <td pEditableColumn *ngIf="!desabilitarCamposManter">
-                                <p-cellEditor>
-                                    <ng-template pTemplate="input">
-                                        <p-inputMask 
-                                            inputId="inputmask" 
-                                            mask="99:99" 
-                                            [maxlength]="5"
-                                            placeholder="00:00"
-                                            class="width" 
-                                            id="float-input" 
-                                            type="text" 
-                                            [(ngModel)]="horarioFuncionamento.horaFinal">
-                                        </p-inputMask>
-                                    </ng-template>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaFinal}}
-                                    </ng-template>
-                                </p-cellEditor>
-                            </td>
-
-                            <td pEditableColumn *ngIf="!desabilitarCamposManter">
-                                <p-cellEditor>
-                                    <ng-template pTemplate="input">
-                                        <input 
-                                        type="text"  
-                                        [(ngModel)]="horarioFuncionamento.Situacao"
-                                        pInputText
-                                        placeholder="Aberto ou Fechado?">
-                                    </ng-template>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.Situacao}}
-                                    </ng-template>
-                                </p-cellEditor>
-                            </td>
-
-                            <td *ngIf="desabilitarCamposManter">
-                                <p-cellEditor>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaInicial}}
-                                    </ng-template>
-                                </p-cellEditor>
-                            </td>
-
-                            <td *ngIf="desabilitarCamposManter">
-                                <p-cellEditor>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.horaFinal}}
-                                    </ng-template>
-                                </p-cellEditor>
-                            </td>
-
-                            <td *ngIf="desabilitarCamposManter">
-                                <p-cellEditor>
-                                    <ng-template pTemplate="output">
-                                        {{horarioFuncionamento.Situacao}}
-                                    </ng-template>
-                                </p-cellEditor>
-                            </td>
-
                         </tr>
                     </ng-template>
                 </p-table>
@@ -417,6 +349,64 @@
             icon="pi pi-check"
             iconPos="left" 
             label="Voltar">
+        </button>
+
+    </div>
+
+</p-dialog>
+
+<p-dialog header="Editar Horário" [(visible)]="exibirDialogHorarioFuncionamento" class="dialog-horario" [blockScroll]="true">
+
+    <input 
+        class="width" 
+        type="text" 
+        [(ngModel)]="selecaoHorarioFuncionamento.dia" 
+        pInputText
+        [disabled]="true">
+
+    <p-inputMask 
+        [disabled]="!selecaoSituacao"
+        inputId="inputmask" 
+        mask="99:99" 
+        [maxlength]="5"
+        placeholder="00:00"
+        class="width" 
+        id="float-input" 
+        type="text" 
+        [(ngModel)]="selecaoHorarioFuncionamento.horaInicial">
+    </p-inputMask>
+
+    <p-inputMask 
+        [disabled]="!selecaoSituacao"
+        inputId="inputmask" 
+        mask="99:99" 
+        [maxlength]="5"
+        placeholder="00:00"
+        class="width" 
+        id="float-input" 
+        type="text" 
+        [(ngModel)]="selecaoHorarioFuncionamento.horaFinal">
+    </p-inputMask>
+
+    <p-toggleButton 
+        onLabel="Aberto" 
+        offLabel="Fechado" 
+        [onIcon]="cssCheck" 
+        offIcon="pi pi-times" 
+        iconPos="right" 
+        [(ngModel)]="selecaoSituacao"
+        (onChange)="selecionarSituacao(selecaoSituacao)">
+    </p-toggleButton>
+
+    <div class="button-dialog">
+
+        <button 
+            class="p-button-outlined p-button-success"
+            (click)="salvarHorario(selecaoHorarioFuncionamento)" 
+            pButton 
+            type="button" 
+            iconPos="left" 
+            label="Atualizar">
         </button>
 
     </div>

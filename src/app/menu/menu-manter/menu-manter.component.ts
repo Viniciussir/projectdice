@@ -78,6 +78,7 @@ export class MenuManterComponent implements OnInit {
       "Situacao": ""
     }
   ];
+  selecaoHorarioFuncionamento: any = {};
 
   uploadedFiles: any[] = [];
   
@@ -107,6 +108,12 @@ export class MenuManterComponent implements OnInit {
   selecaoCidadesUF:any = '';
 
   exibirDialogMotivo:boolean = false;
+
+  exibirDialogHorarioFuncionamento:boolean = false;
+
+  selecaoSituacao:any = {}; 
+
+  cssCheck:string = "pi pi-check"
 
   constructor(
     private messageService: MessageService,
@@ -507,4 +514,35 @@ export class MenuManterComponent implements OnInit {
   }
   //#endregion
 
+  //#region Horario de Funcionamento
+  editarHorario(horario:any){
+    this.selecaoHorarioFuncionamento = horario;
+    if(horario.Situacao == "Aberto") {
+      this.selecaoSituacao = true;
+    } else {
+      this.selecaoSituacao = false;
+    }
+    this.exibirDialogHorarioFuncionamento = true;
+  }
+
+  salvarHorario(selecaoHorario:any){
+    for (let i = 0; i < this.horarioFuncionamento.length; i++) {
+      if(this.horarioFuncionamento[i].dia == selecaoHorario.dia){
+        this.horarioFuncionamento[i] = selecaoHorario;
+      }      
+    }
+    this.exibirDialogHorarioFuncionamento = false;
+    this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Horario de Funcionamento Atualizado.', life: 3000});
+  }
+
+  selecionarSituacao(situacao:any){
+    if(situacao){
+      this.selecaoHorarioFuncionamento.Situacao = "Aberto";
+    } else {
+      this.selecaoHorarioFuncionamento.Situacao = "Fechado";
+      this.selecaoHorarioFuncionamento.horaInicial = "";
+      this.selecaoHorarioFuncionamento.horaFinal = "";
+    }
+  }
+  //#endregion
 }

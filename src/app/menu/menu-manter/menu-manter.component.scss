@@ -36,6 +36,10 @@
 .button-dialog{
     display: flex;
     justify-content: space-between;
+
+    button {
+        width: 100%;
+    }
 }
 
 .image-content{
@@ -56,4 +60,22 @@
     height: 15vh;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
 }
-  
+
+.dialog-horario {
+    width: 25vw;
+    height: 60vh;
+    input {
+        margin-bottom: 1.5vw;
+    }
+
+    p-inputMask {
+        margin-bottom: 1.5vw;
+    }
+
+    p-toggleButton  {
+        display: flex;
+        width: 100% !important;
+        flex-direction: column;
+        margin-bottom: 1.5vw;
+    }
+}
