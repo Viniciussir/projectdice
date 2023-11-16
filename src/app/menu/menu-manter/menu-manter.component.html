@@ -160,11 +160,11 @@
                     <span class="p-float-label">
                         <p-dropdown 
                             class="width" 
-                            [ngStyle]="{'border': selecaoCidadesUF ? '' : '1px solid red', 
-                            'border-radius': selecaoCidadesUF ? '' : '6px'}"
-                            [options]="listaCidade" 
-                            [(ngModel)]="selecaoCidadesUF" 
-                            (onChange)="selecionarCidadeUf()"
+                            [ngStyle]="{'border': selecaoEstado ? '' : '1px solid red', 
+                            'border-radius': selecaoEstado ? '' : '6px'}"
+                            [options]="listaEstado" 
+                            [(ngModel)]="selecaoEstado" 
+                            (onChange)="selecionarEstado()"
                             optionLabel="name" 
                             [showClear]="true" 
                             [filter]="true"
@@ -174,13 +174,35 @@
                             [autoDisplayFirst]="false"
                             [disabled]="desabilitarCamposManter" >
                         </p-dropdown>
-                        <label [ngStyle]="{'color': selecaoCidadesUF ? '' : 'red'}" class="width" for="float-input">Cidade/UF</label>
+                        <label [ngStyle]="{'color': selecaoEstado ? '' : 'red'}" class="width" for="float-input">Estado</label>
                     </span>
                 </div> 
                
             </div>
 
             <div class="flex">
+
+                <div class="col-lg-4 box-comp">
+                    <span class="p-float-label">
+                        <p-dropdown 
+                            class="width" 
+                            [ngStyle]="{'border': selecaoCidade ? '' : '1px solid red', 
+                            'border-radius': selecaoCidade ? '' : '6px'}"
+                            [options]="listaCidade" 
+                            [(ngModel)]="selecaoCidade" 
+                            (onChange)="selecionarCidade()"
+                            optionLabel="name" 
+                            [showClear]="true" 
+                            [filter]="true"
+                            filterBy="name"
+                            filterPlaceholder="Pesquisar..."
+                            emptyFilterMessage="Nenhum registro encontrado"
+                            [autoDisplayFirst]="false"
+                            [disabled]="desabilitarCamposManter || !this.selecaoEstado">
+                        </p-dropdown>
+                        <label [ngStyle]="{'color': selecaoCidade ? '' : 'red'}" class="width" for="float-input">Cidade/UF</label>
+                    </span>
+                </div> 
 
                 <div class="col-lg-4 box-comp">
                     <span class="p-float-label">

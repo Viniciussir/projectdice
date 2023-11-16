@@ -33,49 +33,49 @@ export class MenuManterComponent implements OnInit {
       "dia": "Segunda-Feira",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+      "Situacao": "Fechado"
     },
     {
       "id": "2",
       "dia": "Terça-Feira",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+       "Situacao": "Fechado"
     },
     {
       "id": "3",
       "dia": "Quarta-Feira",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+       "Situacao": "Fechado"
     },
     {
       "id": "4",
       "dia": "Quinta-Feira",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+       "Situacao": "Fechado"
     },
     {
       "id": "5",
       "dia": "Sexta-Feira",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+       "Situacao": "Fechado"
     },
     {
       "id": "6",
       "dia": "Sabado",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+       "Situacao": "Fechado"
     },
     {
       "id": "7",
       "dia": "Domingo",
       "horaInicial": "",
       "horaFinal": "",
-      "Situacao": ""
+       "Situacao": "Fechado"
     }
   ];
   selecaoHorarioFuncionamento: any = {};
@@ -105,7 +105,10 @@ export class MenuManterComponent implements OnInit {
   ];
 
   listaCidade:any [] = [];
-  selecaoCidadesUF:any = '';
+  selecaoCidade:any = '';
+
+  listaEstado:any [] = [];
+  selecaoEstado:any = '';
 
   exibirDialogMotivo:boolean = false;
 
@@ -135,7 +138,7 @@ export class MenuManterComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.obterCidades();
+    await this.obterEstado();
     if(this.operacao == Operacao.ALTERAR || this.operacao == Operacao.DETALHAR || this.operacao == Operacao.ADMIN){
       this.buscarDados(this.userId);
     } else {
@@ -143,16 +146,55 @@ export class MenuManterComponent implements OnInit {
     }
   }
 
-  //#region Combo cidade
-  async obterCidades() {
+   //#region Combo Estado
+   async obterEstado() {
     try {
-      const cidades = await this.menuAcessoService.getCidades('SP').toPromise();
+      const estado = await this.menuAcessoService.getEstado().toPromise();
+      if (estado) {
+        const lista: any[] = [];
+  
+        for (let i = 0; i < estado.length; i++) {
+          lista.push({
+            'code': estado[i].sigla,
+            'name': estado[i].nome + ' - ' + estado[i].sigla,
+          });
+        }
+  
+        this.listaEstado = lista;
+      } else {
+        console.error('A chamada à API retornou um valor indefinido.');
+      }
+    } catch (error) {
+      console.error('Erro na chamada da API:', error);
+      throw error;
+    }
+  }
+
+  async selecionarEstado(){
+    if(this.selecaoEstado){
+      this.dadosEstabelecimento.state = this.selecaoEstado.code;
+      this.selecaoCidade = '';
+      this.listaCidade = [];
+      await this.obterCidades(this.selecaoEstado.code);
+    } else {
+      this.dadosEstabelecimento.state = '';
+      this.selecaoCidade = '';
+      this.listaCidade = [];
+      this.dadosEstabelecimento.city = '';
+    } 
+  }
+  //#endregion
+
+  //#region Combo cidade
+  async obterCidades(estado:any) {
+    try {
+      const cidades = await this.menuAcessoService.getCidades(estado).toPromise();
       if (cidades) {
         const lista: any[] = [];
   
         for (let i = 0; i < cidades.length; i++) {
           lista.push({
-            'code': cidades[i].nome + " - " + cidades[0].microrregiao.mesorregiao.UF.sigla,
+            'code': cidades[i].nome,
             'name': cidades[i].nome + " - " + cidades[0].microrregiao.mesorregiao.UF.sigla,
           });
         }
@@ -167,9 +209,9 @@ export class MenuManterComponent implements OnInit {
     }
   }
 
-  selecionarCidadeUf(){
-    if(this.selecaoCidadesUF){
-      this.dadosEstabelecimento.city = this.selecaoCidadesUF.name;
+  selecionarCidade(){
+    if(this.selecaoCidade){
+      this.dadosEstabelecimento.city = this.selecaoCidade.code;
     } else {
       this.dadosEstabelecimento.city = '';
     } 
@@ -196,7 +238,7 @@ export class MenuManterComponent implements OnInit {
     }
   } 
 
-  ajustarObjetosDropdown(dados:any){
+  async ajustarObjetosDropdown(dados:any){
     this.dadosEstabelecimento = dados;
     this.horarioFuncionamento = dados.openingHours
     for (let i = 0; i < dados.image.length; i++) {
@@ -228,11 +270,20 @@ export class MenuManterComponent implements OnInit {
       }
       this.dadosEstabelecimento.basicInformation = basicInformation;
     }
-    if(dados.city){
-      this.selecaoCidadesUF = {
+    if(dados.state){
+      for (let i = 0; i < this.listaEstado.length; i++) {
+        if(dados.state == this.listaEstado[i].code){
+          this.selecaoEstado = {
+            code: this.listaEstado[i].code,
+            name: this.listaEstado[i].name
+          }
+        }
+      }
+      await this.obterCidades(this.selecaoEstado.code);
+      this.selecaoCidade = {
         code: dados.city,
-        name: dados.city
-      }      
+        name: dados.city + ' - ' + dados.state
+      }
     }
   }
 
@@ -334,7 +385,7 @@ export class MenuManterComponent implements OnInit {
       this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
       return false;
     } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.number || !this.dadosEstabelecimento.district 
-      || !this.dadosEstabelecimento.city || !this.dadosEstabelecimento.zipCode){
+      || !this.dadosEstabelecimento.state || !this.dadosEstabelecimento.city ||!this.dadosEstabelecimento.zipCode){
         this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Endereço.', life: 3000});
       return false;
     }
@@ -384,7 +435,8 @@ export class MenuManterComponent implements OnInit {
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
       "district" : this.dadosEstabelecimento.district,
-      "city" : this.selecaoCidadesUF.code,
+      "state" : this.selecaoEstado.code,
+      "city" : this.selecaoCidade.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
       "status" : "AGUARDANDO ANALISE",
@@ -447,7 +499,8 @@ export class MenuManterComponent implements OnInit {
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
       "district" : this.dadosEstabelecimento.district,
-      "city" : this.selecaoCidadesUF.code,
+      "state" : this.selecaoEstado.code,
+      "city" : this.selecaoCidade.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
       "status" : "ATIVO",
@@ -494,7 +547,8 @@ export class MenuManterComponent implements OnInit {
       "street": this.dadosEstabelecimento.street,
       "number" : this.dadosEstabelecimento.number,
       "district" : this.dadosEstabelecimento.district,
-      "city" : this.selecaoCidadesUF.code,
+      "state" : this.selecaoEstado.code,
+      "city" : this.selecaoCidade.code,
       "zipCode" : this.dadosEstabelecimento.zipCode,
       "complement" : this.dadosEstabelecimento.complement,
       "status" : "REJEITADO",

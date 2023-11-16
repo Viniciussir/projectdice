@@ -1,638 +1,794 @@
 [
 	{
-	 "userId": "2",
-	 "name": "Ao Chopp do Gonzaga",
-	 "description": "Tradicional churrascaria combina o ambiente moderno com a seleção clássica de carnes, bebidas e sobremesas.",
-	 "categories": [
-	  "Bares",
-	  "Restaurante"
-	 ],
-	 "basicInformation": [
-	  "Refeição no Local",
-	  "Ambiente para Fumantes"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2001.JPG?alt=media&token=770fbe35-1a1e-44fe-9c7b-51dde34915fb",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2002.jpg?alt=media&token=34ad179f-9042-4e2c-a282-38bfa2d822cf",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2003.jpg?alt=media&token=b01c8ba3-11f2-4d42-9ea6-ffd0d89069d1",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2004.jpg?alt=media&token=61945edf-ae25-4545-9870-aae023bf4807"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "",
-	   "horaFinal": "",
-	   "Situacao": "Fechado"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:30",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:30",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:30",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:30",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "11:30",
-	   "horaFinal": "23:30",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "11:30",
-	   "horaFinal": "17:30",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Avenida Ana Costa",
-	 "number": 512,
-	 "district": "Gonzaga",
-	 "city": "Santos - SP",
-	 "zipCode": "11-060002",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "testeDice",
-	 "motive": "",
-	 "id": "1"
+	  "userId": "2",
+	  "name": "Ao Chopp do Gonzaga",
+	  "description": "Tradicional churrascaria combina o ambiente moderno com a seleção clássica de carnes, bebidas e sobremesas.",
+	  "categories": [
+		"Bares",
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Ambiente para Fumantes"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2001.JPG?alt=media&token=770fbe35-1a1e-44fe-9c7b-51dde34915fb",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2002.jpg?alt=media&token=34ad179f-9042-4e2c-a282-38bfa2d822cf",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2003.jpg?alt=media&token=b01c8ba3-11f2-4d42-9ea6-ffd0d89069d1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2004.jpg?alt=media&token=61945edf-ae25-4545-9870-aae023bf4807"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:30",
+		  "horaFinal": "23:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:30",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Ana Costa",
+	  "number": 512,
+	  "district": "Gonzaga",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-060002",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "testeDice",
+	  "motive": "",
+	  "id": "1"
 	},
 	{
-	 "userId": "2",
-	 "name": "Bodegaia Bar e Restaurante",
-	 "description": "Bem iluminado e com decoração simples, bar oferece entradas, porções, carnes e pratos especiais aos domingos.",
-	 "categories": [
-	  "Bares",
-	  "Restaurante"
-	 ],
-	 "basicInformation": [
-	  "Musica ao vivo",
-	  "Refeição no Local",
-	  "Para viagem"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBodegaia%20Bar%20e%20Restaurante%2001.jpg?alt=media&token=0071ab35-8752-4419-9fb5-e0598fef00b6",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBodegaia%20Bar%20e%20Restaurante%2002.jpg?alt=media&token=9af35951-148d-4c3d-ad4c-4256b45adf9c"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "",
-	   "horaFinal": "",
-	   "Situacao": "Fechado"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "11:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "11:00",
-	   "horaFinal": "20:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Rua República Argentina",
-	 "number": 80,
-	 "district": "Pompéia",
-	 "city": "Santos - SP",
-	 "zipCode": "11-065030",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "testeDice",
-	 "motive": "",
-	 "id": "2"
+	  "userId": "2",
+	  "name": "Bodegaia Bar e Restaurante",
+	  "description": "Bem iluminado e com decoração simples, bar oferece entradas, porções, carnes e pratos especiais aos domingos.",
+	  "categories": [
+		"Bares",
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Musica ao vivo",
+		"Refeição no Local",
+		"Para viagem"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBodegaia%20Bar%20e%20Restaurante%2001.jpg?alt=media&token=0071ab35-8752-4419-9fb5-e0598fef00b6",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBodegaia%20Bar%20e%20Restaurante%2002.jpg?alt=media&token=9af35951-148d-4c3d-ad4c-4256b45adf9c"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua República Argentina",
+	  "number": 80,
+	  "district": "Pompéia",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-065030",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "testeDice",
+	  "motive": "",
+	  "id": "2"
 	},
 	{
-	 "userId": "2",
-	 "name": "Cola na Base",
-	 "description": "Hamburgueria descolada e boêmia de opções autorais chamativas em pães especiais e guarnições com área externa.",
-	 "categories": [
-	  "Bares",
-	  "Restaurante",
-	  "Pub"
-	 ],
-	 "basicInformation": [
-	  "Musica ao vivo",
-	  "Ambiente para Fumantes",
-	  "Refeição no Local",
-	  "Para viagem"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2001.jpg?alt=media&token=eeea95e6-6f39-4085-b4b8-ab407414427a",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2002.jpg?alt=media&token=0b21a76e-dafe-44a6-94f5-3723c6d05fb9",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2003.jpg?alt=media&token=920fc543-fd67-45e6-a93a-102f7e77b60e"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "",
-	   "horaFinal": "",
-	   "Situacao": "Fechado"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "",
-	   "horaFinal": "",
-	   "Situacao": "Fechado"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "12:00",
-	   "horaFinal": "20:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Rua Alagoas",
-	 "number": 6,
-	 "district": "Gonzaga",
-	 "city": "Santos - SP",
-	 "zipCode": "11-065120",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "testeDice",
-	 "motive": "",
-	 "id": "3"
+	  "userId": "2",
+	  "name": "Cola na Base",
+	  "description": "Hamburgueria descolada e boêmia de opções autorais chamativas em pães especiais e guarnições com área externa.",
+	  "categories": [
+		"Bares",
+		"Restaurante",
+		"Pub"
+	  ],
+	  "basicInformation": [
+		"Musica ao vivo",
+		"Ambiente para Fumantes",
+		"Refeição no Local",
+		"Para viagem"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2001.jpg?alt=media&token=eeea95e6-6f39-4085-b4b8-ab407414427a",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2002.jpg?alt=media&token=0b21a76e-dafe-44a6-94f5-3723c6d05fb9",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2003.jpg?alt=media&token=920fc543-fd67-45e6-a93a-102f7e77b60e"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Alagoas",
+	  "number": 6,
+	  "district": "Gonzaga",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-065120",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "testeDice",
+	  "motive": "",
+	  "id": "3"
 	},
 	{
-	 "userId": "2",
-	 "name": "Bar Heinz",
-	 "description": "Bar tradicional especializado em cervejas artesanais e culinária alemã, incluindo carnes e frutos do mar.",
-	 "categories": [
-	  "Restaurante",
-	  "Bares",
-	  "Pub"
-	 ],
-	 "basicInformation": [
-	  "Refeição no Local",
-	  "Para viagem"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2001.jpg?alt=media&token=7ea6cf22-6e48-4a90-9702-5406af57e5f9",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2002.jpg?alt=media&token=42262d8f-57f3-4fc0-92b4-13d2da6bf610",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2003.jpg?alt=media&token=53935f44-7af4-4dda-ac23-b9b4d4f5ef7a"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "12:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "12:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Rua Doutor Lincoln Feliciano",
-	 "number": 104,
-	 "district": "Boqueirão",
-	 "city": "Santos - SP",
-	 "zipCode": "11-045560",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "testeDice",
-	 "motive": "",
-	 "id": "4"
+	  "userId": "2",
+	  "name": "Bar Heinz",
+	  "description": "Bar tradicional especializado em cervejas artesanais e culinária alemã, incluindo carnes e frutos do mar.",
+	  "categories": [
+		"Restaurante",
+		"Bares",
+		"Pub"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Para viagem"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2001.jpg?alt=media&token=7ea6cf22-6e48-4a90-9702-5406af57e5f9",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2002.jpg?alt=media&token=42262d8f-57f3-4fc0-92b4-13d2da6bf610",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2003.jpg?alt=media&token=53935f44-7af4-4dda-ac23-b9b4d4f5ef7a"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Doutor Lincoln Feliciano",
+	  "number": 104,
+	  "district": "Boqueirão",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-045560",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "testeDice",
+	  "motive": "",
+	  "id": "4"
 	},
 	{
-	 "userId": "2",
-	 "name": "Porks Santos",
-	 "description": "Porks, Porco & Chope & Blues. Gastropub que oferece chops, drinks, hamburgers artesanais e petiscos especializado em carne suína.",
-	 "categories": [
-	  "Pub",
-	  "Bares"
-	 ],
-	 "basicInformation": [
-	  "Musica ao vivo",
-	  "Refeição no Local"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2001.jpg?alt=media&token=e7859f8f-d245-452f-81c4-d39aff37ea78",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2002.jpg?alt=media&token=b2aac263-4e9e-4690-967f-33bdd29742c1",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2003.jpg?alt=media&token=186ec4fa-25a3-48a4-89b6-3d1076801ab9",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2004.jpg?alt=media&token=b2d3c1cd-faa3-4b39-a70c-30ef53abb17c"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "17:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Avenida Doutor Epitácio Pessoa",
-	 "number": 168,
-	 "district": "Embaré",
-	 "city": "Santos - SP",
-	 "zipCode": "11-045300",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "testeDice",
-	 "motive": "",
-	 "id": "5"
+	  "userId": "2",
+	  "name": "Porks Santos",
+	  "description": "Porks, Porco & Chope & Blues. Gastropub que oferece chops, drinks, hamburgers artesanais e petiscos especializado em carne suína.",
+	  "categories": [
+		"Pub",
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Musica ao vivo",
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2001.jpg?alt=media&token=e7859f8f-d245-452f-81c4-d39aff37ea78",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2002.jpg?alt=media&token=b2aac263-4e9e-4690-967f-33bdd29742c1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2003.jpg?alt=media&token=186ec4fa-25a3-48a4-89b6-3d1076801ab9",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FPorks%20Santos%2004.jpg?alt=media&token=b2d3c1cd-faa3-4b39-a70c-30ef53abb17c"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Doutor Epitácio Pessoa",
+	  "number": 168,
+	  "district": "Embaré",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-045300",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "testeDice",
+	  "motive": "",
+	  "id": "5"
 	},
 	{
-	 "userId": "2",
-	 "name": "Coisa Linda Music Bar",
-	 "description": "Bar conta com ambiente muito aconchegante, com atmosfera dos anos 50 e 60. As atrações musicais são variadas, incluindo rock, MPB, samba e pagode.",
-	 "categories": [
-	  "Bares",
-	  "Pub"
-	 ],
-	 "basicInformation": [
-	  "Musica ao vivo",
-	  "Refeição no Local"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCoisa%20Linda%20Music%20Bar%2003.jpg?alt=media&token=5a737b18-37bc-4dba-a0ce-cc7f5603eb24",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCoisa%20Linda%20Music%20Bar%2001.jpg?alt=media&token=d5dbd6b5-2f26-4d3f-bc52-f2a0eb95e934",
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCoisa%20Linda%20Music%20Bar%2002.jpg?alt=media&token=44ce32b3-e95a-464f-b2c9-2fe6d3c54b55"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "16:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "16:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "02:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "12:00",
-	   "horaFinal": "02:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "12:00",
-	   "horaFinal": "18:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Avenida Siqueira Campos",
-	 "number": 487,
-	 "district": "Embaré",
-	 "city": "Santos - SP",
-	 "zipCode": "11-045200",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "testeDice",
-	 "motive": "",
-	 "id": "6"
+	  "userId": "2",
+	  "name": "Coisa Linda Music Bar",
+	  "description": "Bar conta com ambiente muito aconchegante, com atmosfera dos anos 50 e 60. As atrações musicais são variadas, incluindo rock, MPB, samba e pagode.",
+	  "categories": [
+		"Bares",
+		"Pub"
+	  ],
+	  "basicInformation": [
+		"Musica ao vivo",
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCoisa%20Linda%20Music%20Bar%2003.jpg?alt=media&token=5a737b18-37bc-4dba-a0ce-cc7f5603eb24",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCoisa%20Linda%20Music%20Bar%2001.jpg?alt=media&token=d5dbd6b5-2f26-4d3f-bc52-f2a0eb95e934",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCoisa%20Linda%20Music%20Bar%2002.jpg?alt=media&token=44ce32b3-e95a-464f-b2c9-2fe6d3c54b55"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Siqueira Campos",
+	  "number": 487,
+	  "district": "Embaré",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-045200",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "testeDice",
+	  "motive": "",
+	  "id": "6"
 	},
 	{
-	 "userId": "3",
-	 "name": "Naus ",
-	 "description": "Restaurante e Bar",
-	 "categories": [
-	  "Bares",
-	  "Restaurante"
-	 ],
-	 "basicInformation": [
-	  "Ambiente para Fumantes",
-	  "Refeição no Local"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fnaus.jpg?alt=media&token=1b5627da-aa4b-410b-956a-474ef557294f"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:45",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:45",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "12:00",
-	   "horaFinal": "23:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Rua Tolentino Figueiras",
-	 "number": 55,
-	 "district": "Gonzaga",
-	 "city": "Santos - SP",
-	 "zipCode": "11-060470",
-	 "complement": "Gonzaga",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "leticia",
-	 "motive": "",
-	 "id": "7"
+	  "userId": "3",
+	  "name": "Naus ",
+	  "description": "Restaurante e Bar",
+	  "categories": [
+		"Bares",
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Ambiente para Fumantes",
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fnaus.jpg?alt=media&token=1b5627da-aa4b-410b-956a-474ef557294f"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:45",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:45",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Tolentino Figueiras",
+	  "number": 55,
+	  "district": "Gonzaga",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-060470",
+	  "complement": "Gonzaga",
+	  "status": "ATIVO",
+	  "username": "leticia",
+	  "motive": "",
+	  "id": "7"
 	},
 	{
-	 "userId": "3",
-	 "name": "Meraki Beach Bar",
-	 "description": "Gastronomia Mediterrânea",
-	 "categories": [
-	  "Bares",
-	  "Restaurante",
-	  "Pub"
-	 ],
-	 "basicInformation": [
-	  "Refeição no Local",
-	  "Ambiente para Fumantes",
-	  "Para viagem"
-	 ],
-	 "image": [
-	  "https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmeraki.jpg?alt=media&token=d90b8e16-1a83-4f8d-b840-9a691293be4e"
-	 ],
-	 "openingHours": [
-	  {
-	   "id": "1",
-	   "dia": "Segunda-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "2",
-	   "dia": "Terça-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "3",
-	   "dia": "Quarta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "4",
-	   "dia": "Quinta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "5",
-	   "dia": "Sexta-Feira",
-	   "horaInicial": "17:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "6",
-	   "dia": "Sabado",
-	   "horaInicial": "12:00",
-	   "horaFinal": "01:00",
-	   "Situacao": "Aberto"
-	  },
-	  {
-	   "id": "7",
-	   "dia": "Domingo",
-	   "horaInicial": "12:00",
-	   "horaFinal": "00:00",
-	   "Situacao": "Aberto"
-	  }
-	 ],
-	 "street": "Av Bartolomeu de Gusmão",
-	 "number": 119,
-	 "district": "Aparecida",
-	 "city": "Santos - SP",
-	 "zipCode": "11-045401",
-	 "complement": "",
-	 "status": "AGUARDANDO ANALISE",
-	 "username": "leticia",
-	 "motive": "",
-	 "id": "8"
+	  "userId": "3",
+	  "name": "Meraki Beach Bar",
+	  "description": "Gastronomia Mediterrânea",
+	  "categories": [
+		"Bares",
+		"Restaurante",
+		"Pub"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Ambiente para Fumantes",
+		"Para viagem"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmeraki.jpg?alt=media&token=d90b8e16-1a83-4f8d-b840-9a691293be4e"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Av Bartolomeu de Gusmão",
+	  "number": 119,
+	  "district": "Aparecida",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11-045401",
+	  "complement": "",
+	  "status": "REJEITADO",
+	  "username": "leticia",
+	  "motive": "Gentileza anexar uma foto da fachada para poder gerar a aprovação do estabelecimento.",
+	  "id": "8"
+	},
+	{
+	  "userId": "3",
+	  "name": "Cine Arte",
+	  "description": "Posto 4",
+	  "categories": [
+		"Cinemas"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcinearte.jpg?alt=media&token=1bec1827-be52-445a-9de8-ccef51ad7e6a"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Av. Vicente de Carvalho",
+	  "number": 1,
+	  "district": "Gonzaga",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11045-501",
+	  "complement": "Posto 4",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "leticia",
+	  "motive": "",
+	  "id": "9"
+	},
+	{
+	  "userId": "3",
+	  "name": "Cine Arte",
+	  "description": "Posto 4",
+	  "categories": [
+		"Cinemas"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcinearte.jpg?alt=media&token=1bec1827-be52-445a-9de8-ccef51ad7e6a"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "16:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Av. Vicente de Carvalho",
+	  "number": 1,
+	  "district": "Gonzaga",
+	  "state": "SP",
+	  "city": "Santos",
+	  "zipCode": "11045-501",
+	  "complement": "Posto 4",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "leticia",
+	  "motive": "",
+	  "id": "10"
 	}
-   ]
+  ]

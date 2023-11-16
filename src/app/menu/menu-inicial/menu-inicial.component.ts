@@ -112,6 +112,7 @@ export class MenuInicialComponent implements OnInit {
             "street": "Exemplo",
             "number": "Exemplo",
             "district": "Exemplo",
+            "state": "Exemplo",
             "city": "Exemplo",
             "zipCode": "Exemplo",
             "complement": "Exemplo",

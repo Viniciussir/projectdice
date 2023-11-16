@@ -16,6 +16,11 @@ export class MenuAcessoService {
         return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados");
     }
 
+    getEstado(): Observable<any[]> {
+        const url = `${'https://servicodados.ibge.gov.br/api/v1/localidades'}/estados`;
+        return this.http.get<any[]>(url);
+    }
+
     getCidades(estado: string): Observable<any[]> {
         const url = `${'https://servicodados.ibge.gov.br/api/v1/localidades'}/estados/${estado}/municipios`;
         return this.http.get<any[]>(url);

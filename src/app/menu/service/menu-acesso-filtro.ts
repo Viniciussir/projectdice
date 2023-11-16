@@ -10,6 +10,7 @@ export class DadosEstabelecimento {
     street:any = '';
     number:any = '';
     district:any = '';
+    state:any = '';
     city:any = '';
     zipCode:any = '';
     complement:any = '';
