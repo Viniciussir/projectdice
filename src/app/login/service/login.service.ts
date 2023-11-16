@@ -17,4 +17,8 @@ export class LoginService {
         return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/user");
     }
 
+    alterarUsername(dados: any): Observable<any> {
+        return this.http.put("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/user/" + dados.id, dados);
+    }
+
 }

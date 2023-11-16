@@ -5,6 +5,7 @@ import { Operacao } from 'src/app/shared/operacao';
 import { RegisterFiltro } from './service/registerfiltro';
 import { Router } from '@angular/router';
 import { LoginService } from './service/login.service';
+import { ForgotPassword } from './service/forgotpassword';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   loginFiltro:LoginFiltro = new LoginFiltro();
   registerFiltro:RegisterFiltro = new RegisterFiltro();
+  forgotPassword:ForgotPassword = new ForgotPassword();
 
   operacao:any = '';
 
@@ -29,6 +31,11 @@ export class LoginComponent implements OnInit {
 
   indCadastroLogin:Boolean = false;
 
+  redefinirSenha:boolean = false;
+  ativarAlterarSenha:boolean = false;
+
+  confirmepassword:any = '';
+
   constructor(
     private router: Router,
     private messageService: MessageService, 
@@ -42,6 +49,7 @@ export class LoginComponent implements OnInit {
   //#region Validar Login
   verificaCamposLogin(){
     this.messageService.clear();
+    this.redefinirSenha = false;
     if(!this.loginFiltro.username && !this.loginFiltro.password){
       this.usernameInvalidLogin = true;
       this.passwordInvalidLogin = true;
@@ -78,6 +86,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/menu',userId, username]);
       } else {
         this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Usuário e Senha não encontrados.', life: 3000});
+        this.redefinirSenha = true;
       }
     },
       error => {
@@ -137,6 +146,7 @@ export class LoginComponent implements OnInit {
     this.usernameInvalidLogin = false;
     this.passwordInvalidLogin = false;
     this.indCadastroLogin = false;
+    this.ativarAlterarSenha = false;
   }
   //#endregion
   
@@ -146,4 +156,62 @@ export class LoginComponent implements OnInit {
   }
   //#endregion
 
+  //#region Alterar senha
+  exibirDialogAlterarSenha(){
+    this.forgotPassword = new ForgotPassword();
+    this.indCadastroLogin = true;
+    this.ativarAlterarSenha = true;
+  }
+
+  verificarCamposAlterarSenha(){
+    if(!this.forgotPassword.email && !this.forgotPassword.password && !this.confirmepassword){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Campos invalidos. Verifique os campos informados.', life: 3000});
+    } else if (!this.forgotPassword.email){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'E-mail invalido.', life: 3000});
+    }
+    else if (!this.forgotPassword.password || !this.confirmepassword || this.forgotPassword.password != this.confirmepassword){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Campos invalidos. Senhas não conferem ou não foram informadas.', life: 3000});
+    } else {
+      this.verificarEmailUser();
+    }  
+  }
+
+  verificarEmailUser(){
+    this.loginService.verificarUsername().subscribe(
+      response => {
+        if(response){
+          let temUserEmail:Boolean = false;
+          for (let i = 0; i < response.length; i++) {
+            if(response[i].email == this.forgotPassword.email){
+              temUserEmail = true;
+              this.forgotPassword.id = response[i].id;
+              this.forgotPassword.username = response[i].username;
+            } 
+          }
+          if(temUserEmail){
+            this.alterarSenha();
+          } else {
+            this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Campos invalidos. Verifique o email informado.', life: 3000});
+          }
+        }
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  alterarSenha(){
+    this.loginService.alterarUsername(this.forgotPassword).subscribe(
+      response => {
+        if(response){
+          this.router.navigate(['/menu',response.id, response.username]);
+        }
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+  //#endregion
 }

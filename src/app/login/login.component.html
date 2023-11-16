@@ -4,7 +4,7 @@
 
     <div class="login-form">
 
-      <div *ngIf="!indCadastroLogin">
+      <div *ngIf="!indCadastroLogin && !ativarAlterarSenha">
         <h2>Insira seu usuário</h2>
         <div class="form-group">
           <span class="p-float-label">
@@ -20,6 +20,7 @@
             <label for="float-input">Senha</label>
           </span>
           <small *ngIf="passwordInvalidLogin && !loginFiltro.password" id="username2-help" class="p-invalid" style="color: red;">Senha não foi informada.</small>
+          <small *ngIf="redefinirSenha" id="username2-help" class="p-invalid esqueceuHover" style="color: red;" (click)="exibirDialogAlterarSenha()">Esqueceu sua senha?</small>
         </div>
 
         <div class="form-group">
@@ -31,7 +32,7 @@
         </div>
       </div> <!--End Login-->
 
-      <div *ngIf="indCadastroLogin">
+      <div *ngIf="indCadastroLogin && !ativarAlterarSenha">
         <i class="pi pi-arrow-left iconRetorno" (click)="retornarLogin()" style="font-size: 2rem"></i>
         <h2>Realize seu cadastro</h2>
         <div class="form-group">
@@ -62,8 +63,38 @@
           <button style="width: 100%;" class="p-button-outlined p-button-success" (click)="verificaCamposCadastro()" pButton type="button" label="Cadastrar"></button>
         </div>
       </div> <!--End Cadastro-->
+
+      <div *ngIf="ativarAlterarSenha">
+        <i class="pi pi-arrow-left iconRetorno" (click)="retornarLogin()" style="font-size: 2rem"></i>
+        <h2>Altere sua senha</h2>
+        <div class="form-group">
+          <span class="p-float-label">
+            <input class="width" id="float-input" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" [(ngModel)]="forgotPassword.email" pInputText/>
+            <label for="float-input">E-mail</label>
+          </span>
+        </div>
+        
+        <div class="form-group">
+          <span class="p-float-label">
+            <p-password class="width" [(ngModel)]="forgotPassword.password" [toggleMask]="true"></p-password> 
+            <label class="width" for="inputtext">Nova Senha</label>
+          </span>
+         </div>
+
+        <div class="form-group">
+          <span class="p-float-label">
+            <p-password class="width" [(ngModel)]="confirmepassword" [toggleMask]="true"></p-password> 
+            <label class="width" for="inputtext">Confirmação da Senha</label>
+          </span>
+       </div>
+      
+        <div class="form-group">
+          <button style="width: 100%;" class="p-button-outlined p-button-success" (click)="verificarCamposAlterarSenha()" pButton type="button" label="Alterar Senha"></button>
+        </div>
+      </div>
   
     </div> <!--End Login Form-->
+
     <div class="logo-form">
       <img src="assets/img/logo.jpeg" class="logo-form-img">
     </div>
