@@ -118,6 +118,8 @@ export class MenuManterComponent implements OnInit {
 
   cssCheck:string = "pi pi-check"
 
+  botaoBloqueado: boolean = false;
+
   constructor(
     private messageService: MessageService,
     private menuAcessoService : MenuAcessoService,
@@ -413,6 +415,7 @@ export class MenuManterComponent implements OnInit {
   }
 
   gravar(tipoOperacao:any) {
+    this.botaoBloqueado = true;
     let horario:any [] = [];
     for (let i = 0; i < this.horarioFuncionamento.length; i++) {
       horario.push({
@@ -466,6 +469,9 @@ export class MenuManterComponent implements OnInit {
         }
       );
     }
+    setTimeout(() => {
+      this.botaoBloqueado = false;
+    }, 1000);
   }
   //#endregion
 

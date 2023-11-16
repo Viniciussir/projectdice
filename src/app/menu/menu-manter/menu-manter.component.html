@@ -309,7 +309,7 @@
 
                 <button 
                     *ngIf="operacao != 'admin'"
-                    [disabled]="desabilitarCamposManter"
+                    [disabled]="desabilitarCamposManter || botaoBloqueado"
                     class="p-button-outlined p-button-success"
                     (click)="salvar()" 
                     pButton 
