@@ -2,84 +2,200 @@
 
 <div *ngIf="!acessarDadosTelaManter" class="header">   
 
-    <p-toolbar styleClass="p-mb-4">
+    <div *ngIf="!indPodeExibirTabelaUser">
 
-        <ng-template pTemplate="right">
-            <button 
-                pButton pRipple 
-                label="Voltar" 
-                icon="pi pi-arrow-left" 
-                class="p-button-danger p-mr-2" 
-                (click)="voltar()">
-            </button>
+        <p-toolbar styleClass="p-mb-4">
 
-        </ng-template>
+            <ng-template pTemplate="right">
+    
+                <button 
+                    *ngIf="!indPodeExibirTabelaUser"
+                    style="margin-right: 1vw;"
+                    pButton 
+                    label="Listar Usuario" 
+                    class="p-button-outlined p-button-help"
+                    (click)="listarIndUser(true)">
+                </button>
+    
+                <button 
+                    *ngIf="indPodeExibirTabelaUser"
+                    style="margin-right: 1vw;"
+                    pButton 
+                    label="Listar estabelecimentos" 
+                    class="p-button-outlined p-button-help"
+                    (click)="listarIndUser(false)">
+                </button>
+    
+                <button 
+                    pButton 
+                    label="Voltar" 
+                    icon="pi pi-arrow-left" 
+                    class="p-button-outlined p-button-danger"
+                    (click)="voltar()">
+                </button>
+    
+            </ng-template>
+    
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" [(ngModel)]="valorFiltro" (input)="dt.filterGlobal(valorFiltro, 'contains')" placeholder="Search..." />
+            </span>
+    
+        </p-toolbar>
+         
+        <p-table 
+            #dt
+            [value]="dados" 
+            [rows]="10" 
+            [paginator]="true" 
+            [globalFilterFields]="[
+                'name',
+                'username',
+                'city',
+                'status'
+            ]"
+            [(selection)]="dadoSelecionado" 
+            [rowHover]="true" 
+            dataKey="id"
+            currentPageReportTemplate="Mostrando {first} para {last} de {totalRecords} entradas" 
+            [showCurrentPageReport]="true">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 3rem">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th style="width: 20vw" pSortableColumn="name">Nome<p-sortIcon field="name"></p-sortIcon></th>
+                    <th style="width: 10vw">Imagem</th>
+                    <th style="width: 10vw" pSortableColumn="username">Usuário<p-sortIcon field="username"></p-sortIcon></th>
+                    <th style="width: 10vw" pSortableColumn="city">Cidade<p-sortIcon field="city"></p-sortIcon></th>
+                    <th style="width: 20vw"pSortableColumn="status">Status<p-sortIcon field="status"></p-sortIcon></th>
+                    <th style="width: 25vw" pSortableColumn="motive">Motivo Rejeição<p-sortIcon field="motive"></p-sortIcon></th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dados>
+                <tr>
+                    <td>
+                        <p-tableCheckbox [value]="dados"></p-tableCheckbox>
+                    </td>
+                    <td>{{dados.name}}</td>
+                    <td><img [src]="dados.image" [alt]="dados.image" width="100" class="shadow-4" /></td>
+                    <td>{{dados.username}}</td>
+                    <td>{{dados.city}}</td>
+                    <td>{{dados.status}}</td>
+                    <td>{{dados.motive}}</td>
+                    <td>
+                        <div class="flex">
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(dados)"></button>
+                            <button style="margin-left:1vw;" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deletarDados(dados)"></button>    
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    No total existem {{dados ? dados.length : 0 }}.
+                </div>
+            </ng-template>
+    
+        </p-table>
 
-        <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input pInputText type="text" [(ngModel)]="valorFiltro" (input)="dt.filterGlobal(valorFiltro, 'contains')" placeholder="Search..." />
-        </span>
+    </div>
 
-    </p-toolbar>
-                
-    <p-table 
-        #dt 
-        [value]="dados" 
-        [rows]="10" 
-        [paginator]="true" 
-        [globalFilterFields]="[
-            'name',
-            'country.name',
-            'representative.name',
-            'status'
-        ]"
-        [(selection)]="dadoSelecionado" 
-        [rowHover]="true" 
-        dataKey="id"
-        currentPageReportTemplate="Mostrando {first} para {last} de {totalRecords} entradas" 
-        [showCurrentPageReport]="true">
-        <ng-template pTemplate="header">
-            <tr>
-                <th style="width: 3rem">
-                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                </th>
-                <th pSortableColumn="name">Nome<p-sortIcon field="name"></p-sortIcon></th>
-                <th pSortableColumn="description">Descrição<p-sortIcon field="description"></p-sortIcon></th>
-                <th pSortableColumn="username">Usuário<p-sortIcon field="username"></p-sortIcon></th>
-                <th pSortableColumn="categories">Categorias<p-sortIcon field="categories"></p-sortIcon></th>
-                <th pSortableColumn="city">Cidade/UF<p-sortIcon field="city"></p-sortIcon></th>
-                <th pSortableColumn="status">status<p-sortIcon field="status"></p-sortIcon></th>
-                <th pSortableColumn="motive">Motivo Rejeição<p-sortIcon field="motive"></p-sortIcon></th>
-                <th></th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-dados>
-            <tr>
-                <td>
-                    <p-tableCheckbox [value]="dados"></p-tableCheckbox>
-                </td>
-                <td>{{dados.name}}</td>
-                <td>{{dados.description}}</td>
-                <td>{{dados.username}}</td>
-                <td>{{dados.categories}}</td>
-                <td>{{dados.city}}</td>
-                <td>{{dados.status}}</td>
-                <td>{{dados.motive}}</td>
-                <td>
-                    <div class="flex">
-                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(dados)"></button>
-                        <button style="margin-left:1vw;" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deletarDados(dados)"></button>    
-                    </div>
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="summary">
-            <div class="p-d-flex p-ai-center p-jc-between">
-                No total existem {{dados ? dados.length : 0 }}.
-            </div>
-        </ng-template>
+    <div *ngIf="indPodeExibirTabelaUser">
 
-    </p-table>
+        <p-toolbar styleClass="p-mb-4">
+
+            <ng-template pTemplate="right">
+    
+                <button 
+                    *ngIf="!indPodeExibirTabelaUser"
+                    style="margin-right: 1vw;"
+                    pButton 
+                    label="Listar Usuario" 
+                    class="p-button-outlined p-button-help"
+                    (click)="listarIndUser(true)">
+                </button>
+    
+                <button 
+                    *ngIf="indPodeExibirTabelaUser"
+                    style="margin-right: 1vw;"
+                    pButton 
+                    label="Listar estabelecimentos" 
+                    class="p-button-outlined p-button-help"
+                    (click)="listarIndUser(false)">
+                </button>
+    
+                <button 
+                    pButton 
+                    label="Voltar" 
+                    icon="pi pi-arrow-left" 
+                    class="p-button-outlined p-button-danger"
+                    (click)="voltar()">
+                </button>
+    
+            </ng-template>
+    
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" [(ngModel)]="valorFiltro" (input)="dt.filterGlobal(valorFiltro, 'contains')" placeholder="Search..." />
+            </span>
+    
+        </p-toolbar>
+         
+        <p-table 
+            #dt
+            [value]="dadosUser" 
+            [rows]="10" 
+            [paginator]="true" 
+            [globalFilterFields]="[
+                'id',
+                'username',
+                'email',
+            ]"
+            [(selection)]="dadoSelecionadoUser" 
+            [rowHover]="true" 
+            dataKey="id"
+            currentPageReportTemplate="Mostrando {first} para {last} de {totalRecords} entradas" 
+            [showCurrentPageReport]="true">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 3rem">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th pSortableColumn="id">Id<p-sortIcon field="id"></p-sortIcon></th>
+                    <th pSortableColumn="username">Usuario<p-sortIcon field="username"></p-sortIcon></th>
+                    <th pSortableColumn="email">E-mail<p-sortIcon field="email"></p-sortIcon></th>
+                    <th pSortableColumn="adminUser">Permissão administradora<p-sortIcon field="adminUser"></p-sortIcon></th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dadosUser>
+                <tr>
+                    <td>
+                        <p-tableCheckbox [value]="dadosUser"></p-tableCheckbox>
+                    </td>
+                    <td>{{dadosUser.id}}</td>
+                    <td>{{dadosUser.username}}</td>
+                    <td>{{dadosUser.email}}</td>
+                    <td>{{dadosUser.adminUser == true? 'Sim': 'Não'}}</td>
+                    <td>
+                        <div class="flex">
+                            <button *ngIf="dadosUser.adminUser == false" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="atribuirPermissao(dadosUser)"></button>
+                            <button *ngIf="dadosUser.adminUser == true" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="retirarPermissao(dadosUser)"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    No total existem {{dadosUser ? dadosUser.length : 0 }}.
+                </div>
+            </ng-template>
+    
+        </p-table>
+
+    </div>
 
 </div>
 
@@ -91,3 +207,5 @@
   [desabilitarCamposManter]="desabilitarCamposManter"
   [acessarDadosTelaManter]="acessarDadosTelaManter">
 </app-menu-manter>
+
+<p-confirmDialog header="Alteração de permissão" icon="pi pi-exclamation-triangle"></p-confirmDialog>
