@@ -181,8 +181,7 @@
                     <td>{{dadosUser.adminUser == true? 'Sim': 'Não'}}</td>
                     <td>
                         <div class="flex">
-                            <button *ngIf="dadosUser.adminUser == false" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="atribuirPermissao(dadosUser)"></button>
-                            <button *ngIf="dadosUser.adminUser == true" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="retirarPermissao(dadosUser)"></button>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="showConfirmationDialog(dadosUser)"></button>
                         </div>
                     </td>
                 </tr>
@@ -208,4 +207,12 @@
   [acessarDadosTelaManter]="acessarDadosTelaManter">
 </app-menu-manter>
 
-<p-confirmDialog header="Alteração de permissão" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<p-dialog header="Alteração de permissão" [(visible)]="exibirDialogConfirmacao" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <p>
+       {{message}}
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="salvarAlteracaoPermissao(dadosUserPermissao)" label="Sim" class="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="hideConfirmationDialog()" label="Não"></p-button>
+    </ng-template>
+</p-dialog>

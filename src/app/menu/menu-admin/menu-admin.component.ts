@@ -32,6 +32,10 @@ export class MenuAdminComponent implements OnInit {
   indPodeExibirTabelaUser:boolean = false;
 
   dadosUserPermissao:any = {};
+
+  exibirDialogConfirmacao:boolean = false;
+
+  message:any = '';
   
   constructor(
     private router: Router,
@@ -81,34 +85,28 @@ export class MenuAdminComponent implements OnInit {
     this.indPodeExibirTabelaUser = event;
   }
 
-  atribuirPermissao(dados:any) {
-    this.confirmationService.confirm({
-        message: 'Você deseja tornar o acesso desse usuário como administrador?',
-        accept: () => {
-          this.salvarAlteracaoPermissao(dados, true);
-        }
-    });
+  showConfirmationDialog(dadosUser: any) {
+    this.message = dadosUser.adminUser ? 'Você deseja retirar o acesso administrador desse usuário?' : 'Você deseja tornar o acesso desse usuário como administrador?';
+    this.dadosUserPermissao = dadosUser;
+    this.exibirDialogConfirmacao = true;
   }
 
-  retirarPermissao(dados:any) {
-    this.confirmationService.confirm({
-        message: 'Você deseja retirar o acesso administrador desse usuário??',
-        accept: () => {
-          this.salvarAlteracaoPermissao(dados, false);
-        }
-    });
-  }
-
-  salvarAlteracaoPermissao(dados:any, permissao:any){
-    dados.adminUser = permissao;
+  salvarAlteracaoPermissao(dados:any){
+    dados.adminUser = dados.adminUser === true? false : true;
     this.menuAcessoService.alterarUsername(dados).subscribe(
       response => {
         dados = response;
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Alteração realizada.', life: 3000});
+        this.exibirDialogConfirmacao = false; 
       },
       error => {
         console.error('Erro ao adicionar dados:', error);
       }
     );
+  }
+
+  hideConfirmationDialog(){
+    this.exibirDialogConfirmacao = false; 
   }
 
 }
