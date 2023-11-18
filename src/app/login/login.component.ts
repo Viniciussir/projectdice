@@ -133,6 +133,7 @@ export class LoginComponent implements OnInit {
   }
 
   realizarCadastroUsername(){
+    this.registerFiltro.status = 'Ativo';
     this.loginService.adicionarUsername(this.registerFiltro).subscribe(response => {
       this.router.navigate(['/menu',response.id, response.username]);
       },
@@ -186,6 +187,7 @@ export class LoginComponent implements OnInit {
               temUserEmail = true;
               this.forgotPassword.id = response[i].id;
               this.forgotPassword.username = response[i].username;
+              this.forgotPassword.status = response[i].status;
             } 
           }
           if(temUserEmail){

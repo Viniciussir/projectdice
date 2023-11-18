@@ -26,12 +26,33 @@
             label="Voltar">
           </button>
         </div>
-        <div class="title">
-          <h3 >Lugares cadastrados</h3>
-        </div>
+
+        <button 
+          *ngIf="dadosUser.status == 'Inativo'"
+          [disabled]="botaoBloqueado"
+          class="p-button-outlined p-button-warning"
+          (click)="ativarConta()" 
+          pButton 
+          type="button"
+          icon="pi pi-user-edit"
+          iconPos="left" 
+          label="Ativar Conta">
+        </button>
+
+        <button 
+          *ngIf="dadosUser.status == 'Ativo'"
+          [disabled]="botaoBloqueado"
+          class="p-button-outlined p-button-warning"
+          (click)="desativarConta()" 
+          pButton 
+          type="button"
+          icon="pi pi-user-edit"
+          iconPos="left" 
+          label="Desativar Conta">
+        </button>
+
         <div class="button-add">
           <button 
-            style="width: 100%;" 
             class="p-button-outlined p-button-success"
             (click)="adicionarDados()" 
             pButton 
@@ -56,6 +77,7 @@
             <h4 *ngIf="dadosEstabelecimento.status == 'REJEITADO'" class="p-mb-1" style="color:red;">{{ dadosEstabelecimento.status }}</h4>
             <h4 *ngIf="dadosEstabelecimento.status == 'EXEMPLO'" class="p-mb-1" style="color:black;">{{ dadosEstabelecimento.status }}</h4>
             <div class="car-buttons p-mt-5">
+
               <button
                 pButton
                 pRipple
@@ -65,6 +87,7 @@
                 (click)="detalharDados(dadosEstabelecimento.id)"
                 [disabled]="dadosEstabelecimento.status == 'EXEMPLO'"
               ></button>
+
               <button
                 style="margin-left: 1vw;"
                 pButton
@@ -73,16 +96,28 @@
                 icon="pi pi-pencil"
                 class="p-button-rounded p-button-help"
                 (click)="alterarDados(dadosEstabelecimento.id)"
-                [disabled]="dadosEstabelecimento.Status == 'AGUARDANDO ANALISE' || dadosEstabelecimento.status == 'EXEMPLO'"
+                [disabled]="dadosEstabelecimento.Status == 'AGUARDANDO ANALISE' || dadosEstabelecimento.status == 'EXEMPLO' || dadosUser.status == 'Inativo'"
+              ></button>
+
+              <button
+                style="margin-left: 1vw;"
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-eye-slash"
+                class="p-button-rounded p-button-warning" 
+                (click)="desativarDado(dadosEstabelecimento)"
+                [disabled]="dadosEstabelecimento.status == 'INATIVO' || dadosUser.status == 'Inativo'"
               ></button>
 
               <button 
                 style="margin-left:1vw;" 
                 pButton pRipple 
                 icon="pi pi-trash" 
-                class="p-button-rounded p-button-warning" 
+                class="p-button-rounded p-button-danger"
                 (click)="deletarDados(dadosEstabelecimento)">
               </button>    
+
             </div>
           </div>
         </div>

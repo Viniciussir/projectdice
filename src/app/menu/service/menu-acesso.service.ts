@@ -34,10 +34,6 @@ export class MenuAcessoService {
         return this.http.put("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados/" + dados.id, dados);
     }
 
-    detalharDados(dados: any): Observable<any> {
-        return this.http.get("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados?userId=" + dados);
-    }
-
     deletarDados(id: any): Observable<any> {
         return this.http.delete("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/dados/" + id);
     }

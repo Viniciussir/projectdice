@@ -4,5 +4,6 @@ export class ForgotPassword {
     username:any = '';
     email:any = '';
     password:any = '';
+    status:any = '';
 
 }

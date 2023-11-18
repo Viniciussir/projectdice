@@ -45,17 +45,18 @@
 .header-title {
     display: flex;
     text-align: center; 
-    justify-content: space-between
-}
-
-.title{
-    margin-left: 1vw;
+    justify-content: space-between;
+    margin: 1vw;
 }
 
 .button-add{
     display: flex;
     align-items: center;
-    margin-right: 1vw;
+
+    button {
+        width: 10vw;
+        margin-right: 1vw;
+    }
 }
 
 .button-return{

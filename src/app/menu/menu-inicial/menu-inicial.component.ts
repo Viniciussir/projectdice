@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { MessageService } from 'primeng/api';
 import { Operacao } from 'src/app/shared/operacao';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-menu-inicial',
@@ -48,6 +49,9 @@ export class MenuInicialComponent implements OnInit {
 
   carregando:boolean = true;
 
+  dadosUser:any = {};
+  botaoBloqueado: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -76,6 +80,7 @@ export class MenuInicialComponent implements OnInit {
       let adminUser:boolean = false
       for (let i = 0; i < data.length; i++) {
         if(this.username == data[i].username){
+          this.dadosUser = data[i];
           if(data[i].adminUser == true){
             adminUser = true;
           }
@@ -158,6 +163,83 @@ export class MenuInicialComponent implements OnInit {
         console.error('Erro ao adicionar dados:', error);
       }
     );
+  }
+
+  desativarDado(dado:any){
+    dado.status = 'INATIVO';
+    this.menuAcessoService.alterarDados(dado).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Desativado.', life: 3000});
+      this.buscarDados();
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  ativarConta(){
+    this.botaoBloqueado = true;
+    this.dadosUser.status = 'Ativo';
+    this.menuAcessoService.alterarUsername(this.dadosUser).subscribe(
+      response => {
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Seu usuário foi ativado.", life: 3000});
+        this.carregando = true;
+        this.value = 0;
+        this.ngOnInit();
+        setTimeout(() => {
+          this.botaoBloqueado = false;
+        }, 1000);
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  desativarConta(){
+    this.botaoBloqueado = true;
+    this.dadosUser.status = 'Inativo';
+    this.menuAcessoService.alterarUsername(this.dadosUser).subscribe(
+      response => {
+        this.buscarEstabelecimentos();
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  async buscarEstabelecimentos(){
+    try{
+      let data = await firstValueFrom(this.menuAcessoService.buscarDados(this.userId));
+      if (data) {  
+        for (let i = 0; i < data.length; i++) {
+          await this.desativarEstabelecimentos(data[i])          
+        }  
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: "Seu Usuário foi desativado e todos os lugares cadastrados.", life: 3000});
+        this.carregando = true;
+        this.value = 0;
+        this.ngOnInit();
+        setTimeout(() => {
+          this.botaoBloqueado = false;
+        }, 1000);
+      } else {
+        console.error('A chamada à API retornou um valor indefinido.');
+      }
+    }
+    catch(error:any){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+    }
+  }
+
+  async desativarEstabelecimentos(dados:any){
+    dados.status = 'INATIVO';
+    try{
+      await firstValueFrom(this.menuAcessoService.alterarDados(dados));
+    }
+    catch(error:any){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+    }
   }
 
 }
