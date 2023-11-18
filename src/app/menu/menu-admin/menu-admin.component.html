@@ -185,11 +185,13 @@
                         <div class="flex">
                             <button 
                                 pButton pRipple icon="pi pi-pencil" 
+                                [disabled]="dadosUser.status == 'Inativo'"
                                 class="p-button-rounded p-button-success p-mr-2" 
                                 (click)="showConfirmationDialog(dadosUser)">
                             </button>
                             <button 
                                 *ngIf="dadosUser.status == 'Inativo'"
+                                [disabled]="dadosUser.adminUser == true"
                                 style="margin-left: 1vw;" 
                                 pButton pRipple 
                                 icon="pi pi-eye-slash" 
@@ -198,6 +200,7 @@
                             </button>
                             <button 
                                 *ngIf="dadosUser.status == 'Ativo'"
+                                [disabled]="dadosUser.adminUser == true"
                                 style="margin-left: 1vw;" 
                                 pButton pRipple 
                                 icon="pi pi-eye" 
