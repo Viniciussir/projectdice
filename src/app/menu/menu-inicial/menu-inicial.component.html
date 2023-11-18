@@ -53,6 +53,7 @@
 
         <div class="button-add">
           <button 
+            [disabled]="dadosUser.status == 'Inativo'"
             class="p-button-outlined p-button-success"
             (click)="adicionarDados()" 
             pButton 
