@@ -86,7 +86,7 @@
                     <td>{{dados.motive}}</td>
                     <td>
                         <div class="flex">
-                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(dados)"></button>
+                            <button [disabled]="dados.status == 'INATIVO'" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(dados)"></button>
                             <button style="margin-left:1vw;" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deletarDados(dados)"></button>    
                         </div>
                     </td>
@@ -166,6 +166,7 @@
                     <th pSortableColumn="id">Id<p-sortIcon field="id"></p-sortIcon></th>
                     <th pSortableColumn="username">Usuario<p-sortIcon field="username"></p-sortIcon></th>
                     <th pSortableColumn="email">E-mail<p-sortIcon field="email"></p-sortIcon></th>
+                    <th pSortableColumn="status">Status<p-sortIcon field="status"></p-sortIcon></th>
                     <th pSortableColumn="adminUser">Permissão administradora<p-sortIcon field="adminUser"></p-sortIcon></th>
                     <th></th>
                 </tr>
@@ -178,10 +179,31 @@
                     <td>{{dadosUser.id}}</td>
                     <td>{{dadosUser.username}}</td>
                     <td>{{dadosUser.email}}</td>
+                    <td>{{dadosUser.status}}</td>
                     <td>{{dadosUser.adminUser == true? 'Sim': 'Não'}}</td>
                     <td>
                         <div class="flex">
-                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="showConfirmationDialog(dadosUser)"></button>
+                            <button 
+                                pButton pRipple icon="pi pi-pencil" 
+                                class="p-button-rounded p-button-success p-mr-2" 
+                                (click)="showConfirmationDialog(dadosUser)">
+                            </button>
+                            <button 
+                                *ngIf="dadosUser.status == 'Inativo'"
+                                style="margin-left: 1vw;" 
+                                pButton pRipple 
+                                icon="pi pi-eye-slash" 
+                                class="p-button-rounded p-button-warning" 
+                                (click)="showStatusDialog(dadosUser)">
+                            </button>
+                            <button 
+                                *ngIf="dadosUser.status == 'Ativo'"
+                                style="margin-left: 1vw;" 
+                                pButton pRipple 
+                                icon="pi pi-eye" 
+                                class="p-button-rounded p-button-warning" 
+                                (click)="showStatusDialog(dadosUser)">
+                            </button>
                         </div>
                     </td>
                 </tr>
@@ -214,5 +236,15 @@
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="salvarAlteracaoPermissao(dadosUserPermissao)" label="Sim" class="p-button-text"></p-button>
         <p-button icon="pi pi-times" (click)="hideConfirmationDialog()" label="Não"></p-button>
+    </ng-template>
+</p-dialog>
+
+<p-dialog header="Alteração de status" [(visible)]="exibirDialogStatus" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <p>
+       {{message}}
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="salvarAlteracaoStatus(dadosUserPermissao)" label="Sim" class="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="hideStatusDialog()" label="Não"></p-button>
     </ng-template>
 </p-dialog>

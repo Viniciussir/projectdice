@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { Operacao } from 'src/app/shared/operacao';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-menu-admin',
@@ -36,6 +37,8 @@ export class MenuAdminComponent implements OnInit {
   exibirDialogConfirmacao:boolean = false;
 
   message:any = '';
+
+  exibirDialogStatus:boolean = false;
   
   constructor(
     private router: Router,
@@ -83,6 +86,7 @@ export class MenuAdminComponent implements OnInit {
 
   listarIndUser(event:any){
     this.indPodeExibirTabelaUser = event;
+    this.acessarDados();
   }
 
   showConfirmationDialog(dadosUser: any) {
@@ -107,6 +111,59 @@ export class MenuAdminComponent implements OnInit {
 
   hideConfirmationDialog(){
     this.exibirDialogConfirmacao = false; 
+  }
+
+  showStatusDialog(dadosUser: any) {
+    this.message = dadosUser.status == 'Inativo' ? 'Você deseja ativar esse usuário?' : 'Você deseja desativar esse usuário e todos os lugares cadastrados por ele?';
+    this.dadosUserPermissao = dadosUser;
+    this.exibirDialogStatus = true;
+  }
+
+  hideStatusDialog(){
+    this.exibirDialogStatus = false; 
+  }
+
+  salvarAlteracaoStatus(dados:any){
+    dados.status = dados.status === 'Ativo'? 'Inativo' : 'Ativo';
+    this.menuAcessoService.alterarUsername(dados).subscribe(
+      response => {
+        dados = response;
+        this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Alteração realizada.', life: 3000});
+        this.exibirDialogStatus = false; 
+        if(response.status == 'Inativo'){
+          this.buscarEstabelecimentos(dados.id);
+        }
+      },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  async buscarEstabelecimentos(id:any){
+    try{
+      let data = await firstValueFrom(this.menuAcessoService.buscarDados(id));
+      if (data) {  
+        for (let i = 0; i < data.length; i++) {
+          await this.desativarEstabelecimentos(data[i])          
+        }  
+      } else {
+        console.error('A chamada à API retornou um valor indefinido.');
+      }
+    }
+    catch(error:any){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+    }
+  }
+
+  async desativarEstabelecimentos(dados:any){
+    dados.status = 'INATIVO';
+    try{
+      await firstValueFrom(this.menuAcessoService.alterarDados(dados));
+    }
+    catch(error:any){
+      this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
+    }
   }
 
 }
