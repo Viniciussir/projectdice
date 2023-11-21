@@ -116,7 +116,7 @@
                 pButton pRipple 
                 icon="pi pi-trash" 
                 class="p-button-rounded p-button-danger"
-                (click)="deletarDados(dadosEstabelecimento)">
+                (click)="showConfirmationDialogExcluirItem(dadosEstabelecimento)">
               </button>    
 
             </div>
@@ -147,7 +147,7 @@
 
 <p-toast position="top-center"></p-toast>
 
-<p-dialog header="Alteração de Status" [(visible)]="exibirDialogItem" [style]="{width: '50vw'}" [baseZIndex]="10000">
+<p-dialog header="Alteração de Status" [(visible)]="exibirDialogItem" [style]="{width: '40vw'}" [baseZIndex]="10000">
   <p>
      {{message}}
   </p>
@@ -155,5 +155,15 @@
       <p-button *ngIf="dadosItem.status != 'INATIVO'" icon="pi pi-check" (click)="desativarDado()" label="Sim" class="p-button-text"></p-button>
       <p-button *ngIf="dadosItem.status == 'INATIVO'" icon="pi pi-check" (click)="ativarDado()" label="Sim" class="p-button-text"></p-button>
       <p-button icon="pi pi-times" (click)="hideConfirmationDialogItem()" label="Não"></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog header="Excluir Item" [(visible)]="exibirDialogExcluirItem" [style]="{width: '35vw'}" [baseZIndex]="10000">
+  <p>
+     {{message}}
+  </p>
+  <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="deletarDados()" label="Sim" class="p-button-text"></p-button>
+      <p-button icon="pi pi-times" (click)="hideConfirmationDialogExcluirItem()" label="Não"></p-button>
   </ng-template>
 </p-dialog>

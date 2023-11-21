@@ -52,6 +52,7 @@ export class MenuInicialComponent implements OnInit {
   dadosUser:any = {};
   botaoBloqueado: boolean = false;
   
+  exibirDialogExcluirItem:boolean = false;
   exibirDialogItem:boolean = false;
   message:any = '';
   dadosItem:any = {};
@@ -156,18 +157,6 @@ export class MenuInicialComponent implements OnInit {
     this.desabilitarCamposManter = true;
     this.acessarDadosTelaManter = true;
   }
-
-  deletarDados(dados:any){
-    this.menuAcessoService.deletarDados(dados.id).subscribe(response => {
-      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Excluido.', life: 3000});
-      this.buscarDados();
-    },
-      error => {
-        console.error('Erro ao adicionar dados:', error);
-      }
-    );
-  }
-
   //#endregion
 
   //#region Voltar
@@ -278,6 +267,30 @@ export class MenuInicialComponent implements OnInit {
 
   hideConfirmationDialogItem(){
     this.exibirDialogItem = false; 
+  }
+  //#endregion
+
+   //#region Dialog Excluir Item
+   showConfirmationDialogExcluirItem(dadosUser: any) {
+    this.message = 'Você deseja excluir esse item?';
+    this.dadosItem = dadosUser;
+    this.exibirDialogExcluirItem = true;
+  }
+
+  deletarDados(){
+    this.menuAcessoService.deletarDados(this.dadosItem.id).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Excluido.', life: 3000});
+      this.exibirDialogExcluirItem = false;
+      this.buscarDados();
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  hideConfirmationDialogExcluirItem(){
+    this.exibirDialogExcluirItem = false; 
   }
   //#endregion
 
