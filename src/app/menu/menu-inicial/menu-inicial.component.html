@@ -108,10 +108,11 @@
                 [icon]="dadosEstabelecimento.status == 'INATIVO' ? 'pi pi-eye-slash' : 'pi pi-eye'"
                 class="p-button-rounded p-button-warning" 
                 (click)="showConfirmationDialogItem(dadosEstabelecimento)"
-                [disabled]="dadosUser.status == 'Inativo'"
+                [disabled]="dadosUser.status == 'Inativo' || dadosEstabelecimento.status == 'EXEMPLO'"
               ></button>
 
               <button 
+                [disabled]="dadosEstabelecimento.status == 'EXEMPLO'"
                 style="margin-left:1vw;" 
                 pButton pRipple 
                 icon="pi pi-trash" 

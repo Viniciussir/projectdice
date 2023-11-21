@@ -293,7 +293,7 @@ export class MenuManterComponent implements OnInit {
 
   verificaMotivoRejeicao(dados:any){
     if(dados.motive){
-      this.messageService.add({severity:'warn', summary: 'Atenção', detail: dados.motive, life: 3000});
+      this.messageService.add({severity:'warn', summary: 'Motivo da Rejeição.', detail: dados.motive, life: 3000});
     }
   }
   //#endregion
