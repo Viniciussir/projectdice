@@ -45,4 +45,8 @@ export class MenuAcessoService {
     alterarUsername(dados: any): Observable<any> {
         return this.http.put("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/user/" + dados.id, dados);
     }
+
+    deletarUsername(id: any): Observable<any> {
+        return this.http.delete("https://65393dcfe3b530c8d9e82950.mockapi.io/api/dice/user/" + id);
+    }
 }

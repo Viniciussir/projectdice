@@ -39,9 +39,13 @@ export class MenuAdminComponent implements OnInit {
   message:any = '';
 
   exibirDialogStatus:boolean = false;
+  dadosUserStatus:any = {};
 
   exibirDialogExcluirItem:boolean = false;
   dadosItem:any = {};
+
+  exibirDialogExcluirUser:boolean = false;
+  dadosUserExcluir:any = {};
   
   constructor(
     private router: Router,
@@ -111,7 +115,7 @@ export class MenuAdminComponent implements OnInit {
   }
   //#endregion
 
-
+  //#region Alterar permissão User
   showConfirmationDialog(dadosUser: any) {
     this.message = dadosUser.adminUser ? 'Você deseja retirar o acesso administrador desse usuário?' : 'Você deseja tornar o acesso desse usuário como administrador?';
     this.dadosUserPermissao = dadosUser;
@@ -135,10 +139,12 @@ export class MenuAdminComponent implements OnInit {
   hideConfirmationDialog(){
     this.exibirDialogConfirmacao = false; 
   }
+  //#endregion
 
+  //#region Alterar status User
   showStatusDialog(dadosUser: any) {
     this.message = dadosUser.status == 'Inativo' ? 'Você deseja ativar esse usuário?' : 'Você deseja desativar esse usuário e todos os lugares cadastrados por ele?';
-    this.dadosUserPermissao = dadosUser;
+    this.dadosUserStatus = dadosUser;
     this.exibirDialogStatus = true;
   }
 
@@ -188,5 +194,30 @@ export class MenuAdminComponent implements OnInit {
       this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
     }
   }
+  //#endregion
+
+  //#region Excluir User
+  showConfirmationDialogExcluirUser(dadosUser: any) {
+    this.message = 'Você deseja excluir esse Usuário?';
+    this.dadosUserExcluir = dadosUser;
+    this.exibirDialogExcluirUser = true;
+  }
+
+  deletarDadosUser(){
+    this.menuAcessoService.deletarUsername(this.dadosUserExcluir.id).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Excluido.', life: 3000});
+      this.exibirDialogExcluirUser = false;
+      this.acessarDados();
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  hideConfirmationDialogExcluirUser(){
+    this.exibirDialogExcluirUser = false; 
+  }
+  //#endregion
 
 }

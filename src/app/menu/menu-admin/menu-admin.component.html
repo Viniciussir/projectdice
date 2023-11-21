@@ -195,12 +195,14 @@
                     <td>{{dadosUser.adminUser == true? 'Sim': 'Não'}}</td>
                     <td>
                         <div class="flex">
+
                             <button 
                                 pButton pRipple icon="pi pi-pencil" 
                                 [disabled]="dadosUser.status == 'Inativo'"
                                 class="p-button-rounded p-button-success p-mr-2" 
                                 (click)="showConfirmationDialog(dadosUser)">
                             </button>
+                            
                             <button 
                                 *ngIf="dadosUser.status == 'Inativo'"
                                 [disabled]="dadosUser.adminUser == true"
@@ -210,6 +212,7 @@
                                 class="p-button-rounded p-button-warning" 
                                 (click)="showStatusDialog(dadosUser)">
                             </button>
+
                             <button 
                                 *ngIf="dadosUser.status == 'Ativo'"
                                 [disabled]="dadosUser.adminUser == true"
@@ -219,6 +222,14 @@
                                 class="p-button-rounded p-button-warning" 
                                 (click)="showStatusDialog(dadosUser)">
                             </button>
+
+                            <button 
+                                style="margin-left:1vw;" 
+                                pButton pRipple 
+                                icon="pi pi-trash" 
+                                class="p-button-rounded p-button-danger" 
+                                (click)="showConfirmationDialogExcluirUser(dadosUser)">
+                            </button>    
                         </div>
                     </td>
                 </tr>
@@ -259,7 +270,7 @@
        {{message}}
     </p>
     <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="salvarAlteracaoStatus(dadosUserPermissao)" label="Sim" class="p-button-text"></p-button>
+        <p-button icon="pi pi-check" (click)="salvarAlteracaoStatus(dadosUserStatus)" label="Sim" class="p-button-text"></p-button>
         <p-button icon="pi pi-times" (click)="hideStatusDialog()" label="Não"></p-button>
     </ng-template>
 </p-dialog>
@@ -272,4 +283,14 @@
         <p-button icon="pi pi-check" (click)="deletarDados()" label="Sim" class="p-button-text"></p-button>
         <p-button icon="pi pi-times" (click)="hideConfirmationDialogExcluirItem()" label="Não"></p-button>
     </ng-template>
-  </p-dialog>
+</p-dialog>
+
+<p-dialog header="Excluir Usuário" [(visible)]="exibirDialogExcluirUser" [style]="{width: '35vw'}" [baseZIndex]="10000">
+    <p>
+       {{message}}
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="deletarDadosUser()" label="Sim" class="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="hideConfirmationDialogExcluirUser()" label="Não"></p-button>
+    </ng-template>
+</p-dialog>
