@@ -131,14 +131,12 @@
                         <p-inputNumber 
                             inputId="inputnumber"
                             class="width" 
-                            [ngStyle]="{'border': dadosEstabelecimento.number ? '' : '1px solid red', 
-                            'border-radius': dadosEstabelecimento.number ? '' : '6px'}"
                             id="numeroCamposManter" 
                             type="text" 
                             [(ngModel)]="dadosEstabelecimento.number" 
                             [disabled]="desabilitarCamposManter"  >
                         </p-inputNumber>
-                        <label [ngStyle]="{'color': dadosEstabelecimento.number ? '' : 'red'}" class="width" for="inputnumber">Número</label>
+                        <label class="width" for="inputnumber">Número</label>
                     </span>
                 </div>  
 

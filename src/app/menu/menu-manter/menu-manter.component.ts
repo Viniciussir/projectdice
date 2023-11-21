@@ -96,11 +96,14 @@ export class MenuManterComponent implements OnInit {
   ];
 
   listaInformacoesBasicas:any [] = [
-    {name: 'Musica ao vivo', code: 'Musica ao vivo'},
+    {name: 'Musica ao Vivo', code: 'Musica ao Vivo'},
     {name: 'Estacionamento', code: 'Estacionamento'},
     {name: 'Ambiente para Fumantes', code: 'Ambiente para Fumantes'},
     {name: 'Refeição no Local', code: 'Refeição no Local'},
-    {name: 'Para viagem', code: 'Para viagem'},
+    {name: 'Delivery', code: 'Delivery'},
+    {name: 'Empório', code: 'Empório'},
+    {name: 'Espaço Infantil', code: 'Espaço Infantil'},
+    {name: 'Pet Friendly', code: 'Pet Friendly'},
   ];
 
   listaCidade:any [] = [];
@@ -385,8 +388,8 @@ export class MenuManterComponent implements OnInit {
     } else if(this.uploadedFiles.length == 0){
       this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique as imagens informadas.', life: 3000});
       return false;
-    } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.number || !this.dadosEstabelecimento.district 
-      || !this.dadosEstabelecimento.state || !this.dadosEstabelecimento.city ||!this.dadosEstabelecimento.zipCode){
+    } else if(!this.dadosEstabelecimento.street || !this.dadosEstabelecimento.district || !this.dadosEstabelecimento.state 
+      || !this.dadosEstabelecimento.city ||!this.dadosEstabelecimento.zipCode){
         this.messageService.add({severity:'warn', summary: 'Validar campo obrigatório', detail: 'Verique o accordion de Endereço.', life: 3000});
       return false;
     }
