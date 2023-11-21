@@ -65,7 +65,7 @@
                         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                     </th>
                     <th style="width: 20vw" pSortableColumn="name">Nome<p-sortIcon field="name"></p-sortIcon></th>
-                    <th style="width: 10vw">Imagem</th>
+                    <th style="width: 10vw; height: 15vh;">Imagem</th>
                     <th style="width: 10vw" pSortableColumn="username">Usuário<p-sortIcon field="username"></p-sortIcon></th>
                     <th style="width: 10vw" pSortableColumn="city">Cidade<p-sortIcon field="city"></p-sortIcon></th>
                     <th style="width: 20vw"pSortableColumn="status">Status<p-sortIcon field="status"></p-sortIcon></th>
@@ -79,7 +79,7 @@
                         <p-tableCheckbox [value]="dados"></p-tableCheckbox>
                     </td>
                     <td>{{dados.name}}</td>
-                    <td><img [src]="dados.image" [alt]="dados.image" width="100" class="shadow-4" /></td>
+                    <td><img [src]="dados.image" [alt]="dados.image" style="width: 10vw; height: 15vh;" class="shadow-4" /></td>
                     <td>{{dados.username}}</td>
                     <td>{{dados.city}}</td>
                     <td>{{dados.status}}</td>
@@ -197,15 +197,16 @@
                         <div class="flex">
 
                             <button 
-                                pButton pRipple icon="pi pi-pencil" 
-                                [disabled]="dadosUser.status == 'Inativo'"
+                                pButton pRipple 
+                                icon="pi pi-user-edit" 
+                                [disabled]="dadosUser.status == 'Inativo' || dadosUser.username == username"
                                 class="p-button-rounded p-button-success p-mr-2" 
                                 (click)="showConfirmationDialog(dadosUser)">
                             </button>
                             
                             <button 
                                 *ngIf="dadosUser.status == 'Inativo'"
-                                [disabled]="dadosUser.adminUser == true"
+                                [disabled]="dadosUser.adminUser == true || dadosUser.username == username"
                                 style="margin-left: 1vw;" 
                                 pButton pRipple 
                                 icon="pi pi-eye-slash" 
@@ -215,7 +216,7 @@
 
                             <button 
                                 *ngIf="dadosUser.status == 'Ativo'"
-                                [disabled]="dadosUser.adminUser == true"
+                                [disabled]="dadosUser.adminUser == true || dadosUser.username == username"
                                 style="margin-left: 1vw;" 
                                 pButton pRipple 
                                 icon="pi pi-eye" 
@@ -226,6 +227,7 @@
                             <button 
                                 style="margin-left:1vw;" 
                                 pButton pRipple 
+                                [disabled]="dadosUser.username == username"
                                 icon="pi pi-trash" 
                                 class="p-button-rounded p-button-danger" 
                                 (click)="showConfirmationDialogExcluirUser(dadosUser)">

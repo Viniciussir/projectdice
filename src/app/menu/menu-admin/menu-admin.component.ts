@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuAcessoService } from '../service/menu-acesso.service';
 import { Operacao } from 'src/app/shared/operacao';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -25,6 +25,7 @@ export class MenuAdminComponent implements OnInit {
   id:any = '';
 
   userId:any = '';
+  username:any = '';
 
   acessarDadosTelaManter:boolean = false;
 
@@ -51,8 +52,11 @@ export class MenuAdminComponent implements OnInit {
     private router: Router,
     private menuAcessoService : MenuAcessoService,
     private messageService: MessageService,
-    private confirmationService: ConfirmationService
-  ) { }
+    private route: ActivatedRoute,
+    ) {
+      this.route.params.subscribe(params => {
+      this.username = params['username'];
+    });}
 
   ngOnInit(): void {
     this.acessarDados();
