@@ -270,8 +270,8 @@ export class MenuInicialComponent implements OnInit {
   }
   //#endregion
 
-   //#region Dialog Excluir Item
-   showConfirmationDialogExcluirItem(dadosUser: any) {
+  //#region Dialog Excluir Item
+  showConfirmationDialogExcluirItem(dadosUser: any) {
     this.message = 'Você deseja excluir esse item?';
     this.dadosItem = dadosUser;
     this.exibirDialogExcluirItem = true;

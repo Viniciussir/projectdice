@@ -39,6 +39,9 @@ export class MenuAdminComponent implements OnInit {
   message:any = '';
 
   exibirDialogStatus:boolean = false;
+
+  exibirDialogExcluirItem:boolean = false;
+  dadosItem:any = {};
   
   constructor(
     private router: Router,
@@ -61,10 +64,13 @@ export class MenuAdminComponent implements OnInit {
 		});
   }
 
+  //#region Voltar Login
   voltar(){
     this.router.navigate(['/login']);
   }
+  //#endregion
 
+  //#region Manutenção Item
   editar(dados:any){
     this.id = dados.id
     this.userId = dados.userId
@@ -72,10 +78,19 @@ export class MenuAdminComponent implements OnInit {
     this.desabilitarCamposManter = false;
     this.acessarDadosTelaManter = true;
   }
+  //#endregion
 
-  deletarDados(dados:any){
-    this.menuAcessoService.deletarDados(dados.id).subscribe(response => {
+  //#region Deletar Item
+  showConfirmationDialogExcluirItem(dadosUser: any) {
+    this.message = 'Você deseja excluir esse item?';
+    this.dadosItem = dadosUser;
+    this.exibirDialogExcluirItem = true;
+  }
+
+  deletarDados(){
+    this.menuAcessoService.deletarDados(this.dadosItem.id).subscribe(response => {
       this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Excluido.', life: 3000});
+      this.exibirDialogExcluirItem = false;
       this.acessarDados();
     },
       error => {
@@ -84,10 +99,18 @@ export class MenuAdminComponent implements OnInit {
     );
   }
 
-  listarIndUser(event:any){
+  hideConfirmationDialogExcluirItem(){
+    this.exibirDialogExcluirItem = false; 
+  }
+  //#endregion
+
+  //#region Atualizar Dados
+  atualizarDadosTabela(event:any){
     this.indPodeExibirTabelaUser = event;
     this.acessarDados();
   }
+  //#endregion
+
 
   showConfirmationDialog(dadosUser: any) {
     this.message = dadosUser.adminUser ? 'Você deseja retirar o acesso administrador desse usuário?' : 'Você deseja tornar o acesso desse usuário como administrador?';

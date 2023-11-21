@@ -14,7 +14,7 @@
                     pButton 
                     label="Listar Usuario" 
                     class="p-button-outlined p-button-help"
-                    (click)="listarIndUser(true)">
+                    (click)="atualizarDadosTabela(true)">
                 </button>
     
                 <button 
@@ -23,7 +23,7 @@
                     pButton 
                     label="Listar estabelecimentos" 
                     class="p-button-outlined p-button-help"
-                    (click)="listarIndUser(false)">
+                    (click)="atualizarDadosTabela(false)">
                 </button>
     
                 <button 
@@ -86,8 +86,20 @@
                     <td>{{dados.motive}}</td>
                     <td>
                         <div class="flex">
-                            <button [disabled]="dados.status == 'INATIVO'" pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editar(dados)"></button>
-                            <button style="margin-left:1vw;" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="deletarDados(dados)"></button>    
+                            <button 
+                                [disabled]="dados.status == 'INATIVO'" 
+                                pButton pRipple 
+                                icon="pi pi-pencil" 
+                                class="p-button-rounded p-button-success p-mr-2"
+                                (click)="editar(dados)">
+                            </button>
+                            <button 
+                                style="margin-left:1vw;" 
+                                pButton pRipple 
+                                icon="pi pi-trash" 
+                                class="p-button-rounded p-button-danger" 
+                                (click)="showConfirmationDialogExcluirItem(dados)">
+                            </button>    
                         </div>
                     </td>
                 </tr>
@@ -114,7 +126,7 @@
                     pButton 
                     label="Listar Usuario" 
                     class="p-button-outlined p-button-help"
-                    (click)="listarIndUser(true)">
+                    (click)="atualizarDadosTabela(true)">
                 </button>
     
                 <button 
@@ -123,7 +135,7 @@
                     pButton 
                     label="Listar estabelecimentos" 
                     class="p-button-outlined p-button-help"
-                    (click)="listarIndUser(false)">
+                    (click)="atualizarDadosTabela(false)">
                 </button>
     
                 <button 
@@ -251,3 +263,13 @@
         <p-button icon="pi pi-times" (click)="hideStatusDialog()" label="Não"></p-button>
     </ng-template>
 </p-dialog>
+
+<p-dialog header="Excluir Item" [(visible)]="exibirDialogExcluirItem" [style]="{width: '35vw'}" [baseZIndex]="10000">
+    <p>
+       {{message}}
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="deletarDados()" label="Sim" class="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="hideConfirmationDialogExcluirItem()" label="Não"></p-button>
+    </ng-template>
+  </p-dialog>
