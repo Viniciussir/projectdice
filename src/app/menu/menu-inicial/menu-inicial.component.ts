@@ -51,6 +51,10 @@ export class MenuInicialComponent implements OnInit {
 
   dadosUser:any = {};
   botaoBloqueado: boolean = false;
+  
+  exibirDialogItem:boolean = false;
+  message:any = '';
+  dadosItem:any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -75,6 +79,7 @@ export class MenuInicialComponent implements OnInit {
     this.verificarTipoUsuario();
   }
 
+  //#region Verificar User/Dados
   verificarTipoUsuario(){
     this.menuAcessoService.verificarUsername().subscribe(data => {
       let adminUser:boolean = false
@@ -129,7 +134,9 @@ export class MenuInicialComponent implements OnInit {
       }
 		});
   }
+  //#endregion
 
+  //#region Manutenção de Dados
   adicionarDados(){
     this.operacao = Operacao.INCLUIR;
     this.desabilitarCamposManter = false;
@@ -150,10 +157,6 @@ export class MenuInicialComponent implements OnInit {
     this.acessarDadosTelaManter = true;
   }
 
-  voltar(){
-    this.router.navigate(['/login']);
-  }
-
   deletarDados(dados:any){
     this.menuAcessoService.deletarDados(dados.id).subscribe(response => {
       this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Excluido.', life: 3000});
@@ -165,18 +168,15 @@ export class MenuInicialComponent implements OnInit {
     );
   }
 
-  desativarDado(dado:any){
-    dado.status = 'INATIVO';
-    this.menuAcessoService.alterarDados(dado).subscribe(response => {
-      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Desativado.', life: 3000});
-      this.buscarDados();
-    },
-      error => {
-        console.error('Erro ao adicionar dados:', error);
-      }
-    );
-  }
+  //#endregion
 
+  //#region Voltar
+  voltar(){
+    this.router.navigate(['/login']);
+  }
+  //#endregion
+
+  //#region Ativar/Desativar Conta
   ativarConta(){
     this.botaoBloqueado = true;
     this.dadosUser.status = 'Ativo';
@@ -241,5 +241,44 @@ export class MenuInicialComponent implements OnInit {
       this.messageService.add({severity:'warn', summary: 'Atenção', detail: error, life: 3000});
     }
   }
+  //#endregion
+
+  //#region Dialog Ativar/Desativar Item
+  showConfirmationDialogItem(dadosUser: any) {
+    this.message = dadosUser.status != 'INATIVO' ? 'Você deseja desativar?' : 'Você deseja ativar e enviar para análise novamente?';
+    this.dadosItem = dadosUser;
+    this.exibirDialogItem = true;
+  }
+
+  desativarDado(){
+    this.dadosItem.status = 'INATIVO';
+    this.menuAcessoService.alterarDados(this.dadosItem).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Desativado.', life: 3000});
+      this.exibirDialogItem = false; 
+      this.buscarDados();
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  ativarDado(){
+    this.dadosItem.status = 'AGUARDANDO ANALISE';
+    this.menuAcessoService.alterarDados(this.dadosItem).subscribe(response => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Enviado para análise.', life: 3000});
+      this.exibirDialogItem = false; 
+      this.buscarDados();
+    },
+      error => {
+        console.error('Erro ao adicionar dados:', error);
+      }
+    );
+  }
+
+  hideConfirmationDialogItem(){
+    this.exibirDialogItem = false; 
+  }
+  //#endregion
 
 }

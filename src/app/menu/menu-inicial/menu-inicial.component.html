@@ -105,10 +105,10 @@
                 pButton
                 pRipple
                 type="button"
-                icon="pi pi-eye-slash"
+                [icon]="dadosEstabelecimento.status == 'INATIVO' ? 'pi pi-eye-slash' : 'pi pi-eye'"
                 class="p-button-rounded p-button-warning" 
-                (click)="desativarDado(dadosEstabelecimento)"
-                [disabled]="dadosEstabelecimento.status == 'INATIVO' || dadosUser.status == 'Inativo'"
+                (click)="showConfirmationDialogItem(dadosEstabelecimento)"
+                [disabled]="dadosUser.status == 'Inativo'"
               ></button>
 
               <button 
@@ -146,3 +146,14 @@
 </app-menu-manter>
 
 <p-toast position="top-center"></p-toast>
+
+<p-dialog header="Alteração de Status" [(visible)]="exibirDialogItem" [style]="{width: '50vw'}" [baseZIndex]="10000">
+  <p>
+     {{message}}
+  </p>
+  <ng-template pTemplate="footer">
+      <p-button *ngIf="dadosItem.status != 'INATIVO'" icon="pi pi-check" (click)="desativarDado()" label="Sim" class="p-button-text"></p-button>
+      <p-button *ngIf="dadosItem.status == 'INATIVO'" icon="pi pi-check" (click)="ativarDado()" label="Sim" class="p-button-text"></p-button>
+      <p-button icon="pi pi-times" (click)="hideConfirmationDialogItem()" label="Não"></p-button>
+  </ng-template>
+</p-dialog>
