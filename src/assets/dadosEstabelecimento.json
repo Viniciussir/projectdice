@@ -8,9 +8,9 @@
 		"Restaurante"
 	  ],
 	  "basicInformation": [
-		"Musica ao vivo",
 		"Refeição no Local",
-		"Para viagem"
+		"Musica ao Vivo",
+		"Delivery"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBodegaia%20Bar%20e%20Restaurante%2001.jpg?alt=media&token=0071ab35-8752-4419-9fb5-e0598fef00b6",
@@ -74,8 +74,8 @@
 	  "city": "Santos",
 	  "zipCode": "11065-030",
 	  "complement": "",
-	  "status": "INATIVO",
-	  "username": "testeDice",
+	  "status": "ATIVO",
+	  "username": "Vinicius",
 	  "motive": "",
 	  "id": "2"
 	},
@@ -89,10 +89,9 @@
 		"Pub"
 	  ],
 	  "basicInformation": [
-		"Musica ao vivo",
+		"Musica ao Vivo",
 		"Ambiente para Fumantes",
-		"Refeição no Local",
-		"Para viagem"
+		"Refeição no Local"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FCola%20na%20Base%2001.jpg?alt=media&token=eeea95e6-6f39-4085-b4b8-ab407414427a",
@@ -157,8 +156,8 @@
 	  "city": "Santos",
 	  "zipCode": "11-065120",
 	  "complement": "",
-	  "status": "INATIVO",
-	  "username": "testeDice",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Vinicius",
 	  "motive": "",
 	  "id": "3"
 	},
@@ -172,8 +171,7 @@
 		"Pub"
 	  ],
 	  "basicInformation": [
-		"Refeição no Local",
-		"Para viagem"
+		"Refeição no Local"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FBar%20Heinz%2001.jpg?alt=media&token=7ea6cf22-6e48-4a90-9702-5406af57e5f9",
@@ -238,8 +236,8 @@
 	  "city": "Santos",
 	  "zipCode": "11-045560",
 	  "complement": "",
-	  "status": "INATIVO",
-	  "username": "testeDice",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Vinicius",
 	  "motive": "",
 	  "id": "4"
 	},
@@ -252,7 +250,7 @@
 		"Bares"
 	  ],
 	  "basicInformation": [
-		"Musica ao vivo",
+		"Musica ao Vivo",
 		"Refeição no Local"
 	  ],
 	  "image": [
@@ -319,8 +317,8 @@
 	  "city": "Santos",
 	  "zipCode": "11-045300",
 	  "complement": "",
-	  "status": "INATIVO",
-	  "username": "testeDice",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Vinicius",
 	  "motive": "",
 	  "id": "5"
 	},
@@ -333,7 +331,7 @@
 		"Pub"
 	  ],
 	  "basicInformation": [
-		"Musica ao vivo",
+		"Musica ao Vivo",
 		"Refeição no Local"
 	  ],
 	  "image": [
@@ -399,8 +397,8 @@
 	  "city": "Santos",
 	  "zipCode": "11-045200",
 	  "complement": "",
-	  "status": "INATIVO",
-	  "username": "testeDice",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Vinicius",
 	  "motive": "",
 	  "id": "6"
 	},
@@ -493,8 +491,7 @@
 	  ],
 	  "basicInformation": [
 		"Refeição no Local",
-		"Ambiente para Fumantes",
-		"Para viagem"
+		"Ambiente para Fumantes"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmeraki.jpg?alt=media&token=d90b8e16-1a83-4f8d-b840-9a691293be4e"
@@ -557,9 +554,9 @@
 	  "city": "Santos",
 	  "zipCode": "11-045401",
 	  "complement": "",
-	  "status": "REJEITADO",
+	  "status": "ATIVO",
 	  "username": "leticia",
-	  "motive": "Gentileza anexar uma foto da fachada para poder gerar a aprovação do estabelecimento.",
+	  "motive": "",
 	  "id": "8"
 	},
 	{
@@ -637,95 +634,6 @@
 	  "id": "10"
 	},
 	{
-	  "userId": "7",
-	  "name": "teste inativada",
-	  "description": "TESTE",
-	  "categories": [
-		"Bares",
-		"Restaurante",
-		"Parques",
-		"Baladas",
-		"Cinemas",
-		"Shoppings",
-		"Cafeterias",
-		"Teatro",
-		"Museus",
-		"Zoológico"
-	  ],
-	  "basicInformation": [
-		"Musica ao vivo",
-		"Estacionamento",
-		"Ambiente para Fumantes",
-		"Refeição no Local",
-		"Para viagem"
-	  ],
-	  "image": [
-		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FDiagrama%20de%20Caso%20de%20Uso%20-%20TCC.jpg?alt=media&token=be04325e-d7de-4cf1-b6a8-a8a1aa3475cc"
-	  ],
-	  "openingHours": [
-		{
-		  "id": "1",
-		  "dia": "Segunda-Feira",
-		  "horaInicial": "",
-		  "horaFinal": "",
-		  "Situacao": "Fechado"
-		},
-		{
-		  "id": "2",
-		  "dia": "Terça-Feira",
-		  "horaInicial": "",
-		  "horaFinal": "",
-		  "Situacao": "Fechado"
-		},
-		{
-		  "id": "3",
-		  "dia": "Quarta-Feira",
-		  "horaInicial": "10:00",
-		  "horaFinal": "23:00",
-		  "Situacao": "Aberto"
-		},
-		{
-		  "id": "4",
-		  "dia": "Quinta-Feira",
-		  "horaInicial": "",
-		  "horaFinal": "",
-		  "Situacao": "Fechado"
-		},
-		{
-		  "id": "5",
-		  "dia": "Sexta-Feira",
-		  "horaInicial": "",
-		  "horaFinal": "",
-		  "Situacao": "Fechado"
-		},
-		{
-		  "id": "6",
-		  "dia": "Sabado",
-		  "horaInicial": "",
-		  "horaFinal": "",
-		  "Situacao": "Fechado"
-		},
-		{
-		  "id": "7",
-		  "dia": "Domingo",
-		  "horaInicial": "",
-		  "horaFinal": "",
-		  "Situacao": "Fechado"
-		}
-	  ],
-	  "street": "Av. Vicente de Carvalho",
-	  "number": 55,
-	  "district": "Gonzaga",
-	  "city": "Torre de Pedra",
-	  "zipCode": "11060-470",
-	  "complement": "",
-	  "status": "AGUARDANDO ANALISE",
-	  "username": "leteste",
-	  "motive": "",
-	  "state": "SP",
-	  "id": "12"
-	},
-	{
 	  "userId": "9",
 	  "name": "Novo Forno de Ouro",
 	  "description": "Restaurante de fácil acesso, ótimo espaço para alimentação e com um bom custo-benefício. ",
@@ -734,8 +642,7 @@
 	  ],
 	  "basicInformation": [
 		"Ambiente para Fumantes",
-		"Refeição no Local",
-		"Para viagem"
+		"Refeição no Local"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fforno%20de%20ouro.jpg?alt=media&token=fe0ebdae-b3ef-4a3a-b391-2a3a62163264"
@@ -812,10 +719,9 @@
 		"Restaurante"
 	  ],
 	  "basicInformation": [
-		"Musica ao vivo",
+		"Musica ao Vivo",
 		"Ambiente para Fumantes",
-		"Refeição no Local",
-		"Para viagem"
+		"Refeição no Local"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmeu%20lugar%20bar.jpg?alt=media&token=008951b7-f32c-4d73-969d-8cfd321feb33"
@@ -893,8 +799,7 @@
 	  ],
 	  "basicInformation": [
 		"Ambiente para Fumantes",
-		"Refeição no Local",
-		"Para viagem"
+		"Refeição no Local"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbar%20toninho.jpg?alt=media&token=ec99065b-5d1d-4b3d-bd6d-eebad51e10fb"
@@ -971,10 +876,9 @@
 		"Baladas"
 	  ],
 	  "basicInformation": [
-		"Musica ao vivo",
+		"Musica ao Vivo",
 		"Ambiente para Fumantes",
-		"Refeição no Local",
-		"Para viagem"
+		"Refeição no Local"
 	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Frusbe.jpg?alt=media&token=99ab0c3b-e7d9-4c95-82e6-63c067b4e97e"
@@ -1287,7 +1191,9 @@
 		"Zoológico",
 		"Parques"
 	  ],
-	  "basicInformation": [],
+	  "basicInformation": [
+		"Espaço Infantil"
+	  ],
 	  "image": [
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Forquid%C3%A1rio%2001.jpg?alt=media&token=a58049a6-812d-4f0f-a298-3997ef801b94",
 		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Forquid%C3%A1rio%2002.jpg?alt=media&token=edbe232a-7f17-4059-8976-3e8ff6b8498a",
@@ -1369,7 +1275,6 @@
 		"Restaurante"
 	  ],
 	  "basicInformation": [
-		"Para viagem",
 		"Refeição no Local",
 		"Pet Friendly"
 	  ],
@@ -1762,15 +1667,2478 @@
 	  "id": "25"
 	},
 	{
-	  "userId": "2",
-	  "name": "Vinicius Coelho Scampini",
-	  "description": "dd",
+	  "userId": "11",
+	  "name": "Restaurante Canal 4",
+	  "description": "Gastronomia variada e pizzaria descontraída e refinada, em ambiente climatizado de 2 pisos com espaço kids.",
 	  "categories": [
-		"Bares"
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Espaço Infantil",
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Frestaurante%20c4%2001.jpeg?alt=media&token=338abbcf-7a3b-4548-8dee-125c370eac9e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Frestaurante%20c4%2002.jpg?alt=media&token=3c8f7822-3fe2-4239-9da7-d8f0f8651170",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Frestaurante%20c4%2003.jpg?alt=media&token=2935bbd6-ac5f-4598-bf0a-deb11b7acc75",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Frestaurante%20c4%2004.png?alt=media&token=ba7f0d76-2ce0-478a-beba-8f64d46c57ed"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "18:30",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "18:30",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Siqueira Campos",
+	  "number": 612,
+	  "district": "Boqueirão",
+	  "city": "Santos",
+	  "zipCode": "11045-200",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "26"
+	},
+	{
+	  "userId": "11",
+	  "name": "Pizzaria Bravo",
+	  "description": "Cardápio e rodízio de pizzas artesanais, além de bebidas, em espaço relaxado e familiar com tijolo aparente.",
+	  "categories": [
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbravo%2001.jpg?alt=media&token=2832df57-b104-4e1d-aebd-bea9c39906e4",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbravo%2002.jpg?alt=media&token=9a14eb97-2ace-4458-9315-d311cbd3bd33",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbravo%2003.jpg?alt=media&token=3aa997b7-c03e-4fa8-8bbf-9e943acc7571"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "17:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Goiás",
+	  "number": 38,
+	  "district": "Gonzaga",
+	  "city": "Santos",
+	  "zipCode": "11050-100",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "27"
+	},
+	{
+	  "userId": "11",
+	  "name": "Aquário Municipal de Santos",
+	  "description": "Espaço privilegiado de lazer e conhecimento, o parque é pioneiro em projetos de preservação do mar e de seus habitantes.",
+	  "categories": [
+		"Parques",
+		"Zoológico"
 	  ],
 	  "basicInformation": [],
 	  "image": [
-		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2FAo%20Chopp%20do%20Gonzaga%2001.JPG?alt=media&token=3d14d745-1ae4-44b7-9e16-52424fef3937"
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Faqu%C3%A1rio%2001.jpg?alt=media&token=ef633647-a0db-4f3d-9de8-8a0cedf724a8",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Faqu%C3%A1rio%2002.jpg?alt=media&token=4f95fee3-67c0-4d59-9c84-92f9de9e0539",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Faqu%C3%A1rio%2003.jpg?alt=media&token=6a9c780d-21d0-472c-a67f-f0a905dea96f",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Faqu%C3%A1rio%2004.jpg?alt=media&token=a96f02b8-a55a-4cd6-bad9-b19a99f9a3f8",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Faqu%C3%A1rio%2005.jpg?alt=media&token=7520d498-0321-4e5c-b4ed-dfd13239561f"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Praça Luiz La Scala",
+	  "number": null,
+	  "district": "Ponta da Praia",
+	  "city": "Santos",
+	  "zipCode": "11030-600",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "28"
+	},
+	{
+	  "userId": "11",
+	  "name": "Pinacoteca Benedicto Calixto",
+	  "description": "Instalada em belo casarão de estilo neoclássico do início do século XX, a Pinacoteca Benedicto Calixto é importante espaço cultural da cidade, com happy hour musical, cursos e eventos variados para crianças e adultos.",
+	  "categories": [
+		"Museus"
+	  ],
+	  "basicInformation": [
+		"Musica ao Vivo"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpinacoteca%2001.jpg?alt=media&token=3212168d-73d2-48ce-9d17-2797eb2b1733",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpinacoteca%2002.jpg?alt=media&token=945bb64d-5e9a-4cb1-81de-6673c00d8e97",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpinacoteca%2003.jpg?alt=media&token=9b22f87a-3e62-4e70-8160-ea684cef352b",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpinacoteca%2004.jpg?alt=media&token=bc3c29ea-fc29-4ea3-bca8-b3dc0ff704ef"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "09:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Bartholomeu de Gusmão",
+	  "number": 15,
+	  "district": "Boqueirão",
+	  "city": "Santos",
+	  "zipCode": "11045-400",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "29"
+	},
+	{
+	  "userId": "11",
+	  "name": "Bistrô Calixto Café",
+	  "description": "Nos jardins da Pinacoteca, funciona o Café Bistrô Calixto, com opções para o café da manhã, almoço, chá da tarde, happy hour e jantar. ",
+	  "categories": [
+		"Restaurante",
+		"Cafeterias"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbistro%20calixto%2001.jpg?alt=media&token=9b51c088-8c29-4d95-aaba-66d9934ef0dc",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbistro%20calixto%2002.jpg?alt=media&token=e8694cbb-dbde-4e25-b02d-b42d02f19243",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbistro%20calixto%2003.jpg?alt=media&token=c1fe848c-a2b3-4364-ad45-ddfbb86f9ff2",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbistro%20calixto%2004.jpg?alt=media&token=817d1269-e575-44bd-b486-78989eeff6a6"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Bartholomeu de Gusmão",
+	  "number": 15,
+	  "district": "Boqueirão",
+	  "city": "Santos",
+	  "zipCode": "11045-400",
+	  "complement": "No jardim dos fundos da pinacoteca",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "30"
+	},
+	{
+	  "userId": "11",
+	  "name": "Museu Marítimo",
+	  "description": "O Museu Marítimo, sediado em Santos, é uma entidade cultural dedicada à preservação da memória marítima e naval brasileira e estrangeira.",
+	  "categories": [
+		"Museus"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20maritimo%2001.jpg?alt=media&token=4b0aa9b1-eb3f-4bd3-90f4-211516bed0f3",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20maritimo%2002.jpg?alt=media&token=c4ddf5ba-86e0-4cd1-b5ff-f85a3b663913",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20maritimo%2003.jpg?alt=media&token=908c1837-f87e-4d91-883e-21e0396b9797",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20maritimo%2004.jpg?alt=media&token=88322f23-7a4c-46d9-a3d2-bb641463ebb2",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20maritimo%2005.jpg?alt=media&token=fe93e639-7e5a-40f1-a4a8-8b675055ffec"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "13:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "13:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "13:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "13:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "13:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "13:30",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Gov. Fernando Costa",
+	  "number": 343,
+	  "district": "Ponta da Praia",
+	  "city": "Santos",
+	  "zipCode": "11030-181",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "31"
+	},
+	{
+	  "userId": "11",
+	  "name": "Museu do Café",
+	  "description": "Bolsa de Café, foi um centro de negociação de café e atualmente é um museu e um ambiente charmoso para saborear cafés elaborados. ",
+	  "categories": [
+		"Cafeterias",
+		"Museus"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20cafe%2001.jpg?alt=media&token=b95e3bb9-e4a2-452b-b119-167084488930",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20cafe%2002.jpg?alt=media&token=8e1fb875-c108-4e68-90b3-4a1767f5236a",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20cafe%2003.jpg?alt=media&token=a6686177-8e6f-4878-9322-7445df7dc0a6",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20cafe%2004.jpg?alt=media&token=4d1d002a-305a-4255-aa5d-f975b5a46ee5"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Quinze de Novembro",
+	  "number": 95,
+	  "district": "Centro",
+	  "city": "Santos",
+	  "zipCode": "11010-150",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "32"
+	},
+	{
+	  "userId": "11",
+	  "name": "Museu Pelé",
+	  "description": "Museu Pelé é um museu  dedicado à carreira do ex-jogador Pelé.",
+	  "categories": [
+		"Museus"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20pele%2001.jpg?alt=media&token=c2208c8d-73fc-4826-b70b-0a6bc5f9326a",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20pele%2002.jpg?alt=media&token=92d9e099-4138-4877-b448-d6f74416d845",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20pele%2003.JPG?alt=media&token=2aa29fbb-13d2-4201-8e81-052a2864682b",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20pele%2004.jpg?alt=media&token=187c7bf4-4542-499e-b0f4-c32dc7786a28",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmuseu%20pele%2005.jpg?alt=media&token=1bca92eb-d282-43ed-973c-c9fbf8144a97"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "10:00",
+		  "horaFinal": "17:30",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Largo Marquês de Monte Alegre",
+	  "number": 1,
+	  "district": "Valongo",
+	  "city": "Santos",
+	  "zipCode": "11010-260",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "33"
+	},
+	{
+	  "userId": "11",
+	  "name": "Teatro Municipal Braz Cubas",
+	  "description": "Teatro administrado pelo município exibe programação cultural diversificada em prédio de estilo modernista.\n",
+	  "categories": [
+		"Teatro"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20municipal%2001.jpg?alt=media&token=015fbd66-62d9-45b1-b391-b85678b3d892",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20municipal%2002.jpg?alt=media&token=a10cfc1b-225c-4850-8be5-09b4ea47b184",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20municipal%2003.jpg?alt=media&token=69b64a13-7b36-41fc-a511-cf8357331e78",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20municipal%2004.jpg?alt=media&token=040f705a-6f93-48d6-a275-febc3ab1e4bd"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Avenida Senador Pinheiro Machado",
+	  "number": 48,
+	  "district": "Vila Matias",
+	  "city": "Santos",
+	  "zipCode": "11075-907",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "36"
+	},
+	{
+	  "userId": "11",
+	  "name": "Teatro Guarany",
+	  "description": "Peças teatrais, música, dança e mais, em espaço inaugurado em 1882, com pinturas no teto e clima aconchegante.",
+	  "categories": [
+		"Teatro"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20guarany%2001.jpg?alt=media&token=c3bc856d-f1ce-4e0f-b45c-3beec36bd4b2",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20guarany%2002.jpg?alt=media&token=f91fdd96-76f3-41ee-9496-a0a07f09f1a6",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fteatro%20guarany%2003.jpg?alt=media&token=702ce8ed-5eb8-4178-b456-61978278efc8"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "10:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Praça dos Andradas",
+	  "number": 100,
+	  "district": "Centro",
+	  "city": "Santos",
+	  "zipCode": "11010-100",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "37"
+	},
+	{
+	  "userId": "11",
+	  "name": "Teatro Coliseu",
+	  "description": "Maior teatro da cidade, o Teatro Coliseu possui a configuração atual desde 1924. O prédio em estilo eclético, belos afrescos e detalhes arquitetônicos, conta com acústica excelente e requintes de decoração que lhe deram fama e o classificaram entre os melhores do país.",
+	  "categories": [
+		"Teatro"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcoliseu%2001.jpg?alt=media&token=410a0166-77a1-44f4-a71a-e28e1b68ed0e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcoliseu%2002.jpg?alt=media&token=54b3effe-4734-4d43-baa2-cd57a996d1d2",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcoliseu%2003.jpeg?alt=media&token=a1cb996f-84f6-4f31-886b-3ed2fae5892b",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcoliseu%2004.webp?alt=media&token=bde16da2-69a7-4caf-96aa-5b817b370828"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Rua Amador Bueno",
+	  "number": 237,
+	  "district": "Centro",
+	  "city": "Santos",
+	  "zipCode": "11013-153",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "38"
+	},
+	{
+	  "userId": "11",
+	  "name": "Miramar Shopping",
+	  "description": "Shopping com mais de 120 lojas e quiosques, além de vários restaurantes. Animais de estimação são permitidos.",
+	  "categories": [
+		"Shoppings"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Estacionamento",
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmiramar%2001.webp?alt=media&token=17a9b100-714e-4632-9626-c5150fc8d042",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmiramar%2002.jpg?alt=media&token=691802f3-5d9f-4eca-bf21-1b1cc8552a78",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmiramar%2003.png?alt=media&token=f0aec585-4f18-41ea-998f-cefe419d5d60",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmiramar%2004.jpg?alt=media&token=f4c085be-670d-421e-98d8-a3dbbdb5df64"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Euclides da Cunha",
+	  "number": 21,
+	  "district": "Gonzaga",
+	  "city": "Santos",
+	  "zipCode": "11065-900",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "39"
+	},
+	{
+	  "userId": "11",
+	  "name": "Shopping Parque Balneário",
+	  "description": "Shopping antigo e tranquilo com várias lojas e uma praça de alimentação com culinária internacional.",
+	  "categories": [
+		"Shoppings"
+	  ],
+	  "basicInformation": [
+		"Estacionamento",
+		"Refeição no Local",
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbalneario%2001.jpg?alt=media&token=b09609c1-9c6f-4747-8af1-46fc5d87d6be",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbalneario%2002.jpg?alt=media&token=7730f744-be6b-4118-84af-15998753b4ea",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbalneario%2003.jpg?alt=media&token=f8d84bd4-47b6-46ff-b8c6-7e80e0757fca",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbalneario%2004.jpg?alt=media&token=97c9df40-1e7f-4ba5-bcb9-55c6de52f0f5"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Ana Costa",
+	  "number": 549,
+	  "district": "Gonzaga",
+	  "city": "Santos",
+	  "zipCode": "11060-003",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "40"
+	},
+	{
+	  "userId": "11",
+	  "name": "Praiamar Shopping",
+	  "description": "Toda a facilidade que você precisa para tornar suas compras e passeio, completos.",
+	  "categories": [
+		"Shoppings"
+	  ],
+	  "basicInformation": [
+		"Estacionamento",
+		"Refeição no Local",
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpraiamar%2001.webp?alt=media&token=2433ab46-a90b-45fb-b2fa-b58b91cba713",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpraiamar%2002.jpg?alt=media&token=21d0ff6c-9bd9-4bfc-bc59-66d0c39e692c",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpraiamar%2003.jpg?alt=media&token=8314c45c-34d4-4351-b916-d45d24c76e7b",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fpraiamar%2004.jpg?alt=media&token=0740d8ae-af81-4994-b81f-0b6fba344c05"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Alexandre Martins",
+	  "number": 80,
+	  "district": "Aparecida",
+	  "city": "Santos",
+	  "zipCode": "11025-202",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "41"
+	},
+	{
+	  "userId": "11",
+	  "name": "Shopping Pátio Iporanga",
+	  "description": "Local moderno com diversas lojas e restaurantes, além de exibições de arte, festivais, música e shows.",
+	  "categories": [
+		"Shoppings"
+	  ],
+	  "basicInformation": [
+		"Estacionamento",
+		"Refeição no Local",
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fiporanga%2001.jpg?alt=media&token=d41976db-20d0-49b4-9db0-59049bc463be",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fiporanga%2002.jpg?alt=media&token=594a7ce8-a672-42d0-ba65-ee052eb0fa29",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fiporanga%2003.jpg?alt=media&token=a3b68f53-603c-47fb-a6ad-62a79204e870"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Ana Costa",
+	  "number": 465,
+	  "district": "Gonzaga",
+	  "city": "Santos",
+	  "zipCode": "11060-001",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "42"
+	},
+	{
+	  "userId": "11",
+	  "name": "Brisamar Shopping",
+	  "description": "Shopping com diversas lojas e espaço amplo para fazer suas compras e seu passeio com conforto.",
+	  "categories": [
+		"Shoppings"
+	  ],
+	  "basicInformation": [
+		"Estacionamento",
+		"Refeição no Local",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbrisamar%2001.webp?alt=media&token=86ada947-05ec-4a76-8015-d26e9c320540",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbrisamar%2002.jpg?alt=media&token=3f70333c-a6a9-48a0-bb5a-cf26136ef056",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fbrisamar%2003.jpg?alt=media&token=44d1daf0-c32b-4d1a-8507-b66c0d6d7461"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Frei Gaspar",
+	  "number": 365,
+	  "district": "Centro",
+	  "city": "São Vicente",
+	  "zipCode": "11310-060",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "43"
+	},
+	{
+	  "userId": "11",
+	  "name": "Litoral Plaza Shopping",
+	  "description": "Shopping grande com mais de 200 lojas, além de cinema e praça de alimentação.",
+	  "categories": [
+		"Shoppings"
+	  ],
+	  "basicInformation": [
+		"Estacionamento",
+		"Refeição no Local",
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Flitoral%20plaza%2001.jpg?alt=media&token=49900a6e-f8a1-4087-a1f9-8a4c71a31547",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Flitoral%20plaza%2002.jpg?alt=media&token=81596bce-3594-4d71-9bd1-c525b4cefe09",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Flitoral%20plaza%2003.jpg?alt=media&token=ab89c096-0127-400b-9865-fde33ab5c291"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Ayrton Senna da Silva",
+	  "number": 1511,
+	  "district": "Xixová",
+	  "city": "Praia Grande",
+	  "zipCode": "11726-900",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "44"
+	},
+	{
+	  "userId": "11",
+	  "name": "Acqua Mundo",
+	  "description": "Grande aquário com mais de 170 espécies de peixes, répteis, aves e invertebrados, além de loja de presentes.",
+	  "categories": [
+		"Zoológico"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Facqua%20mundo%2001.jpg?alt=media&token=722d4bbe-5658-4598-9e52-af8a547347b1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Facqua%20mundo%2002.jpg?alt=media&token=2220d1de-7209-4474-82cd-55928f6f06a1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Facqua%20mundo%2003.jpg?alt=media&token=3b0ea32e-760f-428b-9d3c-23834cdd9c3a",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Facqua%20mundo%2004.jpg?alt=media&token=fc26ac3a-1f33-4c57-990d-06fa94d60492"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "10:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Miguel Estefno",
+	  "number": 2001,
+	  "district": "Jardim Tres Marias",
+	  "city": "Guarujá",
+	  "zipCode": "11440-532",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "45"
+	},
+	{
+	  "userId": "11",
+	  "name": "Parque do Conde - CEMA",
+	  "description": "O Parque do Conde é uma atração turística no Guarujá que conta com muita aventura, emoção e natureza",
+	  "categories": [
+		"Parques"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20conde%2001.JPG?alt=media&token=84670800-94d5-40c9-8639-2cc326b1444e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20conde%2002.JPG?alt=media&token=121d961c-af50-44b7-bf62-43425f0e9645",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20conde%2003.JPG?alt=media&token=bde3c863-ae0c-4d40-a51a-804984e09d5c",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20conde%2004.JPG?alt=media&token=1d761ac7-b5d4-44f1-9201-f7b1b3852c93"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "5 - Rod. Ariovaldo de Almeida de Viana",
+	  "number": 14,
+	  "district": "Balneário Praia do Perequê",
+	  "city": "Guarujá",
+	  "zipCode": "11440-533",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "46"
+	},
+	{
+	  "userId": "11",
+	  "name": "Tepisco - Melhor Bar do Guarujá",
+	  "description": "Boemia casada à gastronomia com opções japonesas e brasileiras de pratos e petiscos em espaço descontraído.",
+	  "categories": [
+		"Bares",
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftepisco%2001.jpg?alt=media&token=84844474-3ed3-436b-8534-d6a063d78719",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftepisco%2002.jpg?alt=media&token=dc3d2d9b-3f44-4a99-a0dd-51011706432e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftepisco%2003.jpg?alt=media&token=a7a905de-e491-45d2-a065-6e8b2c26e62d",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftepisco%2004.jpg?alt=media&token=ee20ad32-7da8-44e9-99a4-2fd76c823728"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Venezuela",
+	  "number": 55,
+	  "district": "Balneario Cidade Atlantica",
+	  "city": "Guarujá",
+	  "zipCode": "11441-240",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "47"
+	},
+	{
+	  "userId": "11",
+	  "name": "Kairós",
+	  "description": "Restobar descontraído com música popular ao vivo e menu à la carte com opções de sandubas e buffet oriental.",
+	  "categories": [
+		"Bares",
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Musica ao Vivo",
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fkairos%2001.jpg?alt=media&token=e154eac6-c7a2-43e3-b0ea-3863df48fefe",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fkairos%2002.jpg?alt=media&token=ee6e1303-6b15-4479-8dd7-a474b168bfbb",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fkairos%2003.jpg?alt=media&token=664a2440-b36c-464f-af3d-d60faad36a52"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:30",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:30",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:30",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Dom Pedro I",
+	  "number": 295,
+	  "district": "Enseada",
+	  "city": "Guarujá",
+	  "zipCode": "11440-000",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "48"
+	},
+	{
+	  "userId": "11",
+	  "name": "Museu Fortaleza da Barra Grande",
+	  "description": "O Museu Histórico da Fortaleza de Santo Amaro da Barra Grande está na fortificação de mesmo nome, construída em 1584, sob o comando da coroa espanhola.",
+	  "categories": [
+		"Museus"
+	  ],
+	  "basicInformation": [],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ffortaleza%2001.jpg?alt=media&token=f38c09a4-4da3-4f68-a0d4-2506ea57c503",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ffortaleza%2002.JPG?alt=media&token=10e79988-3753-4437-9fde-2b38da1d8615",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ffortaleza%2003.jpg?alt=media&token=4bbd05ba-7a93-4e12-8cbf-5fdf30f3865a"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "16:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "09:00",
+		  "horaFinal": "15:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Messias Borges",
+	  "number": 380,
+	  "district": "Santa Cruz dos Navegantes",
+	  "city": "Guarujá",
+	  "zipCode": "11425-110",
+	  "complement": "Pode ser feita a travessia de barco de Santos até a fortaleza",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "49"
+	},
+	{
+	  "userId": "11",
+	  "name": "Portinho - Parque Ézio Dall' Acqua",
+	  "description": "A Área de Lazer Ézio Dall`Acqua (Portinho) é uma grande área de lazer, localizada na entrada de Praia Grande.",
+	  "categories": [
+		"Parques"
+	  ],
+	  "basicInformation": [
+		"Espaço Infantil"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fportinho%2001.jpg?alt=media&token=2785cf7b-06cd-4fa1-9d79-75216995b28e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fportinho%2002.jpg?alt=media&token=1f021ef2-7ae0-4ad0-89a8-60164180bc32",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fportinho%2003.jpg?alt=media&token=3c627fc4-e8e6-408b-93f2-b4824e3da0f2",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fportinho%2004.jpg?alt=media&token=31079dd1-9664-4589-989c-19439866f79b"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "06:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Paulo Sérgio Garcia",
+	  "number": null,
+	  "district": "Sítio do Campo",
+	  "city": "Praia Grande",
+	  "zipCode": "11726-010",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "50"
+	},
+	{
+	  "userId": "11",
+	  "name": "Parque da Cidade",
+	  "description": "Ponto de encontro bem cuidado com trilhas para caminhada/corrida, playground e equipamentos de escalada.",
+	  "categories": [
+		"Parques"
+	  ],
+	  "basicInformation": [
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20da%20cidade%2001.jpg?alt=media&token=e3a99e4a-494a-4a16-b410-cf28ec98076a",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20da%20cidade%2002.jpg?alt=media&token=ded5cff0-5226-46c5-946a-09363c32217b",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20da%20cidade%2003.jpg?alt=media&token=33418fda-ae79-42b3-83a9-7c0fedb3feb1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fparque%20da%20cidade%2004.jpg?alt=media&token=3f46ec62-7b14-4207-880a-b60e4197f7fb"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "07:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua José Bonifácio",
+	  "number": null,
+	  "district": "Sítio do Campo",
+	  "city": "Praia Grande",
+	  "zipCode": "11725-420",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "51"
+	},
+	{
+	  "userId": "11",
+	  "name": "Esquina Maddalena",
+	  "description": "Um ótimo restaurante para quem aprecia a culinária.",
+	  "categories": [
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmaddalena%2001.jpg?alt=media&token=2df65665-ba9e-4c19-9659-e44a5dcca112",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmaddalena%2002.jpg?alt=media&token=195c851e-8b6d-4b98-a3ba-e262a7a9b19e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmaddalena%2003.jpg?alt=media&token=f30bbe17-8215-444c-ba6d-e979fcacabe1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmaddalena%2004.jpg?alt=media&token=a9deef16-a6cc-40d7-90b9-6dc0cb47cea6"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "06:30",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "06:30",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "06:30",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "06:30",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "06:30",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "06:30",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "06:30",
+		  "horaFinal": "22:30",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Mal. Mallet",
+	  "number": 371,
+	  "district": "Canto do Forte",
+	  "city": "Praia Grande",
+	  "zipCode": "11701-380",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "52"
+	},
+	{
+	  "userId": "11",
+	  "name": "Go Coffee Praia Grande",
+	  "description": "Oferecer biscoitos saborosos, brownies ótimos e biscoito de chocolate bom é a especialidade desse lugar. Ótimos frappes são as melhores bebidas desse ponto.",
+	  "categories": [
+		"Cafeterias"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fgo%20coffee%2001.jpg?alt=media&token=2ce0927b-e017-4d1c-a036-104a7fe8e942",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fgo%20coffee%2002.jpg?alt=media&token=3b306d13-5047-457e-adf9-71ce8656c3bb",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fgo%20coffee%2003.jpg?alt=media&token=1ad7e7ee-4511-4426-86b2-ecb70afdb79d"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Rua Mococa",
+	  "number": 359,
+	  "district": "Boqueirão",
+	  "city": "Praia Grande",
+	  "zipCode": "11701-100",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "53"
+	},
+	{
+	  "userId": "11",
+	  "name": "É Empório Uai",
+	  "description": "Pão de queijo, queijos, cafés, vinhos, doces, pamonha, geleias, compotas, chocolate quente. Venha tomar aquele café especial, chocolate quente, pão de queijo recheado e muito mais!",
+	  "categories": [
+		"Cafeterias"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Empório"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2F%C3%A9%20emporio%2001.jpg?alt=media&token=d7fa5962-cbe9-4145-a9b6-0d722f83e466",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2F%C3%A9%20emporio%2002.jpg?alt=media&token=8f8ddca9-c784-4187-810c-e3eb3103ddea",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2F%C3%A9%20emporio%2003.jpg?alt=media&token=e9ed4698-982b-4cd2-91e7-56d781bf01e3"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "10:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "10:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "15:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Mococa",
+	  "number": 231,
+	  "district": "Boqueirão",
+	  "city": "Praia Grande",
+	  "zipCode": "11701-100",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "54"
+	},
+	{
+	  "userId": "11",
+	  "name": "Jardim Botânico Chico Mendes",
+	  "description": "O parque possui playground, além de mais de 1.000 metros de alamedas asfaltadas, iluminadas e com marcos de distância a cada 100 metros.",
+	  "categories": [
+		"Parques"
+	  ],
+	  "basicInformation": [
+		"Espaço Infantil",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fjardim%20botanico%2001.jpg?alt=media&token=43f1b373-b0a8-410a-bcb4-fc80331db880",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fjardim%20botanico%2002.jpg?alt=media&token=062848f8-cfd5-4205-b3aa-2440bdb535ce",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fjardim%20botanico%2003.jpg?alt=media&token=3ecac32a-415e-4c59-9bc2-33bf4572f181",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fjardim%20botanico%2004.jpg?alt=media&token=00bccdda-f681-46e9-a718-df5e5d3ff8ad"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "18:50",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "18:50",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "07:00",
+		  "horaFinal": "19:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "07:00",
+		  "horaFinal": "17:50",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "07:00",
+		  "horaFinal": "17:50",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua João Fraccaroli",
+	  "number": null,
+	  "district": "Bom Retiro",
+	  "city": "Santos",
+	  "zipCode": "11089-230",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "55"
+	},
+	{
+	  "userId": "11",
+	  "name": "Na Toca",
+	  "description": "Bar temático, música ao vivo e experiência gastrobar.",
+	  "categories": [
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Musica ao Vivo",
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fna%20toca%2001.jpg?alt=media&token=ab3634a0-2ff4-4396-b774-38c47cb4c2d1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fna%20toca%2002.jpg?alt=media&token=7ddc18d4-0771-4229-999d-aa6f681b520d",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fna%20toca%2003.jpg?alt=media&token=67747435-6d25-40d3-8db3-de16df40868c"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "03:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "19:00",
+		  "horaFinal": "03:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "19:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Jacob Emmerich",
+	  "number": 795,
+	  "district": "Centro",
+	  "city": "São Vicente",
+	  "zipCode": "11310-070",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "56"
+	},
+	{
+	  "userId": "11",
+	  "name": "Restaurante Gaudio",
+	  "description": "Choperia descontraída de comidas de boteco e de frutos do mar, com mesas internas e terraço junto à orla.",
+	  "categories": [
+		"Bares",
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fgaudio%2001.jpg?alt=media&token=15a6140a-47dd-4dfe-a7df-dc32aaf5027e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fgaudio%2002.jpg?alt=media&token=dcbab0b1-59b5-4aa8-b524-b7061dcc837f",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fgaudio%2003.jpg?alt=media&token=e892e1f0-6f5e-4d8d-a423-a6b1921d199c"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Frei Gaspar",
+	  "number": 1,
+	  "district": "Gonzaguinha",
+	  "city": "São Vicente",
+	  "zipCode": "11320-440",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "57"
+	},
+	{
+	  "userId": "11",
+	  "name": "Arena Club",
+	  "description": "Um novo conceito de espaço de uma das melhores casas de show de Santos.",
+	  "categories": [
+		"Baladas",
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Farena%20club%2001.jpg?alt=media&token=fbe21d32-cd0e-449d-8e6b-f18bea3f76b7",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Farena%20club%2002.jpeg?alt=media&token=84c16cd4-0964-4f27-a01a-5459ce21d64d",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Farena%20club%2003.jpeg?alt=media&token=63084534-704c-4adf-9131-1bc67042810e"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "05:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:00",
+		  "horaFinal": "05:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Avenida Senador Pinheiro Machado",
+	  "number": 33,
+	  "district": "Vila Matias",
+	  "city": "Santos",
+	  "zipCode": "11075-001",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "58"
+	},
+	{
+	  "userId": "11",
+	  "name": "Santorini Box",
+	  "description": "Casa noturna inspirada em Ilha grega, cervejas e drinques exóticos, em espaço intimista de clima descontraído.",
+	  "categories": [
+		"Baladas",
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Ambiente para Fumantes"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fsantorini%2001.jpg?alt=media&token=8de993eb-9b0a-49a5-8cf0-b207977cca91",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fsantorini%2002.jpg?alt=media&token=c0b52b63-5b51-489d-ade3-680bb9d1c7be"
 	  ],
 	  "openingHours": [
 		{
@@ -1804,9 +4172,801 @@
 		{
 		  "id": "5",
 		  "dia": "Sexta-Feira",
+		  "horaInicial": "23:59",
+		  "horaFinal": "06:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "23:59",
+		  "horaFinal": "06:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
 		  "horaInicial": "",
 		  "horaFinal": "",
 		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Rua do Comércio",
+	  "number": 14,
+	  "district": "Centro",
+	  "city": "Santos",
+	  "zipCode": "11010-121",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "59"
+	},
+	{
+	  "userId": "11",
+	  "name": "Hypnosis Club",
+	  "description": "Diversos estilos de música, além de bebidas alcoólicas, em casa noturna aconchegante com espaço para dançar.",
+	  "categories": [
+		"Bares",
+		"Baladas"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fhypnosis%2001.jpg?alt=media&token=fca186e5-a7b6-4053-9c6e-17ec8f44ec26",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fhypnosis%2002.jpg?alt=media&token=a0d60c21-46a3-4d15-9a13-368671443154"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "00:00",
+		  "horaFinal": "04:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "00:00",
+		  "horaFinal": "04:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "00:00",
+		  "horaFinal": "04:30",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Rua do Comércio",
+	  "number": 39,
+	  "district": "Centro",
+	  "city": "Santos",
+	  "zipCode": "11010-151",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "60"
+	},
+	{
+	  "userId": "11",
+	  "name": "Ôxe Bar",
+	  "description": "Ótimo lugar para desfrutar da culinária nordestina.",
+	  "categories": [
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Foxe%20bar%2001.jpg?alt=media&token=298bae99-0b72-41f7-8851-519183f886ef",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Foxe%20bar%2002.jpg?alt=media&token=3e4bcd4d-52c6-4ccf-894d-15547fbea3b9",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Foxe%20bar%2003.jpg?alt=media&token=354d104f-634d-443e-ac3f-d3f253032403"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Siqueira Campos",
+	  "number": 606,
+	  "district": "Macuco",
+	  "city": "Santos",
+	  "zipCode": "11045-200",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "61"
+	},
+	{
+	  "userId": "11",
+	  "name": "Vixe Bar Mallet",
+	  "description": "Um ótimo lugar para os amantes da culinária do Nordeste.",
+	  "categories": [
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Pet Friendly"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fvixe%20bar%2001.jpg?alt=media&token=7cb61a3c-2546-4f56-b308-eaddd726c2ad",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fvixe%20bar%2002.jpg?alt=media&token=809a644c-1f92-4c26-811a-1a5c1a62e543",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fvixe%20bar%2003.jpg?alt=media&token=6bb4e6fc-2dc6-4aed-95a0-0584a9ebe574"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "17:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Mal. Mallet",
+	  "number": 1155,
+	  "district": "Canto do Forte",
+	  "city": "Praia Grande",
+	  "zipCode": "11700-400",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "62"
+	},
+	{
+	  "userId": "11",
+	  "name": "Empório Dom José",
+	  "description": "Restaurante e padaria com variedade de refeições, pizzas, bolos, doces, tortas e lanches, em ambiente simples.",
+	  "categories": [
+		"Restaurante",
+		"Cafeterias"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Empório",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Femporio%20dom%20jose%2001.jpg?alt=media&token=419a34cc-6ed3-42c6-8fe8-08c95e129163",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Femporio%20dom%20jose%2002.jpg?alt=media&token=ba73de90-098e-4e56-a287-5d44807484ad",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Femporio%20dom%20jose%2003.jpg?alt=media&token=5c9e0a21-b426-4dbe-8957-a6025e5a263c"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "06:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Conselheiro Lafayette",
+	  "number": 3,
+	  "district": "Embaré",
+	  "city": "Santos",
+	  "zipCode": "11040-280",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "63"
+	},
+	{
+	  "userId": "11",
+	  "name": "Churrascaria Tertúlia",
+	  "description": "O salão é palco do rodízio de carnes nobres, buffet de saladas e guarnições, em meio a ambiente de burburinho.",
+	  "categories": [
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Estacionamento",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftertulia%2001.jpg?alt=media&token=f3352e70-4f65-45e8-9d86-dcdbcbcab13e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftertulia%2002.jpg?alt=media&token=a5be6c9f-72e6-45da-8786-bf1bdf5f95fd",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Ftertulia%2003.jpg?alt=media&token=17ec62b9-1558-4f39-861a-8b6044ff9c12"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "22:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "12:00",
+		  "horaFinal": "17:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Bartholomeu de Gusmão",
+	  "number": 187,
+	  "district": "Ponta da Praia",
+	  "city": "Santos",
+	  "zipCode": "11030-500",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "64"
+	},
+	{
+	  "userId": "11",
+	  "name": "Restaurante Capadócia",
+	  "description": "Ótimo lugar para apreciar pratos sofisticados em frente ao mar.",
+	  "categories": [
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcapadocia%2001.jpg?alt=media&token=ad2c9954-43ea-4804-9e2e-d960f7003ddd",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcapadocia%2002.jpg?alt=media&token=32c2b0ca-c3e3-44b9-ad49-c7a72a38771c",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fcapadocia%2003.jpg?alt=media&token=35651908-897e-4d22-bb1c-a8c7d1c4a5e2"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "23:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Miguel Estefno",
+	  "number": 655,
+	  "district": "Jardim Tejereba",
+	  "city": "Guarujá",
+	  "zipCode": "11440-530",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "65"
+	},
+	{
+	  "userId": "11",
+	  "name": "Abelha Rainha - Confeitaria Tradicional",
+	  "description": "Uma doceria tradicional com ótimos doces para se deliciar.",
+	  "categories": [
+		"Cafeterias"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fabelha%20rainha%2001.jpg?alt=media&token=644488b5-04ab-4206-97f2-366f70c6fbd8",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fabelha%20rainha%2002.jpeg?alt=media&token=cfc4f920-4aa8-4e0f-b57c-02ac6ed4385f",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fabelha%20rainha%2003.jpeg?alt=media&token=4b2e8f6b-55ad-4051-beeb-3ca1a4f687e5"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "09:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "09:00",
+		  "horaFinal": "21:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "09:00",
+		  "horaFinal": "20:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Santo Amaro",
+	  "number": 120,
+	  "district": "Vila Maia",
+	  "city": "Guarujá",
+	  "zipCode": "11410-070",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "66"
+	},
+	{
+	  "userId": "11",
+	  "name": "Blue House",
+	  "description": "Apresentações musicais de diversos estilos com destaque às noites de acústico, drinques e atmosfera moderna.",
+	  "categories": [
+		"Baladas"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Ambiente para Fumantes"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fblue%20house%2001.jpg?alt=media&token=23d44e06-cd1c-41a8-b178-03e1cababc6e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fblue%20house%2002.jpg?alt=media&token=795d5901-b931-4e83-b373-96ab2569a44e",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fblue%20house%2003.jpg?alt=media&token=8ada8d5b-47a0-4a23-9fbd-4ef878f4e0cc"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "21:00",
+		  "horaFinal": "05:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "22:00",
+		  "horaFinal": "05:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Avenida Mal. Mallet",
+	  "number": 736,
+	  "district": "Canto do Forte",
+	  "city": "Praia Grande",
+	  "zipCode": "11700-400",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "67"
+	},
+	{
+	  "userId": "11",
+	  "name": "Moby Dick",
+	  "description": "Bar casual e agitado com menu de coquetéis, terraço com lugar para sentar e bandas ao vivo.",
+	  "categories": [
+		"Bares",
+		"Baladas"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Ambiente para Fumantes",
+		"Musica ao Vivo"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmoby%2001.jpg?alt=media&token=d1bce751-1ae1-4512-b3b1-7d0e80d6e5dc",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmoby%2002.jpg?alt=media&token=202a6a97-ffa7-4465-ae59-5d43e7390053",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmoby%2003.jpg?alt=media&token=77332398-cc18-41a7-8322-ecc8b0137afa",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmoby%2004.jpg?alt=media&token=2d4bf93b-b67c-4f14-86ee-870f75e2605b"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "21:00",
+		  "horaFinal": "04:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "12:00",
+		  "horaFinal": "04:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "18:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Avenida Vicente de Carvalho",
+	  "number": 30,
+	  "district": "Boqueirão",
+	  "city": "Santos",
+	  "zipCode": "11045-500",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "68"
+	},
+	{
+	  "userId": "11",
+	  "name": "Mr. & Mrs. Café",
+	  "description": "Aproveite um café quentinho e deliciosos lanches no Mr. & Mrs. Café.",
+	  "categories": [
+		"Cafeterias"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmr%20e%20mrs%2001.jpg?alt=media&token=961f145e-720f-43a1-b9d7-31aea544d609",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fmr%20e%20mrs%2002.jpg?alt=media&token=3384226c-6899-48c4-b61f-b6ac939f9684"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "08:00",
+		  "horaFinal": "18:00",
+		  "Situacao": "Aberto"
 		},
 		{
 		  "id": "6",
@@ -1823,16 +4983,251 @@
 		  "Situacao": "Fechado"
 		}
 	  ],
-	  "street": "Avenida Presidente Wilson",
-	  "number": 62,
-	  "district": "11065200",
-	  "city": "Amaturá",
-	  "zipCode": "11065-200",
-	  "complement": "Avenida Presidente Wilson",
+	  "street": "Rua José Bonifácio",
+	  "number": 385,
+	  "district": "Centro",
+	  "city": "São Vicente",
+	  "zipCode": "11310-080",
+	  "complement": "",
 	  "status": "AGUARDANDO ANALISE",
-	  "username": "testeDice",
+	  "username": "Aninha",
 	  "motive": "",
-	  "state": "AM",
-	  "id": "27"
+	  "state": "SP",
+	  "id": "69"
+	},
+	{
+	  "userId": "11",
+	  "name": "China Gourmet",
+	  "description": "Gastronomia chinesa consagrada de pratos fumegantes e aromáticos em ambiente descontraído de ares familiares.",
+	  "categories": [
+		"Restaurante"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fchina%2001.jpg?alt=media&token=27be4d7a-7b5c-4491-841e-1ea42f18f390",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fchina%2002.jpg?alt=media&token=afb58ab7-abce-4335-b741-4e59a8f31e9a",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fchina%2003.jpg?alt=media&token=31ecfefc-183f-4a0b-aa66-425c2ca5b5d7"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "11:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		}
+	  ],
+	  "street": "Rua Padre Anchieta",
+	  "number": 49,
+	  "district": "Centro",
+	  "city": "São Vicente",
+	  "zipCode": "11310-040",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "70"
+	},
+	{
+	  "userId": "11",
+	  "name": "O Condado Bar",
+	  "description": "A casa mais alternativa da região.",
+	  "categories": [
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Ambiente para Fumantes"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fo%20condado%2001.jpg?alt=media&token=86db0d76-92a9-4965-90de-4a8e55e52df1",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fo%20condado%2002.jpg?alt=media&token=10f8bc7f-3243-4d12-8293-1056492527e5"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "19:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "19:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "19:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "19:00",
+		  "horaFinal": "02:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Rua XV de Novembro",
+	  "number": 12,
+	  "district": "Centro",
+	  "city": "São Vicente",
+	  "zipCode": "11310-400",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "71"
+	},
+	{
+	  "userId": "11",
+	  "name": "Nativos Gastrobar São Vicente",
+	  "description": "O menu deste pub & bar é recomendado para os amantes da culinária.",
+	  "categories": [
+		"Bares"
+	  ],
+	  "basicInformation": [
+		"Refeição no Local",
+		"Delivery"
+	  ],
+	  "image": [
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fnativos%2001.jpeg?alt=media&token=ff69345f-ee6d-4940-855f-67c2d18fb047",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fnativos%2002.jpg?alt=media&token=75810ac3-ec57-4c29-96d4-8ce9966fce28",
+		"https://firebasestorage.googleapis.com/v0/b/dice-99070.appspot.com/o/imagem%2Fnativos%2003.jpg?alt=media&token=0c6d6e11-ebd1-4acc-a770-cdcc0b72caff"
+	  ],
+	  "openingHours": [
+		{
+		  "id": "1",
+		  "dia": "Segunda-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "2",
+		  "dia": "Terça-Feira",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		},
+		{
+		  "id": "3",
+		  "dia": "Quarta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "4",
+		  "dia": "Quinta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "00:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "5",
+		  "dia": "Sexta-Feira",
+		  "horaInicial": "18:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "6",
+		  "dia": "Sabado",
+		  "horaInicial": "18:00",
+		  "horaFinal": "01:00",
+		  "Situacao": "Aberto"
+		},
+		{
+		  "id": "7",
+		  "dia": "Domingo",
+		  "horaInicial": "",
+		  "horaFinal": "",
+		  "Situacao": "Fechado"
+		}
+	  ],
+	  "street": "Avenida Prefeito José Monteiro",
+	  "number": 429,
+	  "district": "Jardim Independência",
+	  "city": "São Vicente",
+	  "zipCode": "11380-000",
+	  "complement": "",
+	  "status": "AGUARDANDO ANALISE",
+	  "username": "Aninha",
+	  "motive": "",
+	  "state": "SP",
+	  "id": "72"
 	}
   ]

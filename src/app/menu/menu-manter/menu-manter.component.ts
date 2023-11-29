@@ -85,6 +85,8 @@ export class MenuManterComponent implements OnInit {
   listaCategorias:any [] = [
     {name: 'Bares', code: 'Bares'},
     {name: 'Restaurante', code: 'Restaurante'},
+    {name: 'Pub', code: 'Pub'},
+    {name: 'Fliperama', code: 'Fliperama'},
     {name: 'Parques', code: 'Parques'},
     {name: 'Baladas', code: 'Baladas'},
     {name: 'Cinemas', code: 'Cinemas'},
